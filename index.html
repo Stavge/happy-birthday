@@ -3,59 +3,151 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>For Marios</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=3">
 </head>
-
 
 <body>
 
-
     <!-- =====================================
-         PASSWORD SCREEN
+         V3 — GIFT / PASSWORD SCREEN
     ====================================== -->
 
     <main id="password-screen" class="screen active">
 
-        <div class="password-container">
+        <div class="gift-scene">
 
-            <div class="lock-icon">
-                ✦
+            <!-- Hand-drawn heart -->
+            <div class="heart-mark" aria-hidden="true">
+                <svg viewBox="0 0 70 60">
+                    <path d="M35 52
+                             C28 44, 8 32, 10 17
+                             C11 7, 23 5, 29 12
+                             C33 16, 35 22, 35 22
+                             C35 22, 38 15, 43 11
+                             C51 5, 62 9, 61 20
+                             C60 32, 46 43, 35 52"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                </svg>
             </div>
 
-            <p class="small-label">
+            <p class="gift-label">
                 A little something for you
             </p>
 
-            <h1>
-                Πριν ανοίξεις...
-            </h1>
 
-            <p class="password-description">
-                Υπάρχει κάτι εδώ που είναι μόνο για εσένα.
-            </p>
+            <!-- =====================================
+                 GIFT
+            ====================================== -->
 
-            <div class="password-box">
+            <div id="gift" class="gift">
 
-                <input
-                    type="password"
-                    id="password-input"
-                    placeholder="Enter password"
-                    autocomplete="off"
-                >
+                <div class="gift-aura"></div>
 
-                <button id="unlock-button">
-                    Enter
-                </button>
+                <!-- card that will rise from the box -->
+                <div class="gift-card">
+
+                    <div class="gift-card-inner">
+
+                        <span class="card-small">
+                            For you...
+                        </span>
+
+                        <span class="card-title">
+                            Χρόνια Πολλά<br>
+                            Μάριε!
+                        </span>
+
+                        <span class="card-line"></span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- box -->
+                <div class="gift-box">
+
+                    <div class="box-back"></div>
+
+                    <div class="box-body">
+
+                        <div class="body-highlight"></div>
+
+                        <div class="vertical-ribbon"></div>
+
+                    </div>
+
+
+                    <!-- lid -->
+                    <div class="gift-lid">
+
+                        <div class="lid-top"></div>
+
+                        <div class="lid-front"></div>
+
+                        <div class="lid-ribbon"></div>
+
+                    </div>
+
+
+                    <!-- bow -->
+                    <div class="gift-bow">
+
+                        <div class="bow-loop bow-left"></div>
+
+                        <div class="bow-loop bow-right"></div>
+
+                        <div class="bow-knot"></div>
+
+                        <div class="bow-tail tail-left"></div>
+
+                        <div class="bow-tail tail-right"></div>
+
+                    </div>
+
+                </div>
 
             </div>
 
-            <p id="error-message"></p>
+
+            <!-- =====================================
+                 PASSWORD
+            ====================================== -->
+
+            <div id="password-area" class="password-area">
+
+                <div class="password-pill">
+
+                    <input
+                        type="password"
+                        id="password-input"
+                        placeholder="••••••"
+                        autocomplete="off"
+                        aria-label="Password"
+                    >
+
+                    <span class="password-divider"></span>
+
+                    <button
+                        id="unlock-button"
+                        aria-label="Άνοιγμα δώρου"
+                    >
+                        →
+                    </button>
+
+                </div>
+
+                <p id="error-message"></p>
+
+            </div>
 
         </div>
 
@@ -112,9 +204,7 @@
                 <span id="progress-number">01</span>
             </div>
 
-            <div id="story-text" class="story-text">
-            </div>
-
+            <div id="story-text" class="story-text"></div>
 
             <div class="story-hint">
 
@@ -143,7 +233,7 @@
         <div class="final-container">
 
             <div class="final-symbol">
-                ✦
+                ♡
             </div>
 
             <h1>
@@ -175,8 +265,7 @@
     </main>
 
 
-
-    <script src="script.js"></script>
+    <script src="script.js?v=3"></script>
 
 </body>
 
