@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For Marios</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         PASSWORD SCREEN
+    ========================== -->
+
+    <main id="password-screen" class="screen active">
+
+        <div class="password-container">
+
+            <div class="lock-icon">✦</div>
+
+            <p class="small-label">A little something for you</p>
+
+            <h1>Πριν ανοίξεις...</h1>
+
+            <p class="password-description">
+                Υπάρχει κάτι εδώ που είναι μόνο για εσένα.
+            </p>
+
+            <div class="password-box">
+
+                <input
+                    type="password"
+                    id="password-input"
+                    placeholder="Enter password"
+                    autocomplete="off"
+                >
+
+                <button id="unlock-button">
+                    Enter
+                </button>
+
+            </div>
+
+            <p id="error-message"></p>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         INTRO SCREEN
+    ========================== -->
+
+    <main id="intro-screen" class="screen hidden">
+
+        <div class="intro-container">
+
+            <p class="small-label fade-element">
+                For Marios
+            </p>
+
+            <h1 class="main-title fade-element">
+                Χρόνια Πολλά<br>
+                Μάριε!
+            </h1>
+
+            <div class="line"></div>
+
+            <p class="intro-subtitle fade-element">
+                Δεν είναι ακριβώς μια ευχή.
+            </p>
+
+            <button id="start-button" class="continue-button">
+                Συνέχισε
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         STORY SCREEN
+    ========================== -->
+
+    <main id="story-screen" class="screen hidden">
+
+        <div class="story-container">
+
+            <div class="story-progress">
+                <span id="progress-number">01</span>
+            </div>
+
+            <div id="story-text" class="story-text">
+                <!-- JavaScript inserts text here -->
+            </div>
+
+            <button id="next-button" class="continue-button">
+                <span>→</span>
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         FINAL SCREEN
+    ========================== -->
+
+    <main id="final-screen" class="screen hidden">
+
+        <div class="final-container">
+
+            <div class="final-symbol">✦</div>
+
+            <h1>
+                Χρόνια πολλά,<br>
+                Μάριε.
+            </h1>
+
+            <p>
+                Και ό,τι κι αν γίνει,
+                θέλω να θυμάσαι κάτι.
+            </p>
+
+            <p class="final-emphasis">
+                Έχεις έναν άνθρωπο που νοιάζεται πραγματικά για εσένα.
+            </p>
+
+            <div class="final-line"></div>
+
+            <button id="replay-button" class="text-button">
+                ↻ Ξανά από την αρχή
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
