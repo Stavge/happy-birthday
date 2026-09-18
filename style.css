@@ -15,10 +15,8 @@ body {
 }
 
 body {
-
-    background: #0d0d0f;
-
-    color: #f4f1eb;
+    background: #090909;
+    color: #f4efe6;
 
     font-family:
         Georgia,
@@ -28,6 +26,10 @@ body {
     overflow: hidden;
 }
 
+button,
+input {
+    -webkit-tap-highlight-color: transparent;
+}
 
 
 /* =========================================
@@ -35,13 +37,11 @@ body {
 ========================================= */
 
 .screen {
-
     width: 100%;
     height: 100vh;
     height: 100svh;
 
     display: flex;
-
     justify-content: center;
     align-items: center;
 
@@ -54,69 +54,938 @@ body {
         transform 1.1s ease;
 }
 
-
 .screen.hidden {
     display: none;
 }
 
-
 .screen.fade-out {
-
     opacity: 0;
-
     transform: scale(0.985);
-
 }
-
 
 
 /* =========================================
-   PASSWORD
+   V3 GIFT SCREEN
 ========================================= */
 
 #password-screen {
+    position: relative;
+    overflow: hidden;
 
     background:
         radial-gradient(
-            circle at center,
-            #19191d 0%,
-            #0d0d0f 60%,
-            #080809 100%
+            ellipse at 50% 50%,
+            #21180f 0%,
+            #15110d 25%,
+            #0d0c0b 55%,
+            #070708 100%
         );
-
 }
 
+#password-screen::before {
+    content: "";
 
-.password-container {
+    position: absolute;
+    inset: 0;
 
-    width: 100%;
+    pointer-events: none;
 
-    max-width: 460px;
+    background:
+        radial-gradient(
+            ellipse at 50% 68%,
+            rgba(202, 145, 76, 0.12),
+            transparent 36%
+        );
+
+    opacity: 0.8;
+}
+
+.gift-scene {
+    width: min(92vw, 720px);
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
 
     text-align: center;
 
-    animation:
-        appear 1.5s ease forwards;
+    z-index: 1;
 
+    animation: sceneAppear 1.6s ease both;
 }
 
 
-.lock-icon {
+/* =========================================
+   HEART
+========================================= */
+
+.heart-mark {
+    width: 44px;
+    height: 38px;
+
+    margin-bottom: 10px;
+
+    color: rgba(231, 203, 164, 0.82);
+
+    opacity: 0.85;
+}
+
+.heart-mark svg {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.gift-label {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 5px;
+
+    color: rgba(244, 232, 214, 0.75);
+
+    margin-bottom: 24px;
+}
+
+
+/* =========================================
+   GIFT WRAPPER
+========================================= */
+
+.gift {
+    width: 330px;
+    height: 300px;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+
+    perspective: 1000px;
+
+    transform: translateZ(0);
+}
+
+.gift-aura {
+    position: absolute;
+
+    width: 300px;
+    height: 180px;
+
+    left: 50%;
+    bottom: 20px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(213, 151, 79, 0.24) 0%,
+            rgba(173, 112, 51, 0.08) 40%,
+            transparent 72%
+        );
+
+    filter: blur(18px);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.5s ease;
+
+    opacity: 0.55;
+}
+
+
+/* =========================================
+   BOX
+========================================= */
+
+.gift-box {
+    width: 220px;
+    height: 170px;
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 20px;
+
+    transform: translateX(-50%);
+
+    z-index: 4;
+}
+
+.box-back {
+    position: absolute;
+
+    left: 8px;
+    right: 8px;
+    top: 5px;
+
+    height: 35px;
+
+    background: #201b17;
+
+    border:
+        1px solid rgba(221, 173, 112, 0.14);
+}
+
+.box-body {
+    position: absolute;
+
+    left: 10px;
+    right: 10px;
+    bottom: 0;
+
+    height: 145px;
+
+    overflow: hidden;
+
+    border-radius: 2px 2px 8px 8px;
+
+    border:
+        1px solid rgba(226, 183, 125, 0.18);
+
+    background:
+        linear-gradient(
+            110deg,
+            #171513 0%,
+            #26211d 48%,
+            #11100f 100%
+        );
+
+    box-shadow:
+        0 30px 55px rgba(0, 0, 0, 0.65),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.body-highlight {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 211, 150, 0.04),
+            transparent
+        );
+}
+
+.vertical-ribbon {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: 50%;
+
+    width: 32px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            #76502f,
+            #c9975c 48%,
+            #805632
+        );
+
+    box-shadow:
+        inset 1px 0 rgba(255, 255, 255, 0.16),
+        inset -1px 0 rgba(0, 0, 0, 0.22);
+
+    transition:
+        opacity 0.9s ease,
+        transform 1.1s ease;
+}
+
+
+/* =========================================
+   LID
+========================================= */
+
+.gift-lid {
+    position: absolute;
+
+    width: 240px;
+    height: 52px;
+
+    left: 50%;
+    top: -5px;
+
+    transform:
+        translateX(-50%)
+        rotateX(0deg);
+
+    transform-origin:
+        50% 100%;
+
+    z-index: 8;
+
+    transition:
+        transform 1.25s cubic-bezier(.2,.8,.2,1),
+        opacity 0.8s ease;
+}
+
+.lid-top {
+    position: absolute;
+
+    width: 100%;
+    height: 35px;
+
+    left: 0;
+    top: 0;
+
+    border-radius: 6px 6px 2px 2px;
+
+    border:
+        1px solid rgba(226, 183, 125, 0.22);
+
+    background:
+        linear-gradient(
+            105deg,
+            #27211d,
+            #181512 45%,
+            #30271f
+        );
+
+    box-shadow:
+        0 8px 15px rgba(0, 0, 0, 0.38);
+}
+
+.lid-front {
+    position: absolute;
+
+    width: 100%;
+    height: 18px;
+
+    left: 0;
+    top: 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #181512,
+            #28211b,
+            #171411
+        );
+
+    border:
+        1px solid rgba(226, 183, 125, 0.14);
+}
+
+.lid-ribbon {
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    width: 34px;
+    height: 48px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            #795130,
+            #c99a62,
+            #805631
+        );
+
+    transition:
+        opacity 0.7s ease;
+}
+
+
+/* =========================================
+   BOW
+========================================= */
+
+.gift-bow {
+    position: absolute;
+
+    width: 180px;
+    height: 100px;
+
+    left: 50%;
+    top: -65px;
+
+    transform: translateX(-50%);
+
+    z-index: 12;
+
+    transition:
+        opacity 0.7s ease,
+        transform 1.1s cubic-bezier(.2,.8,.2,1);
+}
+
+.bow-loop {
+    position: absolute;
+
+    width: 75px;
+    height: 48px;
+
+    top: 15px;
+
+    border:
+        2px solid rgba(228, 184, 126, 0.75);
+
+    background:
+        linear-gradient(
+            135deg,
+            #7b5130,
+            #d4a66d 55%,
+            #815735
+        );
+
+    box-shadow:
+        inset 0 0 10px rgba(255,255,255,0.12),
+        0 8px 12px rgba(0,0,0,0.25);
+
+    transition:
+        transform 1.1s cubic-bezier(.2,.8,.2,1),
+        opacity 0.8s ease;
+}
+
+.bow-left {
+    right: 50%;
+
+    border-radius:
+        70% 35% 60% 35%;
+
+    transform:
+        rotate(-22deg)
+        skewX(-8deg);
+
+    transform-origin: right center;
+}
+
+.bow-right {
+    left: 50%;
+
+    border-radius:
+        35% 70% 35% 60%;
+
+    transform:
+        rotate(22deg)
+        skewX(8deg);
+
+    transform-origin: left center;
+}
+
+.bow-knot {
+    position: absolute;
+
+    width: 38px;
+    height: 30px;
+
+    left: 50%;
+    top: 30px;
+
+    transform: translateX(-50%);
+
+    border-radius: 48%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d0a067,
+            #815331
+        );
+
+    border:
+        1px solid rgba(255, 222, 175, 0.35);
+
+    z-index: 4;
+
+    transition:
+        transform 0.9s ease,
+        opacity 0.8s ease;
+}
+
+.bow-tail {
+    position: absolute;
+
+    width: 30px;
+    height: 95px;
+
+    top: 48px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #805532,
+            #c5965f,
+            #74502f
+        );
+
+    z-index: -1;
+
+    transition:
+        transform 1.25s cubic-bezier(.2,.8,.2,1),
+        opacity 0.8s ease;
+}
+
+.tail-left {
+    left: 58px;
+
+    transform:
+        rotate(24deg)
+        skewY(6deg);
+
+    transform-origin: top center;
+}
+
+.tail-right {
+    right: 58px;
+
+    transform:
+        rotate(-24deg)
+        skewY(-6deg);
+
+    transform-origin: top center;
+}
+
+
+/* =========================================
+   CARD INSIDE GIFT
+========================================= */
+
+.gift-card {
+    position: absolute;
+
+    width: 180px;
+    height: 225px;
+
+    left: 50%;
+    bottom: 55px;
+
+    transform:
+        translateX(-50%)
+        translateY(120px)
+        scale(0.75);
+
+    transform-origin: center center;
+
+    opacity: 0;
+
+    z-index: 5;
+
+    border-radius: 3px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f4ead9,
+            #e5d3b8
+        );
+
+    color: #211b16;
+
+    box-shadow:
+        0 0 35px rgba(235, 180, 105, 0.38),
+        0 20px 45px rgba(0,0,0,0.55);
+
+    transition:
+        transform 1.5s cubic-bezier(.18,.8,.2,1),
+        opacity 0.7s ease,
+        box-shadow 1s ease;
+}
+
+.gift-card::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    opacity: 0.24;
+
+    background:
+        radial-gradient(
+            circle at 30% 20%,
+            rgba(255,255,255,0.8),
+            transparent 30%
+        );
+}
+
+.gift-card-inner {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    z-index: 1;
+}
+
+.card-small {
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+
+    font-size: 26px;
+
+    opacity: 0.78;
+
+    transition: opacity 0.6s ease;
+}
+
+.card-title {
+    display: none;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
     font-size: 24px;
 
-    margin-bottom: 25px;
+    line-height: 1.2;
 
-    opacity: 0.7;
+    color: #1e1915;
+}
 
-    animation:
-        floating 3s ease-in-out infinite;
+.card-line {
+    display: none;
 
+    width: 35px;
+    height: 1px;
+
+    margin-top: 18px;
+
+    background:
+        rgba(30, 25, 21, 0.45);
 }
 
 
-.small-label {
+/* =========================================
+   PASSWORD PILL
+========================================= */
 
+.password-area {
+    width: min(360px, 88vw);
+
+    margin-top: 5px;
+
+    position: relative;
+
+    z-index: 20;
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.7s ease;
+}
+
+.password-pill {
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+
+    border:
+        1px solid rgba(232, 202, 163, 0.52);
+
+    border-radius: 999px;
+
+    background:
+        rgba(14, 12, 10, 0.46);
+
+    backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,0.18);
+
+    overflow: hidden;
+}
+
+.password-pill input {
+    flex: 1;
+
+    min-width: 0;
+
+    height: 100%;
+
+    padding:
+        0 18px 0 27px;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    color: #f4e8d6;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 18px;
+
+    letter-spacing: 7px;
+}
+
+.password-pill input::placeholder {
+    color:
+        rgba(244, 232, 214, 0.55);
+
+    opacity: 1;
+}
+
+.password-divider {
+    width: 1px;
+    height: 28px;
+
+    background:
+        rgba(232, 202, 163, 0.25);
+}
+
+.password-pill button {
+    width: 64px;
+    height: 58px;
+
+    flex-shrink: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #f0dcc0;
+
+    font-size: 27px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+.password-pill button:hover {
+    background:
+        rgba(218, 167, 101, 0.08);
+
+    color: #fff5e8;
+}
+
+.password-pill button:hover {
+    transform: translateX(3px);
+}
+
+#error-message {
+    height: 18px;
+
+    margin-top: 10px;
+
+    color:
+        rgba(229, 177, 169, 0.85);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================
+   GIFT OPENING STATES
+========================================= */
+
+.gift-scene.unlocking .password-area {
+    opacity: 0;
+    transform: translateY(12px);
+
+    pointer-events: none;
+}
+
+
+/* Ribbon loosens */
+
+.gift-scene.ribbon-open .bow-left {
+    transform:
+        translate(-58px, 18px)
+        rotate(-52deg)
+        scale(1.05);
+
+    opacity: 0.8;
+}
+
+.gift-scene.ribbon-open .bow-right {
+    transform:
+        translate(58px, 18px)
+        rotate(52deg)
+        scale(1.05);
+
+    opacity: 0.8;
+}
+
+.gift-scene.ribbon-open .bow-knot {
+    transform:
+        translateX(-50%)
+        translateY(22px)
+        scale(0.72);
+
+    opacity: 0;
+}
+
+.gift-scene.ribbon-open .tail-left {
+    transform:
+        translate(-75px, 55px)
+        rotate(62deg);
+
+    opacity: 0.7;
+}
+
+.gift-scene.ribbon-open .tail-right {
+    transform:
+        translate(75px, 55px)
+        rotate(-62deg);
+
+    opacity: 0.7;
+}
+
+.gift-scene.ribbon-open .lid-ribbon,
+.gift-scene.ribbon-open .vertical-ribbon {
+    opacity: 0.25;
+}
+
+
+/* Lid opens */
+
+.gift-scene.box-open .gift-lid {
+    transform:
+        translateX(-50%)
+        translateY(-70px)
+        rotateX(-58deg)
+        rotateZ(-4deg);
+}
+
+.gift-scene.box-open .gift-bow {
+    transform:
+        translateX(-50%)
+        translateY(-70px)
+        rotate(-4deg);
+
+    opacity: 0.2;
+}
+
+.gift-scene.box-open .gift-aura {
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        scale(1.45);
+}
+
+
+/* warm light from inside */
+
+.gift-scene.box-open .box-back {
+    box-shadow:
+        0 -30px 55px rgba(239, 176, 94, 0.42),
+        0 -5px 15px rgba(255, 223, 173, 0.32);
+}
+
+
+/* Card rises */
+
+.gift-scene.card-rise .gift-card {
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        translateY(-75px)
+        scale(1);
+}
+
+
+/* Card becomes the focus */
+
+.gift-scene.card-focus .gift-card {
+    z-index: 50;
+
+    transform:
+        translateX(-50%)
+        translateY(-55px)
+        scale(1.45);
+
+    box-shadow:
+        0 0 80px rgba(237, 186, 116, 0.38),
+        0 25px 70px rgba(0,0,0,0.6);
+}
+
+.gift-scene.card-focus .gift-box,
+.gift-scene.card-focus .gift-label,
+.gift-scene.card-focus .heart-mark {
+    opacity: 0;
+
+    transition: opacity 0.8s ease;
+}
+
+
+/* card zooms toward camera */
+
+.gift-scene.card-zoom .gift-card {
+    transform:
+        translateX(-50%)
+        translateY(-15px)
+        scale(7);
+
+    border-radius: 0;
+
+    transition:
+        transform 1.45s cubic-bezier(.4,0,.15,1),
+        border-radius 1s ease;
+}
+
+.gift-scene.card-zoom .card-small {
+    opacity: 0;
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+#intro-screen {
+    background:
+        radial-gradient(
+            circle at center,
+            #1a191c 0%,
+            #0d0d0f 65%
+        );
+}
+
+.intro-container {
+    text-align: center;
+    max-width: 700px;
+}
+
+.small-label {
     font-family: Arial, sans-serif;
 
     font-size: 11px;
@@ -128,163 +997,9 @@ body {
     opacity: 0.5;
 
     margin-bottom: 22px;
-
 }
-
-
-.password-container h1 {
-
-    font-size:
-        clamp(32px, 8vw, 50px);
-
-    font-weight: normal;
-
-    margin-bottom: 20px;
-
-}
-
-
-.password-description {
-
-    font-size: 17px;
-
-    line-height: 1.8;
-
-    color:
-        rgba(244, 241, 235, 0.65);
-
-    margin-bottom: 35px;
-
-}
-
-
-.password-box {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 12px;
-
-}
-
-
-.password-box input {
-
-    width: 100%;
-
-    background:
-        rgba(255, 255, 255, 0.04);
-
-    border:
-        1px solid
-        rgba(255, 255, 255, 0.15);
-
-    color: white;
-
-    padding: 15px 18px;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 15px;
-
-    text-align: center;
-
-    outline: none;
-
-    transition:
-        border 0.3s ease;
-
-}
-
-
-.password-box input:focus {
-
-    border-color:
-        rgba(255, 255, 255, 0.5);
-
-}
-
-
-.password-box button {
-
-    padding: 15px;
-
-    background: #f4f1eb;
-
-    color: #0d0d0f;
-
-    border: none;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 12px;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-
-    cursor: pointer;
-
-    transition:
-        opacity 0.3s ease,
-        transform 0.3s ease;
-
-}
-
-
-.password-box button:hover {
-
-    opacity: 0.85;
-
-    transform: translateY(-2px);
-
-}
-
-
-#error-message {
-
-    height: 20px;
-
-    margin-top: 15px;
-
-    color: #c8a7a7;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 12px;
-
-}
-
-
-
-/* =========================================
-   INTRO
-========================================= */
-
-#intro-screen {
-
-    background:
-        radial-gradient(
-            circle at center,
-            #1a191c 0%,
-            #0d0d0f 65%
-        );
-
-}
-
-
-.intro-container {
-
-    text-align: center;
-
-    max-width: 700px;
-
-}
-
 
 .main-title {
-
     font-size:
         clamp(48px, 12vw, 100px);
 
@@ -295,35 +1010,26 @@ body {
     letter-spacing: -2px;
 
     margin-bottom: 35px;
-
 }
 
-
 .intro-subtitle {
-
     font-size: 18px;
 
     color:
         rgba(244, 241, 235, 0.65);
 
     margin-top: 30px;
-
 }
 
-
 .line {
-
     width: 45px;
-
     height: 1px;
 
     background:
         rgba(244, 241, 235, 0.5);
 
     margin: 0 auto;
-
 }
-
 
 
 /* =========================================
@@ -331,17 +1037,13 @@ body {
 ========================================= */
 
 .arrow-button {
-
     width: 64px;
-
     height: 64px;
 
-    margin-top: 28px;
+    margin: 28px auto 0;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     border-radius: 50%;
@@ -354,12 +1056,9 @@ body {
 
     color: #f4f1eb;
 
-    font-family:
-        Arial,
-        sans-serif;
+    font-family: Arial, sans-serif;
 
     font-size: 30px;
-
     font-weight: 300;
 
     line-height: 1;
@@ -372,30 +1071,16 @@ body {
         opacity 0.35s ease,
         transform 0.35s ease,
         border-color 0.35s ease;
-
 }
 
-
 .arrow-button:hover {
-
     opacity: 1;
 
-    transform:
-        translateX(6px);
+    transform: translateX(6px);
 
     border-color:
         rgba(244, 241, 235, 0.8);
-
 }
-
-
-.arrow-button:active {
-
-    transform:
-        translateX(9px);
-
-}
-
 
 
 /* =========================================
@@ -403,31 +1088,23 @@ body {
 ========================================= */
 
 #story-screen {
-
     background:
         radial-gradient(
             ellipse at center,
             #17171a 0%,
             #0b0b0c 70%
         );
-
 }
 
-
 .story-container {
-
     width: 100%;
-
     max-width: 850px;
-
     height: 100%;
 
     display: flex;
-
     flex-direction: column;
 
     justify-content: center;
-
     align-items: center;
 
     text-align: center;
@@ -437,18 +1114,13 @@ body {
     user-select: none;
 
     cursor: pointer;
-
 }
 
-
 .story-progress {
-
     position: absolute;
 
     top: 55px;
-
     left: 0;
-
     right: 0;
 
     font-family: Arial, sans-serif;
@@ -458,21 +1130,12 @@ body {
     letter-spacing: 3px;
 
     opacity: 0.35;
-
 }
 
-
-
-/*
-   The actual sentence.
-*/
-
 .story-text {
-
     width: 100%;
 
-    padding:
-        0 20px;
+    padding: 0 20px;
 
     font-size:
         clamp(27px, 5vw, 46px);
@@ -489,27 +1152,16 @@ body {
     transition:
         opacity 0.9s ease,
         transform 0.9s ease;
-
 }
 
-
 .story-text.visible {
-
     opacity: 1;
 
     transform:
         translateY(0);
-
 }
 
-
-
-/*
-   Small instruction at bottom.
-*/
-
 .story-hint {
-
     position: absolute;
 
     bottom: 45px;
@@ -521,17 +1173,11 @@ body {
     letter-spacing: 3px;
 
     opacity: 0.22;
-
-    transition:
-        opacity 0.8s ease;
-
 }
-
 
 .mobile-hint {
     display: none;
 }
-
 
 
 /* =========================================
@@ -539,42 +1185,32 @@ body {
 ========================================= */
 
 #final-screen {
-
     background:
         radial-gradient(
             circle at center,
             #19181b 0%,
             #09090a 75%
         );
-
 }
 
-
 .final-container {
-
     max-width: 700px;
 
     text-align: center;
 
     animation:
         appear 1.5s ease forwards;
-
 }
 
-
 .final-symbol {
-
-    font-size: 22px;
+    font-size: 28px;
 
     opacity: 0.6;
 
     margin-bottom: 35px;
-
 }
 
-
 .final-container h1 {
-
     font-size:
         clamp(45px, 9vw, 80px);
 
@@ -583,12 +1219,9 @@ body {
     font-weight: normal;
 
     margin-bottom: 40px;
-
 }
 
-
 .final-container p {
-
     font-size: 19px;
 
     line-height: 1.8;
@@ -597,38 +1230,27 @@ body {
         rgba(244, 241, 235, 0.65);
 
     margin-bottom: 20px;
-
 }
 
-
-.final-container
-.final-emphasis {
-
+.final-container .final-emphasis {
     color: #f4f1eb;
 
     font-size: 22px;
 
     margin-top: 35px;
-
 }
 
-
 .final-line {
-
     width: 40px;
-
     height: 1px;
 
     background:
         rgba(255, 255, 255, 0.4);
 
     margin: 40px auto;
-
 }
 
-
 .text-button {
-
     background: transparent;
 
     border: none;
@@ -646,64 +1268,48 @@ body {
 
     transition:
         color 0.3s ease;
-
 }
-
 
 .text-button:hover {
-
     color: white;
-
 }
-
 
 
 /* =========================================
    ANIMATIONS
 ========================================= */
 
-@keyframes appear {
-
+@keyframes sceneAppear {
     from {
-
         opacity: 0;
 
         transform:
-            translateY(20px);
-
+            translateY(12px);
     }
 
     to {
-
         opacity: 1;
 
         transform:
             translateY(0);
-
     }
-
 }
 
+@keyframes appear {
+    from {
+        opacity: 0;
 
-@keyframes floating {
+        transform:
+            translateY(20px);
+    }
 
-    0%,
-    100% {
+    to {
+        opacity: 1;
 
         transform:
             translateY(0);
-
     }
-
-    50% {
-
-        transform:
-            translateY(-6px);
-
-    }
-
 }
-
 
 
 /* =========================================
@@ -713,76 +1319,115 @@ body {
 @media (max-width: 600px) {
 
     .screen {
-
-        padding: 25px;
-
+        padding: 18px;
     }
 
+    .gift-scene {
+        justify-content: center;
+    }
+
+    .heart-mark {
+        width: 36px;
+        height: 31px;
+
+        margin-bottom: 7px;
+    }
+
+    .gift-label {
+        font-size: 9px;
+
+        letter-spacing: 3.5px;
+
+        margin-bottom: 12px;
+    }
+
+    .gift {
+        width: 280px;
+        height: 270px;
+
+        transform: scale(0.88);
+
+        margin:
+            -10px 0 -12px;
+    }
+
+    .password-area {
+        width: min(330px, 88vw);
+    }
+
+    .password-pill {
+        height: 54px;
+    }
+
+    .password-pill button {
+        width: 60px;
+        height: 54px;
+    }
 
     .main-title {
-
         letter-spacing: -1px;
-
     }
-
-
-    .password-container h1 {
-
-        font-size: 38px;
-
-    }
-
 
     .story-text {
-
         font-size: 27px;
 
         line-height: 1.55;
 
         padding:
             0 18px;
-
     }
-
 
     .story-progress {
-
         top: 30px;
-
     }
-
 
     .story-hint {
-
         bottom: 30px;
-
     }
-
 
     .desktop-hint {
-
         display: none;
-
     }
-
 
     .mobile-hint {
-
         display: inline;
-
     }
 
-
     .arrow-button {
-
         width: 58px;
-
         height: 58px;
 
         font-size: 27px;
 
         margin-top: 24px;
+    }
 
+}
+
+
+/* =========================================
+   SMALL HEIGHT DEVICES
+========================================= */
+
+@media (max-height: 700px) {
+
+    .heart-mark {
+        display: none;
+    }
+
+    .gift-label {
+        margin-bottom: 5px;
+    }
+
+    .gift {
+        transform: scale(0.78);
+
+        margin:
+            -35px 0 -30px;
+    }
+
+    .password-pill {
+        height: 50px;
     }
 
 }
