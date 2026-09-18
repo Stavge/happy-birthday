@@ -34,18 +34,8 @@ const finalScreen =
     document.getElementById("final-screen");
 
 
-const giftScene =
-    document.querySelector(".gift-scene");
-
-const giftCover =
-    document.getElementById("gift-cover");
-
-const giftVideo =
-    document.getElementById("gift-video");
-
-
-const passwordArea =
-    document.getElementById("password-area");
+const envelopeScene =
+    document.querySelector(".envelope-scene");
 
 const passwordPill =
     document.getElementById("password-pill");
@@ -74,48 +64,26 @@ const replayButton =
 
 
 let currentStoryIndex = 0;
-
 let isTransitioning = false;
-
-let giftIsOpening = false;
-
+let envelopeIsOpening = false;
 let touchStartY = 0;
-
 let touchEndY = 0;
-
 let wheelLocked = false;
-
-let giftFallbackTimer = null;
 
 
 /* =========================================
    GENERAL SCREEN CHANGE
 ========================================= */
 
-function changeScreen(
-    currentScreen,
-    nextScreen,
-    delay = 780
-) {
+function changeScreen(currentScreen, nextScreen, delay = 780) {
 
-    currentScreen.classList.add(
-        "fade-out"
-    );
-
+    currentScreen.classList.add("fade-out");
 
     setTimeout(() => {
 
-        currentScreen.classList.add(
-            "hidden"
-        );
-
-        currentScreen.classList.remove(
-            "fade-out"
-        );
-
-        nextScreen.classList.remove(
-            "hidden"
-        );
+        currentScreen.classList.add("hidden");
+        currentScreen.classList.remove("fade-out");
+        nextScreen.classList.remove("hidden");
 
     }, delay);
 
@@ -123,7 +91,7 @@ function changeScreen(
 
 
 /* =========================================
-   WRONG PASSWORD
+   PASSWORD
 ========================================= */
 
 function wrongPassword() {
@@ -131,90 +99,48 @@ function wrongPassword() {
     errorMessage.textContent =
         "Δεν είναι αυτό... ξαναπροσπάθησε.";
 
-
     passwordInput.value = "";
 
-
-    passwordPill.classList.remove(
-        "shake"
-    );
-
-
-    /*
-        Forces the animation to restart
-        if the password is wrong again.
-    */
-
+    passwordPill.classList.remove("shake");
     void passwordPill.offsetWidth;
+    passwordPill.classList.add("shake");
 
-
-    passwordPill.classList.add(
-        "shake"
-    );
-
-
-    if (
-        !window.matchMedia(
-            "(pointer: coarse)"
-        ).matches
-    ) {
-
+    if (!window.matchMedia("(pointer: coarse)").matches) {
         passwordInput.focus();
-
     }
 
 }
 
 
-/* =========================================
-   PASSWORD CHECK
-========================================= */
-
 function checkPassword() {
 
-    if (giftIsOpening) {
+    if (envelopeIsOpening) {
         return;
     }
-
 
     const enteredPassword =
         passwordInput.value.trim();
 
-
-    if (
-        enteredPassword !== PASSWORD
-    ) {
-
+    if (enteredPassword !== PASSWORD) {
         wrongPassword();
-
         return;
-
     }
 
-
     errorMessage.textContent = "";
-
-    openGift();
+    openEnvelope();
 
 }
 
 
-unlockButton.addEventListener(
-    "click",
-    checkPassword
-);
-
+unlockButton.addEventListener("click", checkPassword);
 
 passwordInput.addEventListener(
     "keydown",
     function(event) {
 
         if (event.key === "Enter") {
-
             event.preventDefault();
-
             checkPassword();
-
         }
 
     }
@@ -222,207 +148,91 @@ passwordInput.addEventListener(
 
 
 /* =========================================
-   CINEMATIC GIFT OPENING
+   OPEN ENVELOPE SEQUENCE
 ========================================= */
 
-function openGift() {
+function openEnvelope() {
 
-    if (giftIsOpening) {
+    if (envelopeIsOpening) {
         return;
     }
 
-
-    giftIsOpening = true;
-
-
+    envelopeIsOpening = true;
     passwordInput.blur();
 
+    envelopeScene.classList.add("opening");
 
     /*
-        Hide the password area
-        and begin the visual sequence.
+        1. Small pulse on the wax seal
     */
-
-    giftScene.classList.add(
-        "opening"
-    );
-
+    setTimeout(() => {
+        envelopeScene.classList.add("seal-pulse");
+    }, 250);
 
     /*
-        Show the video above
-        the static gift cover.
+        2. Seal disappears / "breaks"
     */
-
-    giftVideo.classList.add(
-        "visible"
-    );
-
-
-    giftCover.classList.add(
-        "hidden-cover"
-    );
-
+    setTimeout(() => {
+        envelopeScene.classList.add("seal-open");
+    }, 950);
 
     /*
-        Always restart video
-        from the beginning.
+        3. Flap opens
     */
-
-    try {
-
-        giftVideo.currentTime = 0;
-
-    }
-
-    catch (error) {
-
-        /*
-            Some browsers may not allow
-            changing currentTime before
-            metadata is loaded.
-        */
-
-    }
-
-
-    const playPromise =
-        giftVideo.play();
-
+    setTimeout(() => {
+        envelopeScene.classList.add("flap-open");
+    }, 1450);
 
     /*
-        Safety fallback:
-        if for any reason the video
-        does not emit the ended event,
-        we still continue.
+        4. Letter rises
     */
-
-    giftFallbackTimer =
-        setTimeout(
-            finishGiftOpening,
-            7600
-        );
-
+    setTimeout(() => {
+        envelopeScene.classList.add("letter-rise");
+    }, 2250);
 
     /*
-        If playback fails completely,
-        continue gracefully instead
-        of leaving the page stuck.
+        5. Letter becomes the focus
     */
+    setTimeout(() => {
+        envelopeScene.classList.add("letter-focus");
+    }, 3200);
 
-    if (
-        playPromise &&
-        typeof playPromise.catch ===
-        "function"
-    ) {
+    /*
+        6. Zoom into the letter
+    */
+    setTimeout(() => {
+        envelopeScene.classList.add("letter-zoom");
+    }, 4100);
 
-        playPromise.catch(() => {
+    /*
+        7. Move into intro screen
+    */
+    setTimeout(() => {
 
-            setTimeout(
-                finishGiftOpening,
-                800
-            );
+        passwordScreen.classList.add("hidden");
+        introScreen.classList.remove("hidden");
 
-        });
+        resetEnvelope();
 
-    }
+    }, 5600);
 
 }
 
 
-/* =========================================
-   FINISH GIFT OPENING
-========================================= */
+function resetEnvelope() {
 
-function finishGiftOpening() {
-
-    if (!giftIsOpening) {
-        return;
-    }
-
-
-    clearTimeout(
-        giftFallbackTimer
+    envelopeScene.classList.remove(
+        "opening",
+        "seal-pulse",
+        "seal-open",
+        "flap-open",
+        "letter-rise",
+        "letter-focus",
+        "letter-zoom"
     );
-
-
-    /*
-        The animation ends on an
-        ivory paper/card frame.
-
-        We now replace the video with
-        the real HTML intro screen,
-        which has the same visual idea.
-    */
-
-    passwordScreen.classList.add(
-        "hidden"
-    );
-
-
-    introScreen.classList.remove(
-        "hidden"
-    );
-
-
-    resetGift();
-
-}
-
-
-/*
-    When the MP4 ends normally,
-    move into the intro.
-*/
-
-giftVideo.addEventListener(
-    "ended",
-    finishGiftOpening
-);
-
-
-/* =========================================
-   RESET GIFT
-========================================= */
-
-function resetGift() {
-
-    giftVideo.pause();
-
-
-    try {
-
-        giftVideo.currentTime = 0;
-
-    }
-
-    catch (error) {
-
-        /*
-            Ignore browser timing issue.
-        */
-
-    }
-
-
-    giftScene.classList.remove(
-        "opening"
-    );
-
-
-    giftVideo.classList.remove(
-        "visible"
-    );
-
-
-    giftCover.classList.remove(
-        "hidden-cover"
-    );
-
 
     passwordInput.value = "";
-
-
-    giftIsOpening = false;
+    envelopeIsOpening = false;
 
 }
 
@@ -431,69 +241,41 @@ function resetGift() {
    START STORY
 ========================================= */
 
-startButton.addEventListener(
-    "click",
-    startStory
-);
-
+startButton.addEventListener("click", startStory);
 
 function startStory() {
 
     currentStoryIndex = 0;
 
+    changeScreen(introScreen, storyScreen);
 
-    changeScreen(
-        introScreen,
-        storyScreen
-    );
-
-
-    setTimeout(
-        showStory,
-        850
-    );
+    setTimeout(showStory, 850);
 
 }
 
 
 /* =========================================
-   SHOW STORY
+   STORY
 ========================================= */
 
 function showStory() {
 
-    storyText.classList.remove(
-        "visible"
-    );
-
+    storyText.classList.remove("visible");
 
     setTimeout(() => {
 
         storyText.textContent =
             story[currentStoryIndex];
 
-
         progressNumber.textContent =
-            String(
-                currentStoryIndex + 1
-            ).padStart(
-                2,
-                "0"
-            );
+            String(currentStoryIndex + 1).padStart(2, "0");
 
-
-        storyText.classList.add(
-            "visible"
-        );
+        storyText.classList.add("visible");
 
     }, 330);
 
 }
 
-
-/* =========================================
-   NEXT STORY
-========================================= */
 
 function nextStory() {
 
@@ -501,25 +283,14 @@ function nextStory() {
         return;
     }
 
-
-    if (
-        currentStoryIndex <
-        story.length - 1
-    ) {
+    if (currentStoryIndex < story.length - 1) {
 
         isTransitioning = true;
-
-
         currentStoryIndex++;
-
-
         showStory();
 
-
         setTimeout(() => {
-
             isTransitioning = false;
-
         }, 950);
 
     }
@@ -527,18 +298,10 @@ function nextStory() {
     else {
 
         isTransitioning = true;
-
-
-        changeScreen(
-            storyScreen,
-            finalScreen
-        );
-
+        changeScreen(storyScreen, finalScreen);
 
         setTimeout(() => {
-
             isTransitioning = false;
-
         }, 1100);
 
     }
@@ -546,35 +309,18 @@ function nextStory() {
 }
 
 
-/* =========================================
-   PREVIOUS STORY
-========================================= */
-
 function previousStory() {
 
-    if (
-        isTransitioning ||
-        currentStoryIndex <= 0
-    ) {
-
+    if (isTransitioning || currentStoryIndex <= 0) {
         return;
-
     }
 
-
     isTransitioning = true;
-
-
     currentStoryIndex--;
-
-
     showStory();
 
-
     setTimeout(() => {
-
         isTransitioning = false;
-
     }, 950);
 
 }
@@ -588,71 +334,25 @@ document.addEventListener(
     "keydown",
     function(event) {
 
-        /*
-            Story controls only work
-            while story screen is visible.
-        */
-
-        if (
-            storyScreen.classList.contains(
-                "hidden"
-            )
-        ) {
-
+        if (storyScreen.classList.contains("hidden")) {
             return;
-
         }
 
-
-        /*
-            Enter or Space = next
-        */
-
-        if (
-            event.key === "Enter" ||
-            event.code === "Space"
-        ) {
-
+        if (event.key === "Enter" || event.code === "Space") {
             event.preventDefault();
-
             nextStory();
-
             return;
-
         }
 
-
-        /*
-            Right / down = next
-        */
-
-        if (
-            event.key === "ArrowDown" ||
-            event.key === "ArrowRight"
-        ) {
-
+        if (event.key === "ArrowDown" || event.key === "ArrowRight") {
             event.preventDefault();
-
             nextStory();
-
             return;
-
         }
 
-
-        /*
-            Left / up = previous
-        */
-
-        if (
-            event.key === "ArrowUp" ||
-            event.key === "ArrowLeft"
-        ) {
-
+        if (event.key === "ArrowUp" || event.key === "ArrowLeft") {
             event.preventDefault();
-
             previousStory();
-
         }
 
     }
@@ -669,32 +369,22 @@ storyScreen.addEventListener(
 
         event.preventDefault();
 
-
         if (wheelLocked) {
             return;
         }
 
-
         wheelLocked = true;
 
-
         if (event.deltaY > 0) {
-
             nextStory();
-
         }
 
         else if (event.deltaY < 0) {
-
             previousStory();
-
         }
 
-
         setTimeout(() => {
-
             wheelLocked = false;
-
         }, 1050);
 
     },
@@ -705,29 +395,20 @@ storyScreen.addEventListener(
 
 
 /* =========================================
-   CLICK ANYWHERE ON STORY
+   CLICK ANYWHERE
 ========================================= */
 
 storyScreen.addEventListener(
     "click",
     function(event) {
 
-        /*
-            Do not trigger navigation
-            if later we add buttons,
-            links or interactive elements.
-        */
-
         if (
             event.target.closest("button") ||
             event.target.closest("a") ||
             event.target.closest("input")
         ) {
-
             return;
-
         }
-
 
         nextStory();
 
@@ -742,71 +423,39 @@ storyScreen.addEventListener(
 storyScreen.addEventListener(
     "touchstart",
     function(event) {
-
-        touchStartY =
-            event.changedTouches[0].screenY;
-
+        touchStartY = event.changedTouches[0].screenY;
     },
     {
         passive: true
     }
 );
-
 
 storyScreen.addEventListener(
     "touchend",
     function(event) {
-
-        touchEndY =
-            event.changedTouches[0].screenY;
-
-
+        touchEndY = event.changedTouches[0].screenY;
         handleSwipe();
-
     },
     {
         passive: true
     }
 );
 
-
 function handleSwipe() {
 
-    const distance =
-        touchStartY - touchEndY;
-
-
+    const distance = touchStartY - touchEndY;
     const minimumSwipe = 45;
 
-
-    if (
-        Math.abs(distance) <
-        minimumSwipe
-    ) {
-
+    if (Math.abs(distance) < minimumSwipe) {
         return;
-
     }
-
-
-    /*
-        Swipe up = next
-    */
 
     if (distance > 0) {
-
         nextStory();
-
     }
 
-    /*
-        Swipe down = previous
-    */
-
     else {
-
         previousStory();
-
     }
 
 }
@@ -821,12 +470,7 @@ replayButton.addEventListener(
     function() {
 
         currentStoryIndex = 0;
-
-
-        changeScreen(
-            finalScreen,
-            introScreen
-        );
+        changeScreen(finalScreen, introScreen);
 
     }
 );
@@ -836,27 +480,6 @@ replayButton.addEventListener(
    INITIAL STATE
 ========================================= */
 
-/*
-    Tell the browser to preload the video.
-*/
-
-giftVideo.load();
-
-
-/*
-    On desktop, focus the password
-    immediately.
-
-    On mobile we avoid automatically
-    opening the keyboard.
-*/
-
-if (
-    !window.matchMedia(
-        "(pointer: coarse)"
-    ).matches
-) {
-
+if (!window.matchMedia("(pointer: coarse)").matches) {
     passwordInput.focus();
-
 }
