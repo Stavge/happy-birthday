@@ -1,0 +1,485 @@
+/* =========================================
+   GENERAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background: #0d0d0f;
+    color: #f4f1eb;
+    font-family: Georgia, "Times New Roman", serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   SCREEN SYSTEM
+========================================= */
+
+.screen {
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    opacity: 1;
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+}
+
+.screen.hidden {
+    display: none;
+}
+
+.screen.fade-out {
+    opacity: 0;
+    transform: scale(0.98);
+}
+
+
+/* =========================================
+   PASSWORD
+========================================= */
+
+#password-screen {
+    background:
+        radial-gradient(
+            circle at center,
+            #19191d 0%,
+            #0d0d0f 60%,
+            #080809 100%
+        );
+}
+
+.password-container {
+    width: 100%;
+    max-width: 460px;
+    text-align: center;
+
+    animation: appear 1.5s ease forwards;
+}
+
+.lock-icon {
+    font-size: 24px;
+    margin-bottom: 25px;
+
+    opacity: 0.7;
+
+    animation: floating 3s ease-in-out infinite;
+}
+
+.small-label {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+
+    opacity: 0.5;
+
+    margin-bottom: 22px;
+}
+
+.password-container h1 {
+    font-size: clamp(32px, 8vw, 50px);
+    font-weight: normal;
+
+    margin-bottom: 20px;
+}
+
+.password-description {
+    font-size: 17px;
+    line-height: 1.8;
+
+    color: rgba(244, 241, 235, 0.65);
+
+    margin-bottom: 35px;
+}
+
+.password-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.password-box input {
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    color: white;
+
+    padding: 15px 18px;
+
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+
+    text-align: center;
+
+    outline: none;
+
+    transition: border 0.3s ease;
+}
+
+.password-box input:focus {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.password-box button {
+    padding: 15px;
+
+    background: #f4f1eb;
+    color: #0d0d0f;
+
+    border: none;
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.password-box button:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+#error-message {
+    height: 20px;
+
+    margin-top: 15px;
+
+    color: #c8a7a7;
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+#intro-screen {
+    background:
+        radial-gradient(
+            circle at center,
+            #1a191c 0%,
+            #0d0d0f 65%
+        );
+}
+
+.intro-container {
+    text-align: center;
+    max-width: 700px;
+}
+
+.main-title {
+    font-size: clamp(48px, 12vw, 100px);
+
+    line-height: 1.05;
+
+    font-weight: normal;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 35px;
+}
+
+.intro-subtitle {
+    font-size: 18px;
+
+    color: rgba(244, 241, 235, 0.65);
+
+    margin-top: 30px;
+}
+
+.line {
+    width: 45px;
+    height: 1px;
+
+    background: rgba(244, 241, 235, 0.5);
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   STORY
+========================================= */
+
+#story-screen {
+    background:
+        radial-gradient(
+            ellipse at center,
+            #17171a 0%,
+            #0b0b0c 70%
+        );
+}
+
+.story-container {
+    width: 100%;
+    max-width: 760px;
+
+    text-align: center;
+
+    position: relative;
+}
+
+.story-progress {
+    position: absolute;
+
+    top: -80px;
+    left: 0;
+    right: 0;
+
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    opacity: 0.4;
+}
+
+.story-text {
+    min-height: 180px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: clamp(25px, 5vw, 42px);
+
+    line-height: 1.55;
+
+    font-weight: normal;
+
+    opacity: 0;
+    transform: translateY(20px);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+}
+
+.story-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.continue-button {
+    margin-top: 50px;
+
+    border: none;
+
+    background: transparent;
+
+    color: rgba(244, 241, 235, 0.65);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.continue-button:hover {
+    color: white;
+
+    transform: translateX(4px);
+}
+
+#next-button {
+    font-size: 25px;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================
+   FINAL
+========================================= */
+
+#final-screen {
+    background:
+        radial-gradient(
+            circle at center,
+            #19181b 0%,
+            #09090a 75%
+        );
+}
+
+.final-container {
+    max-width: 700px;
+
+    text-align: center;
+
+    animation: appear 1.5s ease forwards;
+}
+
+.final-symbol {
+    font-size: 22px;
+
+    opacity: 0.6;
+
+    margin-bottom: 35px;
+}
+
+.final-container h1 {
+    font-size: clamp(45px, 9vw, 80px);
+
+    line-height: 1.1;
+
+    font-weight: normal;
+
+    margin-bottom: 40px;
+}
+
+.final-container p {
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    color: rgba(244, 241, 235, 0.65);
+
+    margin-bottom: 20px;
+}
+
+.final-container .final-emphasis {
+    color: #f4f1eb;
+
+    font-size: 22px;
+
+    margin-top: 35px;
+}
+
+.final-line {
+    width: 40px;
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.4);
+
+    margin: 40px auto;
+}
+
+.text-button {
+    background: transparent;
+
+    border: none;
+
+    color: rgba(244, 241, 235, 0.45);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: color 0.3s ease;
+}
+
+.text-button:hover {
+    color: white;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .screen {
+        padding: 25px;
+    }
+
+    .main-title {
+        letter-spacing: -1px;
+    }
+
+    .story-text {
+        min-height: 250px;
+    }
+
+    .password-container h1 {
+        font-size: 38px;
+    }
+
+}
