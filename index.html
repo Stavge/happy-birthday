@@ -1,29 +1,40 @@
 <!DOCTYPE html>
 <html lang="el">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
     <title>For Marios</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
-    <!-- =========================
+
+    <!-- =====================================
          PASSWORD SCREEN
-    ========================== -->
+    ====================================== -->
 
     <main id="password-screen" class="screen active">
 
         <div class="password-container">
 
-            <div class="lock-icon">✦</div>
+            <div class="lock-icon">
+                ✦
+            </div>
 
-            <p class="small-label">A little something for you</p>
+            <p class="small-label">
+                A little something for you
+            </p>
 
-            <h1>Πριν ανοίξεις...</h1>
+            <h1>
+                Πριν ανοίξεις...
+            </h1>
 
             <p class="password-description">
                 Υπάρχει κάτι εδώ που είναι μόνο για εσένα.
@@ -51,9 +62,10 @@
     </main>
 
 
-    <!-- =========================
+
+    <!-- =====================================
          INTRO SCREEN
-    ========================== -->
+    ====================================== -->
 
     <main id="intro-screen" class="screen hidden">
 
@@ -74,7 +86,10 @@
                 Δεν είναι ακριβώς μια ευχή.
             </p>
 
-            <button id="start-button" class="continue-button">
+            <button
+                id="start-button"
+                class="continue-button"
+            >
                 Συνέχισε
             </button>
 
@@ -83,9 +98,10 @@
     </main>
 
 
-    <!-- =========================
+
+    <!-- =====================================
          STORY SCREEN
-    ========================== -->
+    ====================================== -->
 
     <main id="story-screen" class="screen hidden">
 
@@ -95,28 +111,38 @@
                 <span id="progress-number">01</span>
             </div>
 
+
             <div id="story-text" class="story-text">
-                <!-- JavaScript inserts text here -->
             </div>
 
-            <button id="next-button" class="continue-button">
-                <span>→</span>
-            </button>
+
+            <div class="story-hint">
+                <span class="desktop-hint">
+                    ENTER · SPACE · CLICK
+                </span>
+
+                <span class="mobile-hint">
+                    SWIPE
+                </span>
+            </div>
 
         </div>
 
     </main>
 
 
-    <!-- =========================
+
+    <!-- =====================================
          FINAL SCREEN
-    ========================== -->
+    ====================================== -->
 
     <main id="final-screen" class="screen hidden">
 
         <div class="final-container">
 
-            <div class="final-symbol">✦</div>
+            <div class="final-symbol">
+                ✦
+            </div>
 
             <h1>
                 Χρόνια πολλά,<br>
@@ -129,12 +155,16 @@
             </p>
 
             <p class="final-emphasis">
-                Έχεις έναν άνθρωπο που νοιάζεται πραγματικά για εσένα.
+                Έχεις έναν άνθρωπο που νοιάζεται
+                πραγματικά για εσένα.
             </p>
 
             <div class="final-line"></div>
 
-            <button id="replay-button" class="text-button">
+            <button
+                id="replay-button"
+                class="text-button"
+            >
                 ↻ Ξανά από την αρχή
             </button>
 
@@ -143,7 +173,9 @@
     </main>
 
 
+
     <script src="script.js"></script>
 
 </body>
+
 </html>
