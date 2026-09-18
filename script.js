@@ -1,58 +1,25 @@
-/* =========================================
-   SETTINGS
-========================================= */
-
 const PASSWORD = "marios";
 
-
-/* =========================================
-   STORY
-========================================= */
-
 const story = [
-
     "Δεν θα σου ευχηθώ τα τετριμμένα.",
-
     "Άλλωστε ξέρω ότι δεν σου αρέσουν.",
-
     "Αντ' αυτού, ήθελα να σου φτιάξω κάτι λίγο πιο μοναδικό.",
-
     "Κάτι που να είναι μόνο για εσένα.",
-
     "Κάποια πράγματα είναι δύσκολο να ειπωθούν.",
-
     "Δύσκολο να εκφραστούν.",
-
     "Ίσως γιατί κάποιες φορές οι λέξεις μοιάζουν πολύ μικρές.",
-
     "Όπως το πόσο πολύ σε αγάπησα όλα αυτά τα χρόνια.",
-
     "Δεν μπόρεσες να το καταλάβεις.",
-
     "Με παρεξήγησες.",
-
     "Προσπάθησες να βγάλεις τα δικά σου συμπεράσματα.",
-
     "Ναι... δεν είμαι ο πιο νορμάλ άνθρωπος.",
-
     "Αλλά σε αγάπησα πραγματικά.",
-
     "Ειλικρινά.",
-
     "Με όλη μου την καρδιά.",
-
     "Και θέλω να ξέρεις κάτι.",
-
     "Ότι, ό,τι κι αν γίνει...",
-
     "έχεις έναν άνθρωπο που νοιάζεται πραγματικά για εσένα."
-
 ];
-
-
-/* =========================================
-   ELEMENTS
-========================================= */
 
 const passwordScreen =
     document.getElementById("password-screen");
@@ -69,6 +36,19 @@ const finalScreen =
 
 const giftScene =
     document.querySelector(".gift-scene");
+
+const giftCover =
+    document.getElementById("gift-cover");
+
+const giftVideo =
+    document.getElementById("gift-video");
+
+
+const passwordArea =
+    document.getElementById("password-area");
+
+const passwordPill =
+    document.getElementById("password-pill");
 
 const passwordInput =
     document.getElementById("password-input");
@@ -93,10 +73,6 @@ const replayButton =
     document.getElementById("replay-button");
 
 
-/* =========================================
-   STATE
-========================================= */
-
 let currentStoryIndex = 0;
 
 let isTransitioning = false;
@@ -107,30 +83,91 @@ let touchStartY = 0;
 
 let touchEndY = 0;
 
+let wheelLocked = false;
+
+let giftFallbackTimer = null;
+
 
 /* =========================================
-   SCREEN TRANSITION
+   GENERAL SCREEN CHANGE
 ========================================= */
 
-function changeScreen(currentScreen, nextScreen) {
+function changeScreen(
+    currentScreen,
+    nextScreen,
+    delay = 780
+) {
 
-    currentScreen.classList.add("fade-out");
+    currentScreen.classList.add(
+        "fade-out"
+    );
+
 
     setTimeout(() => {
 
-        currentScreen.classList.add("hidden");
+        currentScreen.classList.add(
+            "hidden"
+        );
 
-        currentScreen.classList.remove("fade-out");
+        currentScreen.classList.remove(
+            "fade-out"
+        );
 
-        nextScreen.classList.remove("hidden");
+        nextScreen.classList.remove(
+            "hidden"
+        );
 
-    }, 900);
+    }, delay);
 
 }
 
 
 /* =========================================
-   PASSWORD
+   WRONG PASSWORD
+========================================= */
+
+function wrongPassword() {
+
+    errorMessage.textContent =
+        "Δεν είναι αυτό... ξαναπροσπάθησε.";
+
+
+    passwordInput.value = "";
+
+
+    passwordPill.classList.remove(
+        "shake"
+    );
+
+
+    /*
+        Forces the animation to restart
+        if the password is wrong again.
+    */
+
+    void passwordPill.offsetWidth;
+
+
+    passwordPill.classList.add(
+        "shake"
+    );
+
+
+    if (
+        !window.matchMedia(
+            "(pointer: coarse)"
+        ).matches
+    ) {
+
+        passwordInput.focus();
+
+    }
+
+}
+
+
+/* =========================================
+   PASSWORD CHECK
 ========================================= */
 
 function checkPassword() {
@@ -139,28 +176,25 @@ function checkPassword() {
         return;
     }
 
+
     const enteredPassword =
         passwordInput.value.trim();
 
 
-    if (enteredPassword === PASSWORD) {
+    if (
+        enteredPassword !== PASSWORD
+    ) {
 
-        errorMessage.textContent = "";
+        wrongPassword();
 
-        openGift();
-
-    }
-
-    else {
-
-        errorMessage.textContent =
-            "Δεν είναι αυτό... ξαναπροσπάθησε.";
-
-        passwordInput.value = "";
-
-        passwordInput.focus();
+        return;
 
     }
+
+
+    errorMessage.textContent = "";
+
+    openGift();
 
 }
 
@@ -188,103 +222,162 @@ passwordInput.addEventListener(
 
 
 /* =========================================
-   V3 — OPEN GIFT
+   CINEMATIC GIFT OPENING
 ========================================= */
 
 function openGift() {
 
+    if (giftIsOpening) {
+        return;
+    }
+
+
     giftIsOpening = true;
+
 
     passwordInput.blur();
 
-    giftScene.classList.add("unlocking");
+
+    /*
+        Hide the password area
+        and begin the visual sequence.
+    */
+
+    giftScene.classList.add(
+        "opening"
+    );
 
 
     /*
-        1. Ribbon loosens
+        Show the video above
+        the static gift cover.
     */
 
-    setTimeout(() => {
+    giftVideo.classList.add(
+        "visible"
+    );
 
-        giftScene.classList.add(
-            "ribbon-open"
-        );
 
-    }, 450);
+    giftCover.classList.add(
+        "hidden-cover"
+    );
 
 
     /*
-        2. Lid opens
+        Always restart video
+        from the beginning.
     */
 
-    setTimeout(() => {
+    try {
 
-        giftScene.classList.add(
-            "box-open"
-        );
+        giftVideo.currentTime = 0;
 
-    }, 1450);
+    }
+
+    catch (error) {
+
+        /*
+            Some browsers may not allow
+            changing currentTime before
+            metadata is loaded.
+        */
+
+    }
+
+
+    const playPromise =
+        giftVideo.play();
 
 
     /*
-        3. Card rises
+        Safety fallback:
+        if for any reason the video
+        does not emit the ended event,
+        we still continue.
     */
 
-    setTimeout(() => {
-
-        giftScene.classList.add(
-            "card-rise"
+    giftFallbackTimer =
+        setTimeout(
+            finishGiftOpening,
+            7600
         );
-
-    }, 2350);
 
 
     /*
-        4. Everything fades back.
-           Card becomes the focus.
+        If playback fails completely,
+        continue gracefully instead
+        of leaving the page stuck.
     */
 
-    setTimeout(() => {
+    if (
+        playPromise &&
+        typeof playPromise.catch ===
+        "function"
+    ) {
 
-        giftScene.classList.add(
-            "card-focus"
-        );
+        playPromise.catch(() => {
 
-    }, 3650);
+            setTimeout(
+                finishGiftOpening,
+                800
+            );
 
+        });
 
-    /*
-        5. Card moves toward camera.
-    */
-
-    setTimeout(() => {
-
-        giftScene.classList.add(
-            "card-zoom"
-        );
-
-    }, 4550);
-
-
-    /*
-        6. Reveal existing intro screen.
-    */
-
-    setTimeout(() => {
-
-        passwordScreen.classList.add(
-            "hidden"
-        );
-
-        introScreen.classList.remove(
-            "hidden"
-        );
-
-        resetGift();
-
-    }, 5850);
+    }
 
 }
+
+
+/* =========================================
+   FINISH GIFT OPENING
+========================================= */
+
+function finishGiftOpening() {
+
+    if (!giftIsOpening) {
+        return;
+    }
+
+
+    clearTimeout(
+        giftFallbackTimer
+    );
+
+
+    /*
+        The animation ends on an
+        ivory paper/card frame.
+
+        We now replace the video with
+        the real HTML intro screen,
+        which has the same visual idea.
+    */
+
+    passwordScreen.classList.add(
+        "hidden"
+    );
+
+
+    introScreen.classList.remove(
+        "hidden"
+    );
+
+
+    resetGift();
+
+}
+
+
+/*
+    When the MP4 ends normally,
+    move into the intro.
+*/
+
+giftVideo.addEventListener(
+    "ended",
+    finishGiftOpening
+);
 
 
 /* =========================================
@@ -293,16 +386,41 @@ function openGift() {
 
 function resetGift() {
 
+    giftVideo.pause();
+
+
+    try {
+
+        giftVideo.currentTime = 0;
+
+    }
+
+    catch (error) {
+
+        /*
+            Ignore browser timing issue.
+        */
+
+    }
+
+
     giftScene.classList.remove(
-        "unlocking",
-        "ribbon-open",
-        "box-open",
-        "card-rise",
-        "card-focus",
-        "card-zoom"
+        "opening"
     );
 
+
+    giftVideo.classList.remove(
+        "visible"
+    );
+
+
+    giftCover.classList.remove(
+        "hidden-cover"
+    );
+
+
     passwordInput.value = "";
+
 
     giftIsOpening = false;
 
@@ -323,17 +441,17 @@ function startStory() {
 
     currentStoryIndex = 0;
 
+
     changeScreen(
         introScreen,
         storyScreen
     );
 
 
-    setTimeout(() => {
-
-        showStory();
-
-    }, 1000);
+    setTimeout(
+        showStory,
+        850
+    );
 
 }
 
@@ -354,17 +472,21 @@ function showStory() {
         storyText.textContent =
             story[currentStoryIndex];
 
+
         progressNumber.textContent =
             String(
                 currentStoryIndex + 1
-            ).padStart(2, "0");
+            ).padStart(
+                2,
+                "0"
+            );
 
 
         storyText.classList.add(
             "visible"
         );
 
-    }, 350);
+    }, 330);
 
 }
 
@@ -387,7 +509,9 @@ function nextStory() {
 
         isTransitioning = true;
 
+
         currentStoryIndex++;
+
 
         showStory();
 
@@ -396,13 +520,14 @@ function nextStory() {
 
             isTransitioning = false;
 
-        }, 1000);
+        }, 950);
 
     }
 
     else {
 
         isTransitioning = true;
+
 
         changeScreen(
             storyScreen,
@@ -414,7 +539,7 @@ function nextStory() {
 
             isTransitioning = false;
 
-        }, 1200);
+        }, 1100);
 
     }
 
@@ -427,33 +552,36 @@ function nextStory() {
 
 function previousStory() {
 
-    if (isTransitioning) {
+    if (
+        isTransitioning ||
+        currentStoryIndex <= 0
+    ) {
+
         return;
-    }
-
-
-    if (currentStoryIndex > 0) {
-
-        isTransitioning = true;
-
-        currentStoryIndex--;
-
-        showStory();
-
-
-        setTimeout(() => {
-
-            isTransitioning = false;
-
-        }, 1000);
 
     }
+
+
+    isTransitioning = true;
+
+
+    currentStoryIndex--;
+
+
+    showStory();
+
+
+    setTimeout(() => {
+
+        isTransitioning = false;
+
+    }, 950);
 
 }
 
 
 /* =========================================
-   KEYBOARD
+   KEYBOARD NAVIGATION
 ========================================= */
 
 document.addEventListener(
@@ -461,8 +589,8 @@ document.addEventListener(
     function(event) {
 
         /*
-            Story controls should only
-            work while story is visible.
+            Story controls only work
+            while story screen is visible.
         */
 
         if (
@@ -476,6 +604,10 @@ document.addEventListener(
         }
 
 
+        /*
+            Enter or Space = next
+        */
+
         if (
             event.key === "Enter" ||
             event.code === "Space"
@@ -485,8 +617,14 @@ document.addEventListener(
 
             nextStory();
 
+            return;
+
         }
 
+
+        /*
+            Right / down = next
+        */
 
         if (
             event.key === "ArrowDown" ||
@@ -497,8 +635,14 @@ document.addEventListener(
 
             nextStory();
 
+            return;
+
         }
 
+
+        /*
+            Left / up = previous
+        */
 
         if (
             event.key === "ArrowUp" ||
@@ -519,14 +663,12 @@ document.addEventListener(
    MOUSE WHEEL
 ========================================= */
 
-let wheelLocked = false;
-
-
 storyScreen.addEventListener(
     "wheel",
     function(event) {
 
         event.preventDefault();
+
 
         if (wheelLocked) {
             return;
@@ -553,7 +695,7 @@ storyScreen.addEventListener(
 
             wheelLocked = false;
 
-        }, 1100);
+        }, 1050);
 
     },
     {
@@ -563,12 +705,18 @@ storyScreen.addEventListener(
 
 
 /* =========================================
-   CLICK ANYWHERE
+   CLICK ANYWHERE ON STORY
 ========================================= */
 
 storyScreen.addEventListener(
     "click",
     function(event) {
+
+        /*
+            Do not trigger navigation
+            if later we add buttons,
+            links or interactive elements.
+        */
 
         if (
             event.target.closest("button") ||
@@ -588,7 +736,7 @@ storyScreen.addEventListener(
 
 
 /* =========================================
-   MOBILE TOUCH
+   MOBILE SWIPE
 ========================================= */
 
 storyScreen.addEventListener(
@@ -612,6 +760,7 @@ storyScreen.addEventListener(
         touchEndY =
             event.changedTouches[0].screenY;
 
+
         handleSwipe();
 
     },
@@ -626,6 +775,7 @@ function handleSwipe() {
     const distance =
         touchStartY - touchEndY;
 
+
     const minimumSwipe = 45;
 
 
@@ -639,11 +789,19 @@ function handleSwipe() {
     }
 
 
+    /*
+        Swipe up = next
+    */
+
     if (distance > 0) {
 
         nextStory();
 
     }
+
+    /*
+        Swipe down = previous
+    */
 
     else {
 
@@ -664,6 +822,7 @@ replayButton.addEventListener(
 
         currentStoryIndex = 0;
 
+
         changeScreen(
             finalScreen,
             introScreen
@@ -678,9 +837,18 @@ replayButton.addEventListener(
 ========================================= */
 
 /*
-   On desktop it is convenient to focus
-   immediately. On touch devices we avoid
-   automatically opening the keyboard.
+    Tell the browser to preload the video.
+*/
+
+giftVideo.load();
+
+
+/*
+    On desktop, focus the password
+    immediately.
+
+    On mobile we avoid automatically
+    opening the keyboard.
 */
 
 if (
