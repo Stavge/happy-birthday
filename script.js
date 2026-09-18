@@ -67,6 +67,9 @@ const finalScreen =
     document.getElementById("final-screen");
 
 
+const giftScene =
+    document.querySelector(".gift-scene");
+
 const passwordInput =
     document.getElementById("password-input");
 
@@ -86,7 +89,6 @@ const storyText =
 const progressNumber =
     document.getElementById("progress-number");
 
-
 const replayButton =
     document.getElementById("replay-button");
 
@@ -98,6 +100,8 @@ const replayButton =
 let currentStoryIndex = 0;
 
 let isTransitioning = false;
+
+let giftIsOpening = false;
 
 let touchStartY = 0;
 
@@ -131,6 +135,10 @@ function changeScreen(currentScreen, nextScreen) {
 
 function checkPassword() {
 
+    if (giftIsOpening) {
+        return;
+    }
+
     const enteredPassword =
         passwordInput.value.trim();
 
@@ -139,10 +147,7 @@ function checkPassword() {
 
         errorMessage.textContent = "";
 
-        changeScreen(
-            passwordScreen,
-            introScreen
-        );
+        openGift();
 
     }
 
@@ -172,12 +177,136 @@ passwordInput.addEventListener(
 
         if (event.key === "Enter") {
 
+            event.preventDefault();
+
             checkPassword();
 
         }
 
     }
 );
+
+
+/* =========================================
+   V3 — OPEN GIFT
+========================================= */
+
+function openGift() {
+
+    giftIsOpening = true;
+
+    passwordInput.blur();
+
+    giftScene.classList.add("unlocking");
+
+
+    /*
+        1. Ribbon loosens
+    */
+
+    setTimeout(() => {
+
+        giftScene.classList.add(
+            "ribbon-open"
+        );
+
+    }, 450);
+
+
+    /*
+        2. Lid opens
+    */
+
+    setTimeout(() => {
+
+        giftScene.classList.add(
+            "box-open"
+        );
+
+    }, 1450);
+
+
+    /*
+        3. Card rises
+    */
+
+    setTimeout(() => {
+
+        giftScene.classList.add(
+            "card-rise"
+        );
+
+    }, 2350);
+
+
+    /*
+        4. Everything fades back.
+           Card becomes the focus.
+    */
+
+    setTimeout(() => {
+
+        giftScene.classList.add(
+            "card-focus"
+        );
+
+    }, 3650);
+
+
+    /*
+        5. Card moves toward camera.
+    */
+
+    setTimeout(() => {
+
+        giftScene.classList.add(
+            "card-zoom"
+        );
+
+    }, 4550);
+
+
+    /*
+        6. Reveal existing intro screen.
+    */
+
+    setTimeout(() => {
+
+        passwordScreen.classList.add(
+            "hidden"
+        );
+
+        introScreen.classList.remove(
+            "hidden"
+        );
+
+        resetGift();
+
+    }, 5850);
+
+}
+
+
+/* =========================================
+   RESET GIFT
+========================================= */
+
+function resetGift() {
+
+    giftScene.classList.remove(
+        "unlocking",
+        "ribbon-open",
+        "box-open",
+        "card-rise",
+        "card-focus",
+        "card-zoom"
+    );
+
+    passwordInput.value = "";
+
+    giftIsOpening = false;
+
+}
 
 
 /* =========================================
@@ -215,7 +344,9 @@ function startStory() {
 
 function showStory() {
 
-    storyText.classList.remove("visible");
+    storyText.classList.remove(
+        "visible"
+    );
 
 
     setTimeout(() => {
@@ -223,14 +354,15 @@ function showStory() {
         storyText.textContent =
             story[currentStoryIndex];
 
-
         progressNumber.textContent =
             String(
                 currentStoryIndex + 1
             ).padStart(2, "0");
 
 
-        storyText.classList.add("visible");
+        storyText.classList.add(
+            "visible"
+        );
 
     }, 350);
 
@@ -329,12 +461,14 @@ document.addEventListener(
     function(event) {
 
         /*
-           Only control the story
-           when the story screen is active.
+            Story controls should only
+            work while story is visible.
         */
 
         if (
-            storyScreen.classList.contains("hidden")
+            storyScreen.classList.contains(
+                "hidden"
+            )
         ) {
 
             return;
@@ -394,7 +528,6 @@ storyScreen.addEventListener(
 
         event.preventDefault();
 
-
         if (wheelLocked) {
             return;
         }
@@ -436,11 +569,6 @@ storyScreen.addEventListener(
 storyScreen.addEventListener(
     "click",
     function(event) {
-
-        /*
-           Ignore clicks on possible
-           interactive elements later.
-        */
 
         if (
             event.target.closest("button") ||
@@ -484,7 +612,6 @@ storyScreen.addEventListener(
         touchEndY =
             event.changedTouches[0].screenY;
 
-
         handleSwipe();
 
     },
@@ -498,12 +625,6 @@ function handleSwipe() {
 
     const distance =
         touchStartY - touchEndY;
-
-
-    /*
-       Minimum swipe distance.
-       Prevents tiny accidental movements.
-    */
 
     const minimumSwipe = 45;
 
@@ -520,14 +641,12 @@ function handleSwipe() {
 
     if (distance > 0) {
 
-        // Swipe UP
         nextStory();
 
     }
 
     else {
 
-        // Swipe DOWN
         previousStory();
 
     }
@@ -558,4 +677,18 @@ replayButton.addEventListener(
    INITIAL STATE
 ========================================= */
 
-passwordInput.focus();
+/*
+   On desktop it is convenient to focus
+   immediately. On touch devices we avoid
+   automatically opening the keyboard.
+*/
+
+if (
+    !window.matchMedia(
+        "(pointer: coarse)"
+    ).matches
+) {
+
+    passwordInput.focus();
+
+}
