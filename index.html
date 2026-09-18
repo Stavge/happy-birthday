@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <html lang="el">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>For Marios</title>
-
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 
 <body>
 
-    <!-- =====================================
-         V3 — GIFT / PASSWORD SCREEN
-    ====================================== -->
-
+    <!-- V3 GIFT / PASSWORD -->
     <main id="password-screen" class="screen active">
+        <section class="gift-scene">
 
-        <div class="gift-scene">
-
-            <!-- Hand-drawn heart -->
             <div class="heart-mark" aria-hidden="true">
                 <svg viewBox="0 0 70 60">
                     <path d="M35 52
@@ -32,103 +24,41 @@
                              C60 32, 46 43, 35 52"
                           fill="none"
                           stroke="currentColor"
-                          stroke-width="1.4"
+                          stroke-width="1.35"
                           stroke-linecap="round"
                           stroke-linejoin="round"/>
                 </svg>
             </div>
 
-            <p class="gift-label">
-                A little something for you
-            </p>
+            <p class="gift-label">A little something for you</p>
 
+            <div id="gift-visual" class="gift-visual">
+                <img
+                    id="gift-cover"
+                    class="gift-cover"
+                    src="assets/gift/gift-cover.webp"
+                    alt=""
+                >
 
-            <!-- =====================================
-                 GIFT
-            ====================================== -->
+                <video
+                    id="gift-video"
+                    class="gift-video"
+                    muted
+                    playsinline
+                    preload="auto"
+                    aria-hidden="true"
+                >
+                    <source src="assets/gift/gift-opening.mp4" type="video/mp4">
+                </video>
 
-            <div id="gift" class="gift">
-
-                <div class="gift-aura"></div>
-
-                <!-- card that will rise from the box -->
-                <div class="gift-card">
-
-                    <div class="gift-card-inner">
-
-                        <span class="card-small">
-                            For you...
-                        </span>
-
-                        <span class="card-title">
-                            Χρόνια Πολλά<br>
-                            Μάριε!
-                        </span>
-
-                        <span class="card-line"></span>
-
-                    </div>
-
-                </div>
-
-
-                <!-- box -->
-                <div class="gift-box">
-
-                    <div class="box-back"></div>
-
-                    <div class="box-body">
-
-                        <div class="body-highlight"></div>
-
-                        <div class="vertical-ribbon"></div>
-
-                    </div>
-
-
-                    <!-- lid -->
-                    <div class="gift-lid">
-
-                        <div class="lid-top"></div>
-
-                        <div class="lid-front"></div>
-
-                        <div class="lid-ribbon"></div>
-
-                    </div>
-
-
-                    <!-- bow -->
-                    <div class="gift-bow">
-
-                        <div class="bow-loop bow-left"></div>
-
-                        <div class="bow-loop bow-right"></div>
-
-                        <div class="bow-knot"></div>
-
-                        <div class="bow-tail tail-left"></div>
-
-                        <div class="bow-tail tail-right"></div>
-
-                    </div>
-
-                </div>
-
+                <div class="visual-glow"></div>
             </div>
 
-
-            <!-- =====================================
-                 PASSWORD
-            ====================================== -->
-
             <div id="password-area" class="password-area">
-
-                <div class="password-pill">
-
+                <div id="password-pill" class="password-pill">
                     <input
-                        type="password"
                         id="password-input"
+                        type="password"
                         placeholder="••••••"
                         autocomplete="off"
                         aria-label="Password"
@@ -136,68 +66,49 @@
 
                     <span class="password-divider"></span>
 
-                    <button
-                        id="unlock-button"
-                        aria-label="Άνοιγμα δώρου"
-                    >
+                    <button id="unlock-button" aria-label="Άνοιγμα">
                         →
                     </button>
-
                 </div>
 
                 <p id="error-message"></p>
-
             </div>
 
-        </div>
-
+        </section>
     </main>
 
 
-
-    <!-- =====================================
-         INTRO SCREEN
-    ====================================== -->
-
-    <main id="intro-screen" class="screen hidden">
+    <!-- CARD / INTRO -->
+    <main id="intro-screen" class="screen paper-screen hidden">
+        <div class="paper-grain"></div>
 
         <div class="intro-container">
+            <p class="paper-small">For Marios</p>
 
-            <p class="small-label fade-element">
-                For Marios
-            </p>
-
-            <h1 class="main-title fade-element">
+            <h1 class="main-title">
                 Χρόνια Πολλά<br>
                 Μάριε!
             </h1>
 
-            <div class="line"></div>
+            <div class="paper-line"></div>
 
-            <p class="intro-subtitle fade-element">
+            <p class="intro-subtitle">
                 Δεν είναι ακριβώς μια ευχή.
             </p>
 
             <button
                 id="start-button"
-                class="arrow-button"
+                class="paper-arrow"
                 aria-label="Συνέχεια"
             >
                 →
             </button>
-
         </div>
-
     </main>
 
 
-
-    <!-- =====================================
-         STORY SCREEN
-    ====================================== -->
-
+    <!-- STORY -->
     <main id="story-screen" class="screen hidden">
-
         <div class="story-container">
 
             <div class="story-progress">
@@ -207,34 +118,19 @@
             <div id="story-text" class="story-text"></div>
 
             <div class="story-hint">
-
-                <span class="desktop-hint">
-                    ENTER · SPACE · CLICK
-                </span>
-
-                <span class="mobile-hint">
-                    SWIPE
-                </span>
-
+                <span class="desktop-hint">ENTER · SPACE · CLICK</span>
+                <span class="mobile-hint">SWIPE</span>
             </div>
 
         </div>
-
     </main>
 
 
-
-    <!-- =====================================
-         FINAL SCREEN
-    ====================================== -->
-
+    <!-- FINAL -->
     <main id="final-screen" class="screen hidden">
-
         <div class="final-container">
 
-            <div class="final-symbol">
-                ♡
-            </div>
+            <div class="final-symbol">♡</div>
 
             <h1>
                 Χρόνια πολλά,<br>
@@ -253,20 +149,13 @@
 
             <div class="final-line"></div>
 
-            <button
-                id="replay-button"
-                class="text-button"
-            >
+            <button id="replay-button" class="text-button">
                 ↻ Ξανά από την αρχή
             </button>
 
         </div>
-
     </main>
 
-
-    <script src="script.js?v=3"></script>
-
+    <script src="script.js?v=4"></script>
 </body>
-
 </html>
