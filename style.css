@@ -103,8 +103,8 @@ input {
 
 .envelope-wrapper {
     position: relative;
-    width: min(540px, 86vw);
-    height: 330px;
+    width: min(560px, 88vw);
+    height: 340px;
     display: flex;
     align-items: center;
     justify-content: center;
