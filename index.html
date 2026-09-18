@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="el">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For Marios</title>
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=5">
 </head>
 
 <body>
 
-    <!-- V3 GIFT / PASSWORD -->
+    <!-- =====================================
+         ENVELOPE / PASSWORD SCREEN
+    ====================================== -->
+
     <main id="password-screen" class="screen active">
-        <section class="gift-scene">
+
+        <section class="envelope-scene">
 
             <div class="heart-mark" aria-hidden="true">
                 <svg viewBox="0 0 70 60">
@@ -30,32 +35,46 @@
                 </svg>
             </div>
 
-            <p class="gift-label">A little something for you</p>
+            <p class="scene-label">
+                A little something for you
+            </p>
 
-            <div id="gift-visual" class="gift-visual">
-                <img
-                    id="gift-cover"
-                    class="gift-cover"
-                    src="gift-cover.webp"
-                    alt=""
-                >
+            <div class="envelope-wrapper">
 
-                <video
-                    id="gift-video"
-                    class="gift-video"
-                    muted
-                    playsinline
-                    preload="auto"
-                    aria-hidden="true"
-                >
-                    <source src="gift-opening.mp4" type="video/mp4">
-                </video>
+                <div class="envelope-glow"></div>
 
-                <div class="visual-glow"></div>
+                <!-- LETTER -->
+                <div id="letter-sheet" class="letter-sheet">
+                    <div class="letter-inner">
+                        <p class="letter-small">For you...</p>
+                    </div>
+                </div>
+
+                <!-- ENVELOPE -->
+                <div id="envelope" class="envelope">
+
+                    <div class="envelope-back"></div>
+
+                    <div id="envelope-flap" class="envelope-flap"></div>
+
+                    <div class="envelope-front">
+                        <div class="front-left"></div>
+                        <div class="front-right"></div>
+                        <div class="front-bottom"></div>
+                    </div>
+
+                    <div id="wax-seal" class="wax-seal">
+                        <span class="seal-heart">♡</span>
+                    </div>
+
+                </div>
+
             </div>
 
             <div id="password-area" class="password-area">
+
                 <div id="password-pill" class="password-pill">
+
                     <input
                         id="password-input"
                         type="password"
@@ -69,21 +88,32 @@
                     <button id="unlock-button" aria-label="Άνοιγμα">
                         →
                     </button>
+
                 </div>
 
                 <p id="error-message"></p>
+
             </div>
 
         </section>
+
     </main>
 
 
-    <!-- CARD / INTRO -->
+
+    <!-- =====================================
+         INTRO SCREEN
+    ====================================== -->
+
     <main id="intro-screen" class="screen paper-screen hidden">
+
         <div class="paper-grain"></div>
 
         <div class="intro-container">
-            <p class="paper-small">For Marios</p>
+
+            <p class="paper-small">
+                For Marios
+            </p>
 
             <h1 class="main-title">
                 Χρόνια Πολλά<br>
@@ -103,12 +133,19 @@
             >
                 →
             </button>
+
         </div>
+
     </main>
 
 
-    <!-- STORY -->
+
+    <!-- =====================================
+         STORY SCREEN
+    ====================================== -->
+
     <main id="story-screen" class="screen hidden">
+
         <div class="story-container">
 
             <div class="story-progress">
@@ -123,11 +160,17 @@
             </div>
 
         </div>
+
     </main>
 
 
-    <!-- FINAL -->
+
+    <!-- =====================================
+         FINAL SCREEN
+    ====================================== -->
+
     <main id="final-screen" class="screen hidden">
+
         <div class="final-container">
 
             <div class="final-symbol">♡</div>
@@ -154,8 +197,10 @@
             </button>
 
         </div>
+
     </main>
 
-    <script src="script.js?v=4"></script>
+    <script src="script.js?v=5"></script>
 </body>
+
 </html>
