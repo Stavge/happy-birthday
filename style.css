@@ -325,42 +325,53 @@ body {
 }
 
 
+
 /* =========================================
    INTRO ARROW
 ========================================= */
 
 .arrow-button {
 
+    width: 64px;
+
+    height: 64px;
+
+    margin-top: 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(244, 241, 235, 0.45);
+
     background: transparent;
 
-    border: none;
-
-    color:
-        rgba(244, 241, 235, 0.70);
+    color: #f4f1eb;
 
     font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+        Arial,
+        sans-serif;
 
-    font-size: 34px;
+    font-size: 30px;
 
-    font-weight: normal;
+    font-weight: 300;
+
+    line-height: 1;
 
     cursor: pointer;
 
-    margin-top: 18px;
-
-    padding: 8px 20px;
-
     opacity: 0.75;
 
-    animation:
-        arrowFloat 2s ease-in-out infinite;
-
     transition:
-        opacity 0.3s ease,
-        transform 0.3s ease;
+        opacity 0.35s ease,
+        transform 0.35s ease,
+        border-color 0.35s ease;
 
 }
 
@@ -370,27 +381,18 @@ body {
     opacity: 1;
 
     transform:
-        translateY(4px);
+        translateX(6px);
+
+    border-color:
+        rgba(244, 241, 235, 0.8);
 
 }
 
 
-@keyframes arrowFloat {
+.arrow-button:active {
 
-    0%,
-    100% {
-
-        transform:
-            translateY(0);
-
-    }
-
-    50% {
-
-        transform:
-            translateY(7px);
-
-    }
+    transform:
+        translateX(9px);
 
 }
 
@@ -773,9 +775,13 @@ body {
 
     .arrow-button {
 
-        font-size: 32px;
+        width: 58px;
 
-        margin-top: 15px;
+        height: 58px;
+
+        font-size: 27px;
+
+        margin-top: 24px;
 
     }
 
