@@ -114,14 +114,21 @@ input {
 .envelope-glow {
     position: absolute;
     left: 50%;
-    bottom: 38px;
+    bottom: 34px;
     transform: translateX(-50%);
-    width: 340px;
-    height: 140px;
+    width: 380px;
+    height: 150px;
     border-radius: 50%;
-    background: rgba(194, 122, 58, 0.18);
-    filter: blur(42px);
-    opacity: 0.55;
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(198, 126, 62, 0.22) 0%,
+            rgba(160, 97, 43, 0.12) 38%,
+            rgba(120, 70, 30, 0.04) 65%,
+            transparent 100%
+        );
+    filter: blur(46px);
+    opacity: 0.5;
     transition: opacity 1s ease, transform 1.2s ease;
     animation: glowBreath 4s ease-in-out infinite;
 }
