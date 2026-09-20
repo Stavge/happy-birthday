@@ -1,206 +1,679 @@
 <!DOCTYPE html>
 <html lang="el">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday</title>
-    <link rel="stylesheet" href="style.css?v=7">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Happy Birthday, Marios</title>
+
+  <link rel="stylesheet" href="style.css?v=8">
 </head>
 
 <body>
 
-    <!-- =====================================
-         ENVELOPE / PASSWORD SCREEN
-    ====================================== -->
+  <!-- =====================================
+       PASSWORD / ENVELOPE
+  ====================================== -->
 
-    <main id="password-screen" class="screen active">
+  <main id="password-screen" class="screen active">
 
-        <section class="envelope-scene">
+    <section class="envelope-scene">
 
-            <div class="heart-mark" aria-hidden="true">
-                <svg viewBox="0 0 70 60">
-                    <path d="M35 52
-                             C28 44, 8 32, 10 17
-                             C11 7, 23 5, 29 12
-                             C33 16, 35 22, 35 22
-                             C35 22, 38 15, 43 11
-                             C51 5, 62 9, 61 20
-                             C60 32, 46 43, 35 52"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.35"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"/>
-                </svg>
-            </div>
+      <div class="heart-mark" aria-hidden="true">
+        <svg viewBox="0 0 70 60">
+          <path
+            d="
+              M35 52
+              C28 44, 8 32, 10 17
+              C11 7, 23 5, 29 12
+              C33 16, 35 22, 35 22
+              C35 22, 38 15, 43 11
+              C51 5, 62 9, 61 20
+              C60 32, 46 43, 35 52
+            "
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.35"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
 
-            <p class="scene-label">
-                A little something for you
+      <p class="scene-label">
+        A little something for you
+      </p>
+
+
+      <div class="envelope-wrapper">
+
+        <div class="envelope-glow"></div>
+
+
+        <div
+          id="letter-sheet"
+          class="letter-sheet"
+        >
+
+          <div class="letter-inner">
+
+            <p class="letter-small">
+              For you...
             </p>
 
-            <div class="envelope-wrapper">
-
-                <div class="envelope-glow"></div>
-
-                <!-- LETTER -->
-                <div id="letter-sheet" class="letter-sheet">
-                    <div class="letter-inner">
-                        <p class="letter-small">For you...</p>
-                    </div>
-                </div>
-
-                <!-- ENVELOPE -->
-                <div id="envelope" class="envelope">
-
-                    <div class="envelope-back"></div>
-
-                    <div id="envelope-flap" class="envelope-flap"></div>
-
-                    <div class="envelope-front">
-                        <div class="front-left"></div>
-                        <div class="front-right"></div>
-                        <div class="front-bottom"></div>
-                    </div>
-
-                    <div id="wax-seal" class="wax-seal">
-                        <span class="seal-heart">♡</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div id="password-area" class="password-area">
-
-                <div id="password-pill" class="password-pill">
-
-                    <input
-                        id="password-input"
-                        type="password"
-                        placeholder="••••••"
-                        autocomplete="off"
-                        aria-label="Password"
-                    >
-
-                    <span class="password-divider"></span>
-
-                    <button id="unlock-button" aria-label="Άνοιγμα">
-                        →
-                    </button>
-
-                </div>
-
-                <p id="error-message"></p>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-
-    <!-- =====================================
-         INTRO SCREEN
-    ====================================== -->
-
-    <main id="intro-screen" class="screen paper-screen hidden">
-
-        <div class="paper-grain"></div>
-
-        <div class="intro-container">
-
-            <p class="paper-small">
-                For Marios
-            </p>
-
-            <h1 class="main-title">
-                Χρόνια Πολλά<br>
-                Μάριε!
-            </h1>
-
-            <div class="paper-line"></div>
-
-            <p class="intro-subtitle">
-                Δεν είναι ακριβώς μια ευχή.
-            </p>
-
-            <button
-                id="start-button"
-                class="paper-arrow"
-                aria-label="Συνέχεια"
-            >
-                →
-            </button>
+          </div>
 
         </div>
 
-    </main>
+
+        <div
+          id="envelope"
+          class="envelope"
+        >
+
+          <div class="envelope-back"></div>
+
+          <div
+            id="envelope-flap"
+            class="envelope-flap"
+          ></div>
+
+          <div class="envelope-front">
+
+            <div class="front-left"></div>
+            <div class="front-right"></div>
+            <div class="front-bottom"></div>
+
+          </div>
 
 
+          <div
+            id="wax-seal"
+            class="wax-seal"
+          >
 
-    <!-- =====================================
-         STORY SCREEN
-    ====================================== -->
+            <span class="seal-heart">
+              ♡
+            </span>
 
-    <main id="story-screen" class="screen hidden">
-
-        <div class="story-container">
-
-            <div class="story-progress">
-                <span id="progress-number">01</span>
-            </div>
-
-            <div id="story-text" class="story-text"></div>
-
-            <div class="story-hint">
-                <span class="desktop-hint">ENTER · SPACE · CLICK</span>
-                <span class="mobile-hint">SWIPE</span>
-            </div>
+          </div>
 
         </div>
 
-    </main>
+      </div>
+
+
+      <div
+        id="password-area"
+        class="password-area"
+      >
+
+        <div
+          id="password-pill"
+          class="password-pill"
+        >
+
+          <input
+            id="password-input"
+            type="password"
+            placeholder="••••••"
+            autocomplete="off"
+            aria-label="Password"
+          >
+
+          <span class="password-divider"></span>
+
+          <button
+            id="unlock-button"
+            aria-label="Άνοιγμα"
+          >
+            →
+          </button>
+
+        </div>
+
+        <p id="error-message"></p>
+
+      </div>
+
+    </section>
+
+  </main>
 
 
 
-    <!-- =====================================
-         FINAL SCREEN
-    ====================================== -->
+  <!-- =====================================
+       PAPER INTRO
+  ====================================== -->
 
-    <main id="final-screen" class="screen hidden">
+  <main
+    id="intro-screen"
+    class="screen paper-screen hidden"
+  >
 
-        <div class="final-container">
+    <div class="paper-grain"></div>
 
-            <div class="final-symbol">♡</div>
 
-            <h1>
-                Χρόνια πολλά,<br>
-                Μάριε.
-            </h1>
+    <div class="intro-container">
+
+      <p class="paper-small">
+        For Marios
+      </p>
+
+      <h1 class="main-title">
+        Χρόνια Πολλά<br>
+        Μάριε!
+      </h1>
+
+      <div class="paper-line"></div>
+
+      <p class="intro-subtitle">
+        Δεν είναι ακριβώς μια ευχή.
+      </p>
+
+      <button
+        id="start-button"
+        class="paper-arrow"
+        aria-label="Συνέχεια"
+      >
+        →
+      </button>
+
+    </div>
+
+  </main>
+
+
+
+  <!-- =====================================
+       STORY
+  ====================================== -->
+
+  <main
+    id="story-screen"
+    class="screen hidden"
+  >
+
+    <div class="story-ambient story-ambient-one"></div>
+
+    <div class="story-ambient story-ambient-two"></div>
+
+
+    <div
+      class="story-container"
+      id="story-container"
+    >
+
+      <div class="story-progress">
+
+        <span id="progress-number">
+          01
+        </span>
+
+        <span class="progress-separator">
+          /
+        </span>
+
+        <span id="progress-total">
+          07
+        </span>
+
+      </div>
+
+
+      <p
+        id="story-kicker"
+        class="story-kicker"
+      ></p>
+
+
+      <div
+        id="story-lines"
+        class="story-lines"
+      ></div>
+
+
+      <div class="story-hint">
+
+        <span class="desktop-hint">
+          ENTER · SPACE · CLICK
+        </span>
+
+        <span class="mobile-hint">
+          SWIPE
+        </span>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+
+  <!-- =====================================
+       POEM
+  ====================================== -->
+
+  <main
+    id="poem-screen"
+    class="screen poem-screen hidden"
+  >
+
+    <div class="poem-glow"></div>
+
+
+    <div
+      class="poem-container"
+      id="poem-container"
+    >
+
+      <p class="poem-kicker">
+        Μερικές λέξεις ακόμα...
+      </p>
+
+
+      <h2 class="poem-title">
+        Για εσένα.
+      </h2>
+
+
+      <div
+        id="poem-lines"
+        class="poem-lines"
+      ></div>
+
+
+      <div class="story-hint poem-hint">
+
+        <span class="desktop-hint">
+          ENTER · SPACE · CLICK
+        </span>
+
+        <span class="mobile-hint">
+          SWIPE
+        </span>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+
+  <!-- =====================================
+       MUSIC
+  ====================================== -->
+
+  <main
+    id="music-screen"
+    class="screen music-screen hidden"
+  >
+
+    <div class="music-scroll">
+
+      <section class="music-section">
+
+
+        <div class="music-heading">
+
+          <p class="music-kicker">
+            A little soundtrack for you
+          </p>
+
+          <h2>
+            Και επειδή καμιά φορά<br>
+            ένα τραγούδι τα λέει καλύτερα...
+          </h2>
+
+          <p class="music-intro">
+            Μερικά τραγούδια που,
+            για κάποιο λόγο,
+            πάντα με γυρίζουν σε εσένα.
+          </p>
+
+        </div>
+
+
+
+        <div class="music-grid">
+
+
+          <!-- 01 -->
+
+          <a
+            class="track-card"
+            href="https://youtu.be/Ctt9UKG1DzE?si=Nlr73wgF48VhsLZY"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <span class="track-number">
+              01
+            </span>
+
+            <span class="track-icon">
+              ♪
+            </span>
+
+            <h3>
+              Αύγουστος
+            </h3>
 
             <p>
-                Και ό,τι κι αν γίνει,
-                θέλω να θυμάσαι κάτι.
+              Νίκος Παπάζογλου
             </p>
 
-            <p class="final-emphasis">
-                Έχεις έναν άνθρωπο που νοιάζεται
-                πραγματικά για εσένα.
+            <span class="track-link">
+              Άκουσέ το ↗
+            </span>
+
+          </a>
+
+
+
+          <!-- 02 -->
+
+          <a
+            class="track-card"
+            href="https://youtu.be/p-JCOpNuoIw?si=ueT7lfKmNWVcptxe"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <span class="track-number">
+              02
+            </span>
+
+            <span class="track-icon">
+              ♪
+            </span>
+
+            <h3>
+              Enjoy the Silence
+            </h3>
+
+            <p>
+              Depeche Mode
             </p>
 
-            <div class="final-line"></div>
+            <span class="track-link">
+              Άκουσέ το ↗
+            </span>
 
-            <button id="replay-button" class="text-button">
-                ↻ Ξανά από την αρχή
-            </button>
+          </a>
+
+
+
+          <!-- 03 -->
+
+          <a
+            class="track-card"
+            href="https://youtu.be/zMonkjavkkU?si=duzzle_cHerjMg9Z"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <span class="track-number">
+              03
+            </span>
+
+            <span class="track-icon">
+              ♪
+            </span>
+
+            <h3>
+              Τυφλές Ελπίδες
+            </h3>
+
+            <p>
+              Παντελής Θαλασσινός
+            </p>
+
+            <span class="track-link">
+              Άκουσέ το ↗
+            </span>
+
+          </a>
+
+
+
+          <!-- 04 -->
+
+          <a
+            class="track-card"
+            href="https://youtu.be/YkXOfuS5T7c?si=dY4WV0ihHWSkEqtV"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <span class="track-number">
+              04
+            </span>
+
+            <span class="track-icon">
+              ♪
+            </span>
+
+            <h3>
+              Impossible
+            </h3>
+
+            <p>
+              Daniel Merriweather
+            </p>
+
+            <span class="track-link">
+              Άκουσέ το ↗
+            </span>
+
+          </a>
+
+
+
+          <!-- 05 -->
+
+          <a
+            class="track-card"
+            href="https://youtu.be/wTrESDwOuyg?si=lgiXW76a2hHpPYlu"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <span class="track-number">
+              05
+            </span>
+
+            <span class="track-icon">
+              ♪
+            </span>
+
+            <h3>
+              Ο Προσκυνητής
+            </h3>
+
+            <p>
+              Αλκίνοος Ιωαννίδης
+            </p>
+
+            <span class="track-link">
+              Άκουσέ το ↗
+            </span>
+
+          </a>
+
+
+
+          <!-- 06 -->
+
+          <a
+            class="track-card"
+            href="https://youtu.be/9TMu0_AhPRU?si=TDBgDi0mkQyv4MTy"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <span class="track-number">
+              06
+            </span>
+
+            <span class="track-icon">
+              ♪
+            </span>
+
+            <h3>
+              Could I Have This Kiss Forever
+            </h3>
+
+            <p>
+              Whitney Houston &amp; Enrique Iglesias
+            </p>
+
+            <span class="track-link">
+              Άκουσέ το ↗
+            </span>
+
+          </a>
+
+
+
+          <!-- 07 -->
+
+          <a
+            class="track-card"
+            href="https://youtu.be/s-qXrj2JkzU?si=O33WY_LfHswL1FT1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <span class="track-number">
+              07
+            </span>
+
+            <span class="track-icon">
+              ♪
+            </span>
+
+            <h3>
+              Still Got the Blues
+            </h3>
+
+            <p>
+              Gary Moore
+            </p>
+
+            <span class="track-link">
+              Άκουσέ το ↗
+            </span>
+
+          </a>
+
+
+
+          <!-- 08 -->
+
+          <a
+            class="track-card"
+            href="https://youtu.be/m_uWS6K-VF8?si=X2U8Oq972RP8shOp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <span class="track-number">
+              08
+            </span>
+
+            <span class="track-icon">
+              ♪
+            </span>
+
+            <h3>
+              Right Here Waiting
+            </h3>
+
+            <p>
+              Richard Marx
+            </p>
+
+            <span class="track-link">
+              Άκουσέ το ↗
+            </span>
+
+          </a>
+
 
         </div>
 
-    </main>
 
-    <script src="script.js?v=5"></script>
+
+        <p class="music-more">
+          ...και πολλά, πολλά ακόμη. ♡
+        </p>
+
+
+        <button
+          id="music-continue"
+          class="music-continue"
+        >
+          Συνέχισε →
+        </button>
+
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+
+  <!-- =====================================
+       FINAL
+  ====================================== -->
+
+  <main
+    id="final-screen"
+    class="screen hidden"
+  >
+
+    <div class="final-container">
+
+      <div class="final-symbol">
+        ♡
+      </div>
+
+
+      <h1>
+        Χρόνια πολλά,<br>
+        Μάριε μου.
+      </h1>
+
+
+      <p class="final-emphasis">
+        Αν ποτέ αναρωτηθείς
+        πόσο σημαντικός υπήρξες για κάποιον,
+        γύρνα εδώ.
+      </p>
+
+
+      <div class="final-line"></div>
+
+
+      <button
+        id="replay-button"
+        class="text-button"
+      >
+        ↻ Ξανά από την αρχή
+      </button>
+
+    </div>
+
+  </main>
+
+
+
+  <script src="script.js?v=8"></script>
+
 </body>
-
 </html>
