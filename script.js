@@ -13,17 +13,11 @@ const storyScenes = [
     kicker: "Για αρχή...",
 
     lines: [
-
       "Χρόνια πολλά, Μάριε μου.",
-
       "Δεν θα σου ευχηθώ τα τετριμμένα...",
-
       "Άλλωστε ξέρω ότι δεν σου αρέσουν.",
-
       "Αντ' αυτού ήθελα να σου φτιάξω κάτι πιο μοναδικό.",
-
       "(Καιρό είχα.)"
-
     ]
   },
 
@@ -31,23 +25,15 @@ const storyScenes = [
   {
     theme: "words",
 
-    kicker:
-      "Κάπου εδώ αλλάζει λίγο το πράγμα...",
+    kicker: "Κάπου εδώ αλλάζει λίγο το πράγμα...",
 
     lines: [
-
       "Αν και η ελληνική γλώσσα είναι τόσο υπέροχη και πλούσια...",
-
       "κάποιες φορές τα λόγια μοιάζουν φτωχά.",
-
       "Και κάπου εδώ ίσως καταλάβεις και το 18,1 στην Έκθεση στις Πανελλήνιες.",
-
       "Από κοντά κομπλάρω.",
-
       "Δεν εκφράζομαι πάντα όπως θα ήθελα.",
-
       "Οπότε ίσως αυτός να είναι ο μόνος τρόπος να σου πω κάποια πράγματα ακριβώς όπως τα νιώθω."
-
     ]
   },
 
@@ -55,21 +41,14 @@ const storyScenes = [
   {
     theme: "confession",
 
-    kicker:
-      "Αυτά που δύσκολα λέγονται από κοντά.",
+    kicker: "Αυτά που δύσκολα λέγονται από κοντά.",
 
     lines: [
-
       "Σε αγάπησα περισσότερο από τον εαυτό μου.",
-
       "Περισσότερο από οποιονδήποτε άλλο.",
-
       "Ένιωσα για εσένα κάτι πρωτόγνωρο.",
-
       "Κάτι που δεν είχα νιώσει ποτέ ξανά.",
-
       "Κάτι μοναδικό."
-
     ]
   },
 
@@ -77,19 +56,13 @@ const storyScenes = [
   {
     theme: "confession-deep",
 
-    kicker:
-      "Και ίσως αυτό να είναι το πιο δύσκολο κομμάτι.",
+    kicker: "Και ίσως αυτό να είναι το πιο δύσκολο κομμάτι.",
 
     lines: [
-
       "Ξέρω ότι εσύ το βλέπεις διαφορετικά.",
-
       "Αλλά για μένα αυτό που ένιωσα για σένα δεν ήταν ποτέ απλώς πλατωνικό.",
-
       "Μόνο εγώ ξέρω πόσο πολύ σε αγαπώ.",
-
       "Και ίσως ούτε εγώ να μπορώ πραγματικά να το εξηγήσω με λόγια."
-
     ]
   },
 
@@ -97,21 +70,14 @@ const storyScenes = [
   {
     theme: "life",
 
-    kicker:
-      "Η ζωή, βέβαια, έχει τα δικά της σχέδια.",
+    kicker: "Η ζωή, βέβαια, έχει τα δικά της σχέδια.",
 
     lines: [
-
       "Ξέρω ότι η ζωή δεν μας δίνει πάντα τα πράγματα όπως θα τα θέλαμε.",
-
       "Καμιά φορά είναι σκληρή.",
-
       "Αλλά είναι και όμορφη.",
-
       "Και ίσως κάποια πράγματα να μην μπορούν να είναι όπως τα φανταστήκαμε.",
-
       "Αυτό όμως δεν αλλάζει το πόσο σημαντικός είσαι για μένα."
-
     ]
   },
 
@@ -119,19 +85,13 @@ const storyScenes = [
   {
     theme: "care",
 
-    kicker:
-      "Αυτό θέλω κυρίως να θυμάσαι.",
+    kicker: "Αυτό θέλω κυρίως να θυμάσαι.",
 
     lines: [
-
       "Θέλω μόνο να ξέρεις ότι υπάρχει ένας άνθρωπος που νοιάζεται πραγματικά για εσένα.",
-
       "Που χαίρεται όταν είσαι καλά.",
-
       "Που θέλει να σε βλέπει ευτυχισμένο.",
-
       "Και που θα σε αγαπάει με τον δικό του τρόπο."
-
     ]
   },
 
@@ -139,30 +99,20 @@ const storyScenes = [
   {
     theme: "hope",
 
-    kicker:
-      "Και κάτι τελευταίο πριν προχωρήσεις...",
+    kicker: "Και κάτι τελευταίο πριν προχωρήσεις...",
 
     lines: [
-
       "Κάποιες φορές στενοχωριέμαι όταν νιώθω ότι απομακρύνεσαι.",
-
       "Ή όταν συνειδητοποιώ ότι δεν μπορώ να είμαι μέρος της ζωής σου όσο θα ήθελα.",
-
       "Όχι γιατί δεν θέλω να περνάς καλά.",
-
       "Το αντίθετο.",
-
       "Απλώς γιατί θέλω να είμαι κι εγώ ένα μικρό κομμάτι της ζωής σου.",
-
       "Μακάρι να σε έχω για πολλά ακόμη χρόνια στη ζωή μου.",
-
       "Με όποιον τρόπο μας επιτρέψει η ζωή."
-
     ]
   }
 
 ];
-
 
 
 /* =========================================
@@ -172,58 +122,34 @@ const storyScenes = [
 const poemStanzas = [
 
   [
-
     "Όσες φορές κι αν προσπάθησα «τέλος» να πω,",
-
     "πάντα σε σένα ξαναγυρνώ.",
-
     "Στην ίδια λούπα τριγυρνώ,",
-
     "κι όσο κι αν θέλω, δεν μπορώ να βγω."
-
   ],
 
-
   [
-
     "10+ χρόνια μετά",
-
     "αν τύχει να σε δω ξαφνικά,",
-
     "η καρδιά μου χτυπά τόσο δυνατά",
-
     "όπως όταν σε έβλεπα για πρώτη μου φορά."
-
   ],
 
-
   [
-
     "Δύσκολο πράγμα να αγαπάς,",
-
     "τόσο πολύ που να πονάς,",
-
     "ώρες και μέρες να μετράς,",
-
     "κι όσο κι αν φεύγεις, να γυρνάς."
-
   ],
 
-
   [
-
     "Πλάι σου έμαθα πολλά,",
-
     "για τη ζωή, τα δύσκολα, τ’ απλά,",
-
     "για ανθρώπους, όνειρα και λεφτά,",
-
     "χωρίς εσένα πού θα τα μάθαινα όλα αυτά;"
-
   ]
 
 ];
-
 
 
 /* =========================================
@@ -298,7 +224,6 @@ const replayButton =
   document.getElementById("replay-button");
 
 
-
 /* =========================================
    STATE
 ========================================= */
@@ -306,7 +231,6 @@ const replayButton =
 let envelopeIsOpening = false;
 
 let storySceneIndex = 0;
-
 let storyLineIndex = 0;
 
 let poemIndex = 0;
@@ -314,11 +238,15 @@ let poemIndex = 0;
 let interactionLocked = false;
 
 let touchStartY = 0;
-
 let touchEndY = 0;
 
 let wheelLocked = false;
 
+/*
+   Αποτρέπει το ghost click που μπορεί
+   να εμφανιστεί αμέσως μετά από swipe.
+*/
+let ignoreClickUntil = 0;
 
 
 /* =========================================
@@ -333,7 +261,6 @@ function changeScreen(
 
   currentScreen.classList.add("fade-out");
 
-
   setTimeout(() => {
 
     currentScreen.classList.add("hidden");
@@ -347,7 +274,6 @@ function changeScreen(
 }
 
 
-
 /* =========================================
    PASSWORD
 ========================================= */
@@ -357,9 +283,7 @@ function wrongPassword() {
   errorMessage.textContent =
     "Δεν είναι αυτό... ξαναπροσπάθησε.";
 
-
   passwordInput.value = "";
-
 
   passwordPill.classList.remove("shake");
 
@@ -367,19 +291,15 @@ function wrongPassword() {
 
   passwordPill.classList.add("shake");
 
-
   if (
     !window
       .matchMedia("(pointer: coarse)")
       .matches
   ) {
-
     passwordInput.focus();
-
   }
 
 }
-
 
 
 function checkPassword() {
@@ -388,10 +308,8 @@ function checkPassword() {
     return;
   }
 
-
   const enteredPassword =
     passwordInput.value.trim();
-
 
   if (
     enteredPassword !== PASSWORD
@@ -400,9 +318,7 @@ function checkPassword() {
     wrongPassword();
 
     return;
-
   }
-
 
   errorMessage.textContent = "";
 
@@ -411,12 +327,10 @@ function checkPassword() {
 }
 
 
-
 unlockButton.addEventListener(
   "click",
   checkPassword
 );
-
 
 
 passwordInput.addEventListener(
@@ -429,12 +343,10 @@ passwordInput.addEventListener(
       event.preventDefault();
 
       checkPassword();
-
     }
 
   }
 );
-
 
 
 /* =========================================
@@ -447,17 +359,13 @@ function openEnvelope() {
     return;
   }
 
-
   envelopeIsOpening = true;
 
-
   passwordInput.blur();
-
 
   envelopeScene.classList.add(
     "opening"
   );
-
 
   setTimeout(
     () =>
@@ -467,7 +375,6 @@ function openEnvelope() {
     250
   );
 
-
   setTimeout(
     () =>
       envelopeScene
@@ -475,7 +382,6 @@ function openEnvelope() {
         .add("seal-open"),
     950
   );
-
 
   setTimeout(
     () =>
@@ -485,7 +391,6 @@ function openEnvelope() {
     1450
   );
 
-
   setTimeout(
     () =>
       envelopeScene
@@ -493,7 +398,6 @@ function openEnvelope() {
         .add("letter-rise"),
     2250
   );
-
 
   setTimeout(
     () =>
@@ -503,7 +407,6 @@ function openEnvelope() {
     3200
   );
 
-
   setTimeout(
     () =>
       envelopeScene
@@ -512,7 +415,6 @@ function openEnvelope() {
     4100
   );
 
-
   setTimeout(
     () => {
 
@@ -520,11 +422,9 @@ function openEnvelope() {
         .classList
         .add("hidden");
 
-
       introScreen
         .classList
         .remove("hidden");
-
 
       resetEnvelope();
 
@@ -535,34 +435,23 @@ function openEnvelope() {
 }
 
 
-
 function resetEnvelope() {
 
   envelopeScene.classList.remove(
-
     "opening",
-
     "seal-pulse",
-
     "seal-open",
-
     "flap-open",
-
     "letter-rise",
-
     "letter-focus",
-
     "letter-zoom"
-
   );
-
 
   passwordInput.value = "";
 
   envelopeIsOpening = false;
 
 }
-
 
 
 /* =========================================
@@ -576,13 +465,11 @@ startButton.addEventListener(
 
     resetStory();
 
-
     changeScreen(
       introScreen,
       storyScreen,
       650
     );
-
 
     setTimeout(
       () => {
@@ -599,27 +486,22 @@ startButton.addEventListener(
 );
 
 
-
 function resetStory() {
 
   storySceneIndex = 0;
 
   storyLineIndex = 0;
 
-
   storyLines.innerHTML = "";
-
 
   storyScreen.className =
     "screen theme-opening hidden";
-
 
   progressTotal.textContent =
     String(storyScenes.length)
       .padStart(2, "0");
 
 }
-
 
 
 /* =========================================
@@ -631,45 +513,35 @@ function renderStoryScene() {
   const scene =
     storyScenes[storySceneIndex];
 
-
   storyScreen.className =
     `screen theme-${scene.theme}`;
-
 
   storyKicker.textContent =
     scene.kicker;
 
-
   storyLines.innerHTML = "";
 
-
   storyLineIndex = 0;
-
 
   progressNumber.textContent =
     String(storySceneIndex + 1)
       .padStart(2, "0");
 
-
   progressTotal.textContent =
     String(storyScenes.length)
       .padStart(2, "0");
-
 
   storyContainer
     .classList
     .remove("scene-enter");
 
-
   void storyContainer.offsetWidth;
-
 
   storyContainer
     .classList
     .add("scene-enter");
 
 }
-
 
 
 /* =========================================
@@ -682,10 +554,8 @@ function revealNextStoryLine() {
     return;
   }
 
-
   const scene =
     storyScenes[storySceneIndex];
-
 
   if (
     storyLineIndex <
@@ -695,14 +565,11 @@ function revealNextStoryLine() {
     const line =
       document.createElement("p");
 
-
     line.className =
       "story-line";
 
-
     line.textContent =
       scene.lines[storyLineIndex];
-
 
     if (
       scene.theme === "hope" &&
@@ -716,9 +583,7 @@ function revealNextStoryLine() {
 
     }
 
-
     storyLines.appendChild(line);
-
 
     requestAnimationFrame(
       () => {
@@ -730,17 +595,12 @@ function revealNextStoryLine() {
       }
     );
 
-
     storyLineIndex += 1;
-
 
     keepNewestStoryLineVisible();
 
-
     return;
-
   }
-
 
   if (
     storySceneIndex <
@@ -750,14 +610,11 @@ function revealNextStoryLine() {
     goToNextStoryScene();
 
     return;
-
   }
-
 
   startPoem();
 
 }
-
 
 
 /* =========================================
@@ -768,25 +625,20 @@ function goToNextStoryScene() {
 
   interactionLocked = true;
 
-
   storyContainer
     .classList
     .add("scene-leave");
-
 
   setTimeout(
     () => {
 
       storySceneIndex += 1;
 
-
       renderStoryScene();
-
 
       storyContainer
         .classList
         .remove("scene-leave");
-
 
       setTimeout(
         () => {
@@ -806,28 +658,21 @@ function goToNextStoryScene() {
 }
 
 
-
 function keepNewestStoryLineVisible() {
 
   const newest =
     storyLines.lastElementChild;
 
-
   if (!newest) {
     return;
   }
 
-
   newest.scrollIntoView({
-
     behavior: "smooth",
-
     block: "nearest"
-
   });
 
 }
-
 
 
 /* =========================================
@@ -840,21 +685,17 @@ function startPoem() {
     return;
   }
 
-
   interactionLocked = true;
-
 
   poemIndex = 0;
 
   poemLines.innerHTML = "";
-
 
   changeScreen(
     storyScreen,
     poemScreen,
     720
   );
-
 
   setTimeout(
     () => {
@@ -870,13 +711,11 @@ function startPoem() {
 }
 
 
-
 function revealNextPoemStanza() {
 
   if (interactionLocked) {
     return;
   }
-
 
   if (
     poemIndex <
@@ -886,10 +725,8 @@ function revealNextPoemStanza() {
     const stanza =
       document.createElement("div");
 
-
     stanza.className =
       "poem-stanza";
-
 
     poemStanzas[poemIndex]
       .forEach(
@@ -898,19 +735,15 @@ function revealNextPoemStanza() {
           const line =
             document.createElement("p");
 
-
           line.textContent =
             text;
-
 
           stanza.appendChild(line);
 
         }
       );
 
-
     poemLines.appendChild(stanza);
-
 
     requestAnimationFrame(
       () => {
@@ -922,23 +755,15 @@ function revealNextPoemStanza() {
       }
     );
 
-
     poemIndex += 1;
 
-
     stanza.scrollIntoView({
-
       behavior: "smooth",
-
       block: "nearest"
-
     });
 
-
     return;
-
   }
-
 
   changeScreen(
     poemScreen,
@@ -947,7 +772,6 @@ function revealNextPoemStanza() {
   );
 
 }
-
 
 
 /* =========================================
@@ -969,7 +793,6 @@ musicContinue.addEventListener(
 );
 
 
-
 /* =========================================
    REPLAY
 ========================================= */
@@ -983,7 +806,6 @@ replayButton.addEventListener(
       .classList
       .add("fade-out");
 
-
     setTimeout(
       () => {
 
@@ -991,33 +813,24 @@ replayButton.addEventListener(
           .classList
           .add("hidden");
 
-
         finalScreen
           .classList
           .remove("fade-out");
 
-
         storySceneIndex = 0;
-
         storyLineIndex = 0;
-
         poemIndex = 0;
 
-
         storyLines.innerHTML = "";
-
         poemLines.innerHTML = "";
-
 
         passwordScreen
           .classList
           .remove("hidden");
 
-
         passwordInput.value = "";
 
         errorMessage.textContent = "";
-
 
         if (
           !window
@@ -1043,7 +856,6 @@ replayButton.addEventListener(
 );
 
 
-
 /* =========================================
    INPUT HELPERS
 ========================================= */
@@ -1057,7 +869,6 @@ function isInteractiveStoryScreen() {
 }
 
 
-
 function isInteractivePoemScreen() {
 
   return !poemScreen
@@ -1067,13 +878,11 @@ function isInteractivePoemScreen() {
 }
 
 
-
 function advanceCurrentExperience() {
 
   if (interactionLocked) {
     return;
   }
-
 
   if (
     isInteractiveStoryScreen()
@@ -1094,7 +903,6 @@ function advanceCurrentExperience() {
 }
 
 
-
 /* =========================================
    KEYBOARD
 ========================================= */
@@ -1110,9 +918,7 @@ document.addEventListener(
     ) {
 
       return;
-
     }
-
 
     if (
       document.activeElement ===
@@ -1120,9 +926,7 @@ document.addEventListener(
     ) {
 
       return;
-
     }
-
 
     if (
       !isInteractiveStoryScreen() &&
@@ -1130,12 +934,9 @@ document.addEventListener(
     ) {
 
       return;
-
     }
 
-
     event.preventDefault();
-
 
     advanceCurrentExperience();
 
@@ -1143,9 +944,8 @@ document.addEventListener(
 );
 
 
-
 /* =========================================
-   CLICK
+   TAP / CLICK
 ========================================= */
 
 storyContainer.addEventListener(
@@ -1154,21 +954,24 @@ storyContainer.addEventListener(
   (event) => {
 
     if (
+      Date.now() <
+      ignoreClickUntil
+    ) {
+      return;
+    }
+
+    if (
       event.target.closest(
         "button, a, input"
       )
     ) {
-
       return;
-
     }
-
 
     revealNextStoryLine();
 
   }
 );
-
 
 
 poemContainer.addEventListener(
@@ -1177,21 +980,24 @@ poemContainer.addEventListener(
   (event) => {
 
     if (
+      Date.now() <
+      ignoreClickUntil
+    ) {
+      return;
+    }
+
+    if (
       event.target.closest(
         "button, a, input"
       )
     ) {
-
       return;
-
     }
-
 
     revealNextPoemStanza();
 
   }
 );
-
 
 
 /* =========================================
@@ -1206,9 +1012,7 @@ function handleWheel(event) {
   ) {
 
     return;
-
   }
-
 
   if (
     Math.abs(event.deltaY) < 18 ||
@@ -1216,12 +1020,9 @@ function handleWheel(event) {
   ) {
 
     return;
-
   }
 
-
   wheelLocked = true;
-
 
   if (
     event.deltaY > 0
@@ -1230,7 +1031,6 @@ function handleWheel(event) {
     advanceCurrentExperience();
 
   }
-
 
   setTimeout(
     () => {
@@ -1244,7 +1044,6 @@ function handleWheel(event) {
 }
 
 
-
 window.addEventListener(
   "wheel",
   handleWheel,
@@ -1252,7 +1051,6 @@ window.addEventListener(
     passive: true
   }
 );
-
 
 
 /* =========================================
@@ -1269,7 +1067,6 @@ function onTouchStart(event) {
 }
 
 
-
 function onTouchEnd(event) {
 
   touchEndY =
@@ -1277,23 +1074,29 @@ function onTouchEnd(event) {
       .changedTouches[0]
       .screenY;
 
-
   const distance =
     touchStartY - touchEndY;
-
 
   if (
     Math.abs(distance) < 45
   ) {
 
     return;
-
   }
-
 
   if (
     distance > 0
   ) {
+
+    /*
+       Εμποδίζουμε τον browser να στείλει
+       ένα δεύτερο click μετά το swipe.
+    */
+
+    event.preventDefault();
+
+    ignoreClickUntil =
+      Date.now() + 550;
 
     advanceCurrentExperience();
 
@@ -1302,6 +1105,10 @@ function onTouchEnd(event) {
 }
 
 
+/*
+   touchend = passive:false ώστε να μπορούμε
+   να κάνουμε preventDefault() μετά από swipe.
+*/
 
 storyScreen.addEventListener(
   "touchstart",
@@ -1316,7 +1123,7 @@ storyScreen.addEventListener(
   "touchend",
   onTouchEnd,
   {
-    passive: true
+    passive: false
   }
 );
 
@@ -1334,10 +1141,9 @@ poemScreen.addEventListener(
   "touchend",
   onTouchEnd,
   {
-    passive: true
+    passive: false
   }
 );
-
 
 
 /* =========================================
