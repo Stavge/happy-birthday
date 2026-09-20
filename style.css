@@ -38,11 +38,14 @@ a {
 
 .screen {
     position: relative;
+
     width: 100%;
+
     min-height: 100vh;
     min-height: 100svh;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -61,21 +64,15 @@ a {
 
 .screen.fade-out {
     opacity: 0;
-    transform: scale(1.015);
+
+    transform:
+        scale(1.015);
 }
 
 
 /* =========================================
    HIDE SMALL SECTION LABELS
 ========================================= */
-
-/*
-   Κρύβουμε τα μικρά uppercase labels
-   από όλες τις επόμενες σελίδες.
-
-   ΔΕΝ κρύβουμε το .scene-label της
-   πρώτης σελίδας με τον φάκελο.
-*/
 
 .story-kicker,
 .poem-kicker,
@@ -108,16 +105,24 @@ a {
 
 .envelope-scene {
     position: relative;
+
     z-index: 2;
 
     width: min(100%, 1000px);
+
     height: 100%;
 
-    padding: 30px 20px 20px;
+    padding:
+        30px
+        20px
+        20px;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
@@ -127,7 +132,13 @@ a {
     width: 42px;
     height: 36px;
 
-    color: rgba(230, 197, 151, 0.88);
+    color:
+        rgba(
+            230,
+            197,
+            151,
+            0.88
+        );
 
     margin-bottom: 10px;
 
@@ -148,7 +159,13 @@ a {
 }
 
 .scene-label {
-    color: rgba(244, 231, 212, 0.78);
+    color:
+        rgba(
+            244,
+            231,
+            212,
+            0.78
+        );
 
     font-size: 11px;
 
@@ -171,7 +188,11 @@ a {
 .envelope-wrapper {
     position: relative;
 
-    width: min(575px, 90vw);
+    width:
+        min(
+            575px,
+            90vw
+        );
 
     height: 350px;
 
@@ -209,15 +230,13 @@ a {
     background:
         radial-gradient(
             ellipse at center,
-
             rgba(196, 124, 61, 0.18) 0%,
-
             rgba(146, 86, 39, 0.08) 43%,
-
             transparent 74%
         );
 
-    filter: blur(46px);
+    filter:
+        blur(46px);
 
     opacity: 0.5;
 
@@ -250,7 +269,6 @@ a {
             translateX(-50%)
             scale(1.035);
     }
-
 }
 
 
@@ -269,7 +287,11 @@ a {
         translateY(115px)
         scale(0.9);
 
-    width: min(300px, 52vw);
+    width:
+        min(
+            300px,
+            52vw
+        );
 
     aspect-ratio: 5 / 7;
 
@@ -346,7 +368,9 @@ a {
     width: 100%;
     height: 100%;
 
-    padding: 34px 26px;
+    padding:
+        34px
+        26px;
 
     display: flex;
 
@@ -362,7 +386,11 @@ a {
         cursive;
 
     font-size:
-        clamp(30px, 4vw, 44px);
+        clamp(
+            30px,
+            4vw,
+            44px
+        );
 
     color:
         rgba(34, 26, 20, 0.88);
@@ -386,7 +414,10 @@ a {
         translateX(-50%);
 
     width:
-        min(420px, 74vw);
+        min(
+            420px,
+            74vw
+        );
 
     aspect-ratio:
         1.6 / 1;
@@ -503,9 +534,7 @@ a {
         );
 
     transition:
-        opacity
-        0.7s
-        ease;
+        opacity 0.7s ease;
 }
 
 
@@ -532,9 +561,7 @@ a {
     background:
         radial-gradient(
             circle at 50% 3%,
-
             rgba(255, 255, 255, 0.18),
-
             transparent 38%
         ),
 
@@ -584,11 +611,8 @@ a {
     background:
         linear-gradient(
             90deg,
-
             transparent,
-
             rgba(111, 78, 43, 0.12),
-
             transparent
         );
 }
@@ -603,11 +627,8 @@ a {
     background:
         linear-gradient(
             105deg,
-
             rgba(255, 255, 255, 0.08),
-
             transparent 42%,
-
             rgba(143, 106, 65, 0.03)
         );
 }
@@ -666,13 +687,9 @@ a {
     background:
         linear-gradient(
             35deg,
-
             transparent 49.6%,
-
             rgba(138, 101, 58, 0.15) 49.9%,
-
             rgba(255, 255, 255, 0.10) 50.25%,
-
             transparent 50.6%
         );
 
@@ -698,13 +715,9 @@ a {
     background:
         linear-gradient(
             -35deg,
-
             transparent 49.6%,
-
             rgba(138, 101, 58, 0.15) 49.9%,
-
             rgba(255, 255, 255, 0.10) 50.25%,
-
             transparent 50.6%
         );
 
@@ -753,15 +766,10 @@ a {
     background:
         radial-gradient(
             circle at 30% 25%,
-
             #d88577 0%,
-
             #c05f54 19%,
-
             #a2463f 42%,
-
             #87362f 70%,
-
             #67251f 100%
         );
 
@@ -886,7 +894,10 @@ a {
     z-index: 10;
 
     width:
-        min(360px, 86vw);
+        min(
+            360px,
+            86vw
+        );
 
     transition:
         opacity 0.55s ease,
@@ -1076,7 +1087,6 @@ a {
         transform:
             translateX(3px);
     }
-
 }
 
 
@@ -1091,8 +1101,7 @@ a {
     transform:
         translateY(14px);
 
-    pointer-events:
-        none;
+    pointer-events: none;
 }
 
 .envelope-scene.opening
@@ -1193,9 +1202,7 @@ a {
     opacity: 0.12;
 
     transition:
-        opacity
-        0.9s
-        ease;
+        opacity 0.9s ease;
 }
 
 .envelope-scene.letter-focus
@@ -1203,9 +1210,7 @@ a {
     opacity: 0.22;
 
     transition:
-        opacity
-        0.9s
-        ease;
+        opacity 0.9s ease;
 }
 
 .envelope-scene.letter-zoom
@@ -1295,7 +1300,10 @@ a {
     z-index: 2;
 
     width:
-        min(760px, 90vw);
+        min(
+            760px,
+            90vw
+        );
 
     text-align: center;
 
@@ -1323,7 +1331,6 @@ a {
             translateY(0)
             scale(1);
     }
-
 }
 
 .paper-small {
@@ -1344,7 +1351,11 @@ a {
 
 .main-title {
     font-size:
-        clamp(52px, 10vw, 98px);
+        clamp(
+            52px,
+            10vw,
+            98px
+        );
 
     font-weight:
         normal;
@@ -1413,8 +1424,7 @@ a {
         Arial,
         sans-serif;
 
-    font-size:
-        29px;
+    font-size: 29px;
 
     cursor:
         pointer;
@@ -1495,9 +1505,7 @@ a {
     background:
         radial-gradient(
             circle at 50% 45%,
-
             rgba(170, 111, 61, 0.14),
-
             transparent 31%
         ),
 
@@ -1515,17 +1523,13 @@ a {
     background:
         radial-gradient(
             circle at 30% 30%,
-
             rgba(191, 145, 89, 0.10),
-
             transparent 28%
         ),
 
         radial-gradient(
             circle at 72% 68%,
-
             rgba(107, 74, 46, 0.11),
-
             transparent 26%
         ),
 
@@ -1541,9 +1545,7 @@ a {
     background:
         radial-gradient(
             circle at 50% 50%,
-
             rgba(118, 43, 43, 0.13),
-
             transparent 33%
         ),
 
@@ -1561,9 +1563,7 @@ a {
     background:
         radial-gradient(
             circle at 50% 32%,
-
             rgba(93, 86, 121, 0.11),
-
             transparent 31%
         ),
 
@@ -1583,9 +1583,7 @@ a {
     background:
         radial-gradient(
             circle at 50% 45%,
-
             rgba(171, 117, 72, 0.12),
-
             transparent 30%
         ),
 
@@ -1665,7 +1663,6 @@ a {
             translate3d(20px, 14px, 0)
             scale(1.05);
     }
-
 }
 
 
@@ -1679,10 +1676,12 @@ a {
     z-index: 2;
 
     width:
-        min(880px, 92vw);
+        min(
+            880px,
+            92vw
+        );
 
-    height:
-        100%;
+    height: 100%;
 
     min-height:
         100svh;
@@ -1761,7 +1760,6 @@ a {
         filter:
             blur(0);
     }
-
 }
 
 
@@ -1844,7 +1842,10 @@ a {
         100%;
 
     max-height:
-        min(66vh, 610px);
+        min(
+            66vh,
+            610px
+        );
 
     overflow-y:
         auto;
@@ -1859,8 +1860,7 @@ a {
 }
 
 .story-lines::-webkit-scrollbar {
-    display:
-        none;
+    display: none;
 }
 
 .story-line {
@@ -1876,7 +1876,11 @@ a {
         rgba(245, 239, 230, 0.48);
 
     font-size:
-        clamp(20px, 2.2vw, 28px);
+        clamp(
+            20px,
+            2.2vw,
+            28px
+        );
 
     line-height:
         1.43;
@@ -1922,7 +1926,11 @@ a {
         !important;
 
     font-size:
-        clamp(26px, 3vw, 38px);
+        clamp(
+            26px,
+            3vw,
+            38px
+        );
 
     font-style:
         italic;
@@ -1971,9 +1979,7 @@ a {
     background:
         radial-gradient(
             circle at 50% 16%,
-
             rgba(255, 255, 255, 0.28),
-
             transparent 30%
         ),
 
@@ -2052,7 +2058,10 @@ a {
         2;
 
     width:
-        min(820px, 92vw);
+        min(
+            820px,
+            92vw
+        );
 
     min-height:
         100svh;
@@ -2161,7 +2170,11 @@ a {
 
 .poem-stanza p {
     font-size:
-        clamp(18px, 2.1vw, 25px);
+        clamp(
+            18px,
+            2.1vw,
+            25px
+        );
 
     line-height:
         1.52;
@@ -2192,9 +2205,7 @@ a {
     background:
         radial-gradient(
             circle at 50% 10%,
-
             rgba(126, 86, 52, 0.12),
-
             transparent 32%
         ),
 
@@ -2224,13 +2235,9 @@ a {
     background:
         repeating-linear-gradient(
             90deg,
-
             rgba(255, 255, 255, 0.03) 0,
-
             rgba(255, 255, 255, 0.03) 1px,
-
             transparent 1px,
-
             transparent 8px
         );
 }
@@ -2261,7 +2268,10 @@ a {
 
 .music-section {
     width:
-        min(1160px, 92vw);
+        min(
+            1160px,
+            92vw
+        );
 
     margin:
         0 auto;
@@ -2308,7 +2318,11 @@ a {
 
 .music-heading h2 {
     font-size:
-        clamp(36px, 5.3vw, 66px);
+        clamp(
+            36px,
+            5.3vw,
+            66px
+        );
 
     font-weight:
         normal;
@@ -2401,9 +2415,7 @@ a {
     background:
         linear-gradient(
             145deg,
-
             rgba(255, 255, 255, 0.035),
-
             rgba(255, 255, 255, 0.008)
         );
 
@@ -2468,9 +2480,7 @@ a {
     background:
         linear-gradient(
             145deg,
-
             rgba(255, 255, 255, 0.055),
-
             rgba(255, 255, 255, 0.014)
         );
 
@@ -2542,7 +2552,11 @@ a {
         8px;
 
     font-size:
-        clamp(22px, 2vw, 29px);
+        clamp(
+            22px,
+            2vw,
+            29px
+        );
 
     line-height:
         1.12;
@@ -2676,9 +2690,7 @@ a {
     background:
         radial-gradient(
             circle at 50% 43%,
-
             rgba(119, 77, 51, 0.13),
-
             transparent 31%
         ),
 
@@ -2691,10 +2703,14 @@ a {
 
 .final-container {
     width:
-        min(720px, 90vw);
+        min(
+            720px,
+            90vw
+        );
 
     padding:
-        28px 0;
+        28px
+        0;
 
     text-align:
         center;
@@ -2722,7 +2738,11 @@ a {
         34px;
 
     font-size:
-        clamp(45px, 9vw, 80px);
+        clamp(
+            45px,
+            9vw,
+            80px
+        );
 
     line-height:
         1.1;
@@ -2743,7 +2763,11 @@ a {
         rgba(244, 241, 235, 0.72);
 
     font-size:
-        clamp(18px, 2.2vw, 23px);
+        clamp(
+            18px,
+            2.2vw,
+            23px
+        );
 
     line-height:
         1.7;
@@ -2764,33 +2788,86 @@ a {
         rgba(255, 255, 255, 0.34);
 }
 
+
+/* =========================================
+   REPLAY BUTTON
+========================================= */
+
 .text-button {
+    width: 62px;
+    height: 62px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding: 0;
+
     border:
-        0;
+        1px solid
+        rgba(244, 241, 235, 0.18);
+
+    border-radius:
+        50%;
 
     background:
-        transparent;
+        rgba(255, 255, 255, 0.01);
 
     color:
-        rgba(244, 241, 235, 0.42);
+        rgba(244, 241, 235, 0.60);
 
     font-family:
         Arial,
         sans-serif;
 
     font-size:
-        10px;
+        31px;
 
-    letter-spacing:
-        2px;
+    font-weight:
+        300;
+
+    line-height:
+        1;
 
     cursor:
         pointer;
+
+    transition:
+        color 0.28s ease,
+        border-color 0.28s ease,
+        background 0.28s ease,
+        transform 0.4s ease,
+        box-shadow 0.28s ease;
 }
 
 .text-button:hover {
     color:
-        #fff;
+        #fff8ee;
+
+    border-color:
+        rgba(230, 197, 151, 0.55);
+
+    background:
+        rgba(230, 197, 151, 0.04);
+
+    transform:
+        rotate(-22deg)
+        scale(1.07);
+
+    box-shadow:
+        0 0 28px
+        rgba(194, 127, 62, 0.08);
+}
+
+.text-button:active {
+    transform:
+        rotate(-45deg)
+        scale(0.95);
 }
 
 @keyframes finalAppear {
@@ -2810,7 +2887,6 @@ a {
         transform:
             translateY(0);
     }
-
 }
 
 
@@ -2825,7 +2901,10 @@ a {
         grid-template-columns:
             repeat(
                 2,
-                minmax(0, 1fr)
+                minmax(
+                    0,
+                    1fr
+                )
             );
     }
 
@@ -2833,7 +2912,6 @@ a {
         min-height:
             220px;
     }
-
 }
 
 
@@ -2875,7 +2953,10 @@ a {
 
     .envelope-wrapper {
         width:
-            min(500px, 94vw);
+            min(
+                500px,
+                94vw
+            );
 
         height:
             282px;
@@ -2886,12 +2967,18 @@ a {
 
     .envelope {
         width:
-            min(338px, 78vw);
+            min(
+                338px,
+                78vw
+            );
     }
 
     .letter-sheet {
         width:
-            min(250px, 56vw);
+            min(
+                250px,
+                56vw
+            );
 
         bottom:
             63px;
@@ -2899,7 +2986,10 @@ a {
 
     .password-area {
         width:
-            min(330px, 88vw);
+            min(
+                330px,
+                88vw
+            );
     }
 
     .password-pill,
@@ -2916,7 +3006,11 @@ a {
 
     .main-title {
         font-size:
-            clamp(49px, 15vw, 74px);
+            clamp(
+                49px,
+                15vw,
+                74px
+            );
 
         letter-spacing:
             -1px;
@@ -2966,7 +3060,11 @@ a {
             11px;
 
         font-size:
-            clamp(18px, 5.1vw, 23px);
+            clamp(
+                18px,
+                5.1vw,
+                23px
+            );
 
         line-height:
             1.4;
@@ -2977,7 +3075,11 @@ a {
             18px;
 
         font-size:
-            clamp(23px, 6vw, 30px);
+            clamp(
+                23px,
+                6vw,
+                30px
+            );
     }
 
     .story-hint {
@@ -3043,7 +3145,11 @@ a {
 
     .poem-stanza p {
         font-size:
-            clamp(16px, 4.55vw, 20px);
+            clamp(
+                16px,
+                4.55vw,
+                20px
+            );
 
         line-height:
             1.46;
@@ -3069,7 +3175,11 @@ a {
 
     .music-heading h2 {
         font-size:
-            clamp(35px, 10vw, 49px);
+            clamp(
+                35px,
+                10vw,
+                49px
+            );
     }
 
     .music-intro {
@@ -3081,7 +3191,10 @@ a {
         grid-template-columns:
             repeat(
                 2,
-                minmax(0, 1fr)
+                minmax(
+                    0,
+                    1fr
+                )
             );
 
         gap:
@@ -3103,7 +3216,11 @@ a {
 
     .track-card h3 {
         font-size:
-            clamp(18px, 5.2vw, 23px);
+            clamp(
+                18px,
+                5.2vw,
+                23px
+            );
     }
 
     .track-card p {
@@ -3137,9 +3254,23 @@ a {
 
     .final-container h1 {
         font-size:
-            clamp(43px, 13vw, 67px);
+            clamp(
+                43px,
+                13vw,
+                67px
+            );
     }
 
+    .text-button {
+        width:
+            58px;
+
+        height:
+            58px;
+
+        font-size:
+            29px;
+    }
 }
 
 
@@ -3159,7 +3290,6 @@ a {
         min-height:
             165px;
     }
-
 }
 
 
@@ -3196,7 +3326,10 @@ a {
 
     .envelope {
         width:
-            min(370px, 67vw);
+            min(
+                370px,
+                67vw
+            );
     }
 
     .password-pill,
@@ -3231,7 +3364,6 @@ a {
         max-height:
             72vh;
     }
-
 }
 
 
@@ -3256,5 +3388,4 @@ a {
         scroll-behavior:
             auto !important;
     }
-
 }
