@@ -22,9 +22,15 @@ html {
 
 body {
     overflow: hidden;
+
     background: #080706;
+
     color: #f4efe6;
-    font-family: Georgia, "Times New Roman", serif;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 }
 
 button,
@@ -40,7 +46,10 @@ a {
 button:focus-visible,
 a:focus-visible,
 input:focus-visible {
-    outline: 1px solid rgba(230, 197, 151, 0.72);
+    outline:
+        1px solid
+        rgba(230, 197, 151, 0.72);
+
     outline-offset: 4px;
 }
 
@@ -73,8 +82,15 @@ input:focus-visible {
 
 .screen.fade-out {
     opacity: 0;
-    transform: scale(1.015);
+
+    transform:
+        scale(1.015);
 }
+
+
+/* =========================================
+   HIDDEN SMALL LABELS
+========================================= */
 
 .story-kicker,
 .poem-kicker,
@@ -85,7 +101,7 @@ input:focus-visible {
 
 
 /* =========================================
-   ENVELOPE
+   ENVELOPE SCREEN
 ========================================= */
 
 #password-screen {
@@ -107,16 +123,28 @@ input:focus-visible {
 
 .envelope-scene {
     position: relative;
+
     z-index: 2;
 
-    width: min(100%, 1000px);
+    width:
+        min(
+            100%,
+            1000px
+        );
+
     height: 100%;
 
-    padding: 30px 20px 20px;
+    padding:
+        30px
+        20px
+        20px;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
@@ -126,7 +154,8 @@ input:focus-visible {
     width: 42px;
     height: 36px;
 
-    color: rgba(230, 197, 151, 0.88);
+    color:
+        rgba(230, 197, 151, 0.88);
 
     margin-bottom: 10px;
 
@@ -147,10 +176,13 @@ input:focus-visible {
 }
 
 .scene-label {
-    color: rgba(244, 231, 212, 0.78);
+    color:
+        rgba(244, 231, 212, 0.78);
 
     font-size: 11px;
+
     letter-spacing: 5.5px;
+
     text-transform: uppercase;
 
     margin-bottom: 22px;
@@ -160,20 +192,37 @@ input:focus-visible {
         transform 0.6s ease;
 }
 
+
+/* =========================================
+   ENVELOPE WRAPPER
+========================================= */
+
 .envelope-wrapper {
     position: relative;
 
-    width: min(575px, 90vw);
+    width:
+        min(
+            575px,
+            90vw
+        );
+
     height: 350px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     margin-bottom: 10px;
 
     perspective: 1200px;
 }
+
+
+/* =========================================
+   ENVELOPE GLOW
+========================================= */
 
 .envelope-glow {
     position: absolute;
@@ -234,6 +283,11 @@ input:focus-visible {
 
 }
 
+
+/* =========================================
+   LETTER
+========================================= */
+
 .letter-sheet {
     position: absolute;
 
@@ -245,7 +299,11 @@ input:focus-visible {
         translateY(115px)
         scale(0.9);
 
-    width: min(300px, 52vw);
+    width:
+        min(
+            300px,
+            52vw
+        );
 
     aspect-ratio: 5 / 7;
 
@@ -270,8 +328,11 @@ input:focus-visible {
     border-radius: 2px;
 
     box-shadow:
-        0 24px 44px rgba(0, 0, 0, 0.28),
-        0 0 34px rgba(234, 184, 116, 0.08);
+        0 24px 44px
+        rgba(0, 0, 0, 0.28),
+
+        0 0 34px
+        rgba(234, 184, 116, 0.08);
 
     opacity: 0;
 
@@ -315,10 +376,14 @@ input:focus-visible {
     width: 100%;
     height: 100%;
 
-    padding: 34px 26px;
+    padding:
+        34px
+        26px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 }
 
@@ -328,13 +393,24 @@ input:focus-visible {
         "Segoe Script",
         cursive;
 
-    font-size: clamp(30px, 4vw, 44px);
+    font-size:
+        clamp(
+            30px,
+            4vw,
+            44px
+        );
 
-    color: rgba(34, 26, 20, 0.88);
+    color:
+        rgba(34, 26, 20, 0.88);
 
     transition:
         opacity 0.5s ease;
 }
+
+
+/* =========================================
+   ENVELOPE
+========================================= */
 
 .envelope {
     position: absolute;
@@ -345,9 +421,14 @@ input:focus-visible {
     transform:
         translateX(-50%);
 
-    width: min(420px, 74vw);
+    width:
+        min(
+            420px,
+            74vw
+        );
 
-    aspect-ratio: 1.6 / 1;
+    aspect-ratio:
+        1.6 / 1;
 
     z-index: 4;
 
@@ -357,8 +438,14 @@ input:focus-visible {
             rgba(0, 0, 0, 0.20)
         );
 
-    transform-style: preserve-3d;
+    transform-style:
+        preserve-3d;
 }
+
+
+/* =========================================
+   ENVELOPE BACK
+========================================= */
 
 .envelope-back {
     position: absolute;
@@ -392,8 +479,17 @@ input:focus-visible {
         );
 
     box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.76),
-        inset 0 -16px 22px rgba(118, 86, 48, 0.04);
+        inset
+        0
+        1px
+        0
+        rgba(255, 255, 255, 0.76),
+
+        inset
+        0
+        -16px
+        22px
+        rgba(118, 86, 48, 0.04);
 }
 
 .envelope-back::before {
@@ -449,6 +545,11 @@ input:focus-visible {
         opacity 0.7s ease;
 }
 
+
+/* =========================================
+   ENVELOPE FLAP
+========================================= */
+
 .envelope-flap {
     position: absolute;
 
@@ -499,7 +600,10 @@ input:focus-visible {
         opacity 0.8s ease;
 
     box-shadow:
-        inset 0 1px 0
+        inset
+        0
+        1px
+        0
         rgba(255, 255, 255, 0.35);
 }
 
@@ -540,6 +644,11 @@ input:focus-visible {
         );
 }
 
+
+/* =========================================
+   FRONT POCKET
+========================================= */
+
 .envelope-front {
     position: absolute;
 
@@ -572,8 +681,17 @@ input:focus-visible {
         );
 
     box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.24),
-        inset 0 -10px 14px rgba(132, 95, 54, 0.03);
+        inset
+        0
+        1px
+        0
+        rgba(255, 255, 255, 0.24),
+
+        inset
+        0
+        -10px
+        14px
+        rgba(132, 95, 54, 0.03);
 }
 
 .envelope-front::before {
@@ -638,6 +756,11 @@ input:focus-visible {
     display: none;
 }
 
+
+/* =========================================
+   WAX SEAL
+========================================= */
+
 .wax-seal {
     position: absolute;
 
@@ -668,13 +791,19 @@ input:focus-visible {
         );
 
     box-shadow:
-        0 12px 18px rgba(0, 0, 0, 0.24),
-        inset 4px 5px 8px rgba(255, 211, 198, 0.14),
-        inset -6px -7px 11px rgba(67, 15, 13, 0.28);
+        0 12px 18px
+        rgba(0, 0, 0, 0.24),
+
+        inset 4px 5px 8px
+        rgba(255, 211, 198, 0.14),
+
+        inset -6px -7px 11px
+        rgba(67, 15, 13, 0.28);
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     z-index: 10;
@@ -739,7 +868,8 @@ input:focus-visible {
 
     z-index: 2;
 
-    color: rgba(242, 204, 194, 0.91);
+    color:
+        rgba(242, 204, 194, 0.91);
 
     font-size: 18px;
 
@@ -756,7 +886,11 @@ input:focus-visible {
 
     z-index: 10;
 
-    width: min(360px, 86vw);
+    width:
+        min(
+            360px,
+            86vw
+        );
 
     transition:
         opacity 0.55s ease,
@@ -1074,14 +1208,22 @@ input:focus-visible {
 
     z-index: 2;
 
-    width: min(760px, 90vw);
+    width:
+        min(
+            760px,
+            90vw
+        );
 
     text-align: center;
 }
 
 .main-title {
     font-size:
-        clamp(52px, 10vw, 98px);
+        clamp(
+            52px,
+            10vw,
+            98px
+        );
 
     font-weight: normal;
 
@@ -1125,6 +1267,7 @@ input:focus-visible {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     border-radius: 50%;
@@ -1244,7 +1387,9 @@ input:focus-visible {
 }
 
 
-/* STORY COLORS */
+/* =========================================
+   STORY COLORS
+========================================= */
 
 #story-screen.theme-opening {
     --center-glow:
@@ -1387,6 +1532,10 @@ input:focus-visible {
 }
 
 
+/* =========================================
+   STORY AMBIENT
+========================================= */
+
 .story-ambient {
     position: absolute;
 
@@ -1394,8 +1543,7 @@ input:focus-visible {
 
     border-radius: 50%;
 
-    filter:
-        blur(80px);
+    filter: blur(80px);
 
     opacity: 0.10;
 
@@ -1449,12 +1597,21 @@ input:focus-visible {
 
 }
 
+
+/* =========================================
+   STORY CONTAINER
+========================================= */
+
 .story-container {
     position: relative;
 
     z-index: 3;
 
-    width: min(880px, 92vw);
+    width:
+        min(
+            880px,
+            92vw
+        );
 
     height: 100%;
 
@@ -1470,6 +1627,7 @@ input:focus-visible {
     flex-direction: column;
 
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
@@ -1533,6 +1691,11 @@ input:focus-visible {
 
 }
 
+
+/* =========================================
+   STORY PROGRESS
+========================================= */
+
 .story-progress {
     position: absolute;
 
@@ -1563,11 +1726,19 @@ input:focus-visible {
     opacity: 0.45;
 }
 
+
+/* =========================================
+   STORY TEXT
+========================================= */
+
 .story-lines {
     width: 100%;
 
     max-height:
-        min(66vh, 610px);
+        min(
+            66vh,
+            610px
+        );
 
     overflow-y: auto;
 
@@ -1595,7 +1766,11 @@ input:focus-visible {
         rgba(245, 239, 230, 0.48);
 
     font-size:
-        clamp(20px, 2.2vw, 28px);
+        clamp(
+            20px,
+            2.2vw,
+            28px
+        );
 
     line-height: 1.43;
 
@@ -1635,7 +1810,11 @@ input:focus-visible {
         #f2d5ae !important;
 
     font-size:
-        clamp(26px, 3vw, 38px);
+        clamp(
+            26px,
+            3vw,
+            38px
+        );
 
     font-style: italic;
 }
@@ -1720,8 +1899,7 @@ input:focus-visible {
             transparent 68%
         );
 
-    filter:
-        blur(38px);
+    filter: blur(38px);
 
     opacity: 0.52;
 
@@ -1734,10 +1912,12 @@ input:focus-visible {
     z-index: 2;
 
     width:
-        min(820px, 92vw);
+        min(
+            820px,
+            92vw
+        );
 
-    min-height:
-        100svh;
+    min-height: 100svh;
 
     padding:
         64px
@@ -1749,6 +1929,7 @@ input:focus-visible {
     flex-direction: column;
 
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
@@ -1773,7 +1954,11 @@ input:focus-visible {
         36px;
 
     font-size:
-        clamp(22px, 3.2vw, 34px);
+        clamp(
+            22px,
+            3.2vw,
+            34px
+        );
 
     line-height: 1.42;
 
@@ -1829,7 +2014,11 @@ input:focus-visible {
 
 .poem-stanza p {
     font-size:
-        clamp(18px, 2.1vw, 25px);
+        clamp(
+            18px,
+            2.1vw,
+            25px
+        );
 
     line-height: 1.52;
 }
@@ -1877,7 +2066,10 @@ input:focus-visible {
 
 .music-section {
     width:
-        min(1160px, 92vw);
+        min(
+            1160px,
+            92vw
+        );
 
     margin:
         0 auto;
@@ -1901,7 +2093,11 @@ input:focus-visible {
 
 .music-heading h2 {
     font-size:
-        clamp(36px, 5.3vw, 66px);
+        clamp(
+            36px,
+            5.3vw,
+            66px
+        );
 
     font-weight: normal;
 
@@ -1923,6 +2119,11 @@ input:focus-visible {
 
     line-height: 1.6;
 }
+
+
+/* =========================================
+   MUSIC GRID
+========================================= */
 
 .music-grid {
     display: grid;
@@ -1951,6 +2152,7 @@ input:focus-visible {
     flex-direction: column;
 
     align-items: flex-start;
+
     justify-content: flex-end;
 
     text-align: left;
@@ -2020,7 +2222,11 @@ input:focus-visible {
     margin-bottom: 8px;
 
     font-size:
-        clamp(22px, 2vw, 29px);
+        clamp(
+            22px,
+            2vw,
+            29px
+        );
 
     line-height: 1.12;
 
@@ -2068,7 +2274,7 @@ input:focus-visible {
 
 
 /* =========================================
-   UNIVERSAL NAVIGATION ARROWS
+   UNIVERSAL NAVIGATION
 ========================================= */
 
 .section-navigation {
@@ -2077,6 +2283,7 @@ input:focus-visible {
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
     gap: 22px;
@@ -2089,6 +2296,7 @@ input:focus-visible {
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
     flex-shrink: 0;
@@ -2209,7 +2417,10 @@ input:focus-visible {
     z-index: 2;
 
     width:
-        min(720px, 92vw);
+        min(
+            720px,
+            92vw
+        );
 
     padding:
         48px
@@ -2230,7 +2441,11 @@ input:focus-visible {
         rgba(236, 215, 187, 0.66);
 
     font-size:
-        clamp(18px, 2vw, 23px);
+        clamp(
+            18px,
+            2vw,
+            23px
+        );
 
     line-height: 1.45;
 
@@ -2241,7 +2456,11 @@ input:focus-visible {
     margin-bottom: 30px;
 
     font-size:
-        clamp(46px, 8vw, 84px);
+        clamp(
+            46px,
+            8vw,
+            84px
+        );
 
     font-weight: normal;
 
@@ -2252,6 +2471,7 @@ input:focus-visible {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     gap: 18px;
@@ -2336,7 +2556,10 @@ input:focus-visible {
     display: none;
 
     width:
-        min(300px, 72vw);
+        min(
+            300px,
+            72vw
+        );
 
     max-height: 300px;
 
@@ -2364,7 +2587,11 @@ input:focus-visible {
         auto;
 
     font-size:
-        clamp(22px, 3vw, 32px);
+        clamp(
+            22px,
+            3vw,
+            32px
+        );
 
     line-height: 1.45;
 
@@ -2378,6 +2605,7 @@ input:focus-visible {
     display: flex;
 
     align-items: flex-start;
+
     justify-content: center;
 
     gap: 42px;
@@ -2414,15 +2642,41 @@ input:focus-visible {
 ========================================= */
 
 #final-screen {
-    align-items: stretch;
+    /*
+       Το final έχει δικό του scroll.
+       Αυτό παρακάμπτει το overflow:hidden
+       του body και αποτρέπει το κόψιμο.
+    */
 
+    display: block;
+
+    width: 100%;
+
+    height: 100vh;
+    height: 100svh;
+
+    min-height: 0;
+
+    overflow-x: hidden;
     overflow-y: auto;
+
+    -webkit-overflow-scrolling: touch;
+
+    overscroll-behavior-y: contain;
+
+    touch-action: pan-y;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(230, 197, 151, 0.22)
+        transparent;
 
     background:
         radial-gradient(
-            circle at 50% 40%,
-            rgba(154, 101, 62, 0.15),
-            transparent 32%
+            circle at 50% 42%,
+            rgba(154, 101, 62, 0.16),
+            transparent 33%
         ),
 
         radial-gradient(
@@ -2432,44 +2686,93 @@ input:focus-visible {
         );
 }
 
+#final-screen::-webkit-scrollbar {
+    width: 5px;
+}
+
+#final-screen::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#final-screen::-webkit-scrollbar-thumb {
+    background:
+        rgba(230, 197, 151, 0.20);
+
+    border-radius: 999px;
+}
+
+
+/* =========================================
+   FINAL CONTAINER
+========================================= */
+
 .final-container {
     position: relative;
 
     width:
-        min(760px, 90vw);
+        min(
+            760px,
+            90vw
+        );
 
-    margin: auto;
+    min-height: 100%;
+
+    margin:
+        0
+        auto;
 
     padding:
-        58px
+        38px
         0
-        46px;
+        34px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
 
     text-align: center;
 
     animation:
         finalAppear
-        1.4s
+        1.25s
         ease
         both;
 }
 
-.final-symbol {
-    margin-bottom: 24px;
 
-    font-size: 30px;
+/* =========================================
+   FINAL HEART
+========================================= */
+
+.final-symbol {
+    margin-bottom: 16px;
+
+    font-size: 27px;
 
     color:
         rgba(230, 197, 151, 0.70);
 }
 
+
+/* =========================================
+   FINAL TITLE
+========================================= */
+
 .final-container h1 {
-    margin-bottom: 38px;
+    margin-bottom: 25px;
 
     font-size:
-        clamp(44px, 8vw, 76px);
+        clamp(
+            42px,
+            6.6vw,
+            68px
+        );
 
-    line-height: 1.08;
+    line-height: 1.04;
 
     font-weight: normal;
 }
@@ -2480,6 +2783,8 @@ input:focus-visible {
 ========================================= */
 
 .final-quote-block {
+    width: 100%;
+
     max-width: 650px;
 
     margin:
@@ -2492,36 +2797,48 @@ input:focus-visible {
         rgba(247, 241, 232, 0.82);
 
     font-size:
-        clamp(19px, 2.6vw, 27px);
+        clamp(
+            18px,
+            2vw,
+            24px
+        );
 
-    line-height: 1.55;
+    line-height: 1.45;
 
     font-style: italic;
 }
 
 .final-attribution {
-    margin-top: 11px;
+    margin-top: 8px;
 
     color:
         rgba(230, 197, 151, 0.60);
 
-    font-size:
-        14px;
+    font-size: 13px;
+
+    line-height: 1.4;
 
     font-style: italic;
 }
+
+
+/* =========================================
+   FINAL DIVIDER
+========================================= */
 
 .final-line {
     width: 42px;
 
     height: 1px;
 
+    flex-shrink: 0;
+
     margin:
-        34px
+        25px
         auto;
 
     background:
-        rgba(255, 255, 255, 0.28);
+        rgba(255, 255, 255, 0.25);
 }
 
 
@@ -2530,6 +2847,8 @@ input:focus-visible {
 ========================================= */
 
 .final-thoughts {
+    width: 100%;
+
     max-width: 650px;
 
     margin:
@@ -2539,50 +2858,66 @@ input:focus-visible {
 
 .final-life {
     color:
-        rgba(244, 239, 230, 0.62);
+        rgba(244, 239, 230, 0.60);
 
     font-size:
-        clamp(18px, 2.2vw, 23px);
+        clamp(
+            17px,
+            1.8vw,
+            21px
+        );
 
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 .final-choice {
-    margin-top: 12px;
+    margin-top: 9px;
 
     color:
-        rgba(241, 208, 164, 0.93);
+        rgba(241, 208, 164, 0.94);
 
     font-size:
-        clamp(22px, 2.8vw, 29px);
+        clamp(
+            21px,
+            2.2vw,
+            27px
+        );
 
-    line-height: 1.45;
+    line-height: 1.4;
 
     font-weight: normal;
 }
 
 .final-reminder {
-    margin-top: 30px;
+    margin-top: 23px;
 
     color:
-        rgba(244, 239, 230, 0.58);
+        rgba(244, 239, 230, 0.54);
 
     font-size:
-        clamp(16px, 2vw, 20px);
+        clamp(
+            16px,
+            1.65vw,
+            19px
+        );
 
-    line-height: 1.68;
+    line-height: 1.55;
 }
 
 .final-tomorrow {
-    margin-top: 12px;
+    margin-top: 8px;
 
     color:
-        rgba(242, 205, 155, 0.90);
+        rgba(242, 205, 155, 0.93);
 
     font-size:
-        clamp(21px, 2.6vw, 27px);
+        clamp(
+            20px,
+            2.15vw,
+            26px
+        );
 
-    line-height: 1.45;
+    line-height: 1.4;
 
     font-style: italic;
 }
@@ -2593,14 +2928,19 @@ input:focus-visible {
 ========================================= */
 
 .final-actions {
-    margin-top: 40px;
+    margin-top: 27px;
+
+    padding-bottom: 4px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
-    gap: 26px;
+    gap: 22px;
+
+    flex-shrink: 0;
 }
 
 .final-action-item {
@@ -2610,7 +2950,9 @@ input:focus-visible {
 
     align-items: center;
 
-    gap: 8px;
+    justify-content: center;
+
+    gap: 7px;
 }
 
 .final-action-item span {
@@ -2627,25 +2969,32 @@ input:focus-visible {
 }
 
 .final-back-button {
-    width: 66px;
-    height: 66px;
+    width: 60px;
 
-    font-size: 31px;
+    height: 60px;
+
+    font-size: 28px;
 }
 
 
-/* BIG REPLAY */
+/* =========================================
+   BIG REPLAY BUTTON
+========================================= */
 
 .text-button {
-    width: 124px;
-    height: 124px;
+    width: 96px;
+
+    height: 96px;
 
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
     padding: 0;
+
+    flex-shrink: 0;
 
     border:
         1px solid
@@ -2662,7 +3011,7 @@ input:focus-visible {
         Arial,
         sans-serif;
 
-    font-size: 86px;
+    font-size: 63px;
 
     font-weight: 300;
 
@@ -2674,11 +3023,13 @@ input:focus-visible {
         color 0.28s ease,
         border-color 0.28s ease,
         background 0.28s ease,
-        transform 0.38s ease;
+        transform 0.38s ease,
+        box-shadow 0.28s ease;
 }
 
 .text-button:hover {
-    color: #fff8ee;
+    color:
+        #fff8ee;
 
     border-color:
         rgba(244, 241, 235, 0.70);
@@ -2689,6 +3040,12 @@ input:focus-visible {
     transform:
         rotate(-18deg)
         scale(1.04);
+
+    box-shadow:
+        0
+        0
+        30px
+        rgba(194, 127, 62, 0.08);
 }
 
 .text-button:active {
@@ -2703,7 +3060,7 @@ input:focus-visible {
         opacity: 0;
 
         transform:
-            translateY(18px);
+            translateY(14px);
     }
 
     to {
@@ -2745,6 +3102,8 @@ input:focus-visible {
 @media
 (max-width: 600px) {
 
+    /* ENVELOPE */
+
     .envelope-scene {
         padding:
             20px
@@ -2754,6 +3113,7 @@ input:focus-visible {
 
     .heart-mark {
         width: 34px;
+
         height: 30px;
 
         margin-bottom: 7px;
@@ -2769,7 +3129,10 @@ input:focus-visible {
 
     .envelope-wrapper {
         width:
-            min(500px, 94vw);
+            min(
+                500px,
+                94vw
+            );
 
         height: 282px;
 
@@ -2778,19 +3141,28 @@ input:focus-visible {
 
     .envelope {
         width:
-            min(338px, 78vw);
+            min(
+                338px,
+                78vw
+            );
     }
 
     .letter-sheet {
         width:
-            min(250px, 56vw);
+            min(
+                250px,
+                56vw
+            );
 
         bottom: 63px;
     }
 
     .password-area {
         width:
-            min(330px, 88vw);
+            min(
+                330px,
+                88vw
+            );
     }
 
     .password-pill,
@@ -2798,9 +3170,16 @@ input:focus-visible {
         height: 54px;
     }
 
+
+    /* INTRO */
+
     .main-title {
         font-size:
-            clamp(49px, 15vw, 74px);
+            clamp(
+                49px,
+                15vw,
+                74px
+            );
 
         letter-spacing: -1px;
     }
@@ -2811,6 +3190,7 @@ input:focus-visible {
 
     .paper-arrow {
         width: 58px;
+
         height: 58px;
     }
 
@@ -2840,7 +3220,11 @@ input:focus-visible {
         margin-bottom: 11px;
 
         font-size:
-            clamp(18px, 5.1vw, 23px);
+            clamp(
+                18px,
+                5.1vw,
+                23px
+            );
 
         line-height: 1.4;
     }
@@ -2849,7 +3233,11 @@ input:focus-visible {
         margin-top: 18px;
 
         font-size:
-            clamp(23px, 6vw, 30px);
+            clamp(
+                23px,
+                6vw,
+                30px
+            );
     }
 
     .story-hint {
@@ -2885,7 +3273,11 @@ input:focus-visible {
             28px;
 
         font-size:
-            clamp(20px, 6vw, 27px);
+            clamp(
+                20px,
+                6vw,
+                27px
+            );
     }
 
     .poem-lines {
@@ -2894,7 +3286,11 @@ input:focus-visible {
 
     .poem-stanza p {
         font-size:
-            clamp(16px, 4.55vw, 20px);
+            clamp(
+                16px,
+                4.55vw,
+                20px
+            );
 
         line-height: 1.46;
     }
@@ -2913,7 +3309,11 @@ input:focus-visible {
 
     .music-heading h2 {
         font-size:
-            clamp(35px, 10vw, 49px);
+            clamp(
+                35px,
+                10vw,
+                49px
+            );
     }
 
     .music-intro {
@@ -2943,7 +3343,11 @@ input:focus-visible {
 
     .track-card h3 {
         font-size:
-            clamp(18px, 5.2vw, 23px);
+            clamp(
+                18px,
+                5.2vw,
+                23px
+            );
     }
 
     .track-card p {
@@ -2957,10 +3361,11 @@ input:focus-visible {
     }
 
 
-    /* NAV */
+    /* NAVIGATION */
 
     .nav-circle {
         width: 60px;
+
         height: 60px;
 
         font-size: 29px;
@@ -2981,12 +3386,20 @@ input:focus-visible {
         margin-bottom: 17px;
 
         font-size:
-            clamp(17px, 5vw, 21px);
+            clamp(
+                17px,
+                5vw,
+                21px
+            );
     }
 
     .question-title {
         font-size:
-            clamp(40px, 12vw, 62px);
+            clamp(
+                40px,
+                12vw,
+                62px
+            );
     }
 
     .question-buttons {
@@ -2997,14 +3410,21 @@ input:focus-visible {
 
     .question-btn {
         width:
-            min(240px, 80vw);
+            min(
+                240px,
+                80vw
+            );
 
         font-size: 17px;
     }
 
     .question-message {
         font-size:
-            clamp(20px, 5.3vw, 27px);
+            clamp(
+                20px,
+                5.3vw,
+                27px
+            );
     }
 
     .result-navigation {
@@ -3012,78 +3432,139 @@ input:focus-visible {
     }
 
 
-    /* FINAL */
+    /* =====================================
+       FINAL MOBILE
+    ====================================== */
 
     .final-container {
         width: 88vw;
 
+        min-height: 100%;
+
         padding:
-            44px
+            32px
             0
-            36px;
+            34px;
+
+        justify-content: flex-start;
     }
 
     .final-symbol {
-        margin-bottom: 20px;
+        margin-bottom: 14px;
+
+        font-size: 25px;
     }
 
     .final-container h1 {
-        margin-bottom: 30px;
+        margin-bottom: 24px;
 
         font-size:
-            clamp(42px, 12.5vw, 64px);
+            clamp(
+                40px,
+                11vw,
+                58px
+            );
+
+        line-height: 1.04;
+    }
+
+    .final-quote-block {
+        max-width: 92%;
     }
 
     .final-quote {
         font-size:
-            clamp(18px, 5vw, 22px);
+            clamp(
+                17px,
+                4.6vw,
+                21px
+            );
+
+        line-height: 1.45;
     }
 
     .final-attribution {
-        font-size: 13px;
+        margin-top: 7px;
+
+        font-size: 12px;
     }
 
     .final-line {
         margin:
-            29px
+            22px
             auto;
     }
 
     .final-life {
         font-size:
-            clamp(17px, 4.8vw, 20px);
+            clamp(
+                16px,
+                4.4vw,
+                19px
+            );
+
+        line-height: 1.48;
     }
 
     .final-choice {
-        margin-top: 10px;
+        margin-top: 8px;
 
         font-size:
-            clamp(20px, 5.6vw, 25px);
+            clamp(
+                19px,
+                5.3vw,
+                24px
+            );
+
+        line-height: 1.4;
     }
 
     .final-reminder {
-        margin-top: 25px;
+        margin-top: 21px;
 
         font-size:
-            clamp(16px, 4.5vw, 19px);
+            clamp(
+                15px,
+                4.1vw,
+                18px
+            );
+
+        line-height: 1.55;
     }
 
     .final-tomorrow {
+        margin-top: 8px;
+
         font-size:
-            clamp(20px, 5.4vw, 24px);
+            clamp(
+                19px,
+                5.1vw,
+                23px
+            );
     }
 
     .final-actions {
-        margin-top: 34px;
+        margin-top: 26px;
 
-        gap: 20px;
+        padding-bottom: 16px;
+
+        gap: 18px;
+    }
+
+    .final-back-button {
+        width: 56px;
+
+        height: 56px;
+
+        font-size: 27px;
     }
 
     .text-button {
-        width: 106px;
-        height: 106px;
+        width: 88px;
 
-        font-size: 72px;
+        height: 88px;
+
+        font-size: 58px;
     }
 
 }
@@ -3097,7 +3578,8 @@ input:focus-visible {
 (max-width: 390px) {
 
     .music-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
     .track-card {
@@ -3106,52 +3588,150 @@ input:focus-visible {
 
     .final-container {
         width: 90vw;
+
+        padding-top: 28px;
     }
 
-    .text-button {
-        width: 96px;
-        height: 96px;
+    .final-container h1 {
+        font-size:
+            clamp(
+                38px,
+                11vw,
+                52px
+            );
+    }
 
-        font-size: 64px;
+    .final-actions {
+        padding-bottom: 20px;
     }
 
 }
 
 
 /* =========================================
-   SHORT SCREEN
+   SHORT DESKTOP / LAPTOP SCREEN
+========================================= */
+
+@media
+(max-height: 800px)
+and
+(min-width: 601px) {
+
+    .final-container {
+        padding:
+            26px
+            0
+            28px;
+
+        justify-content: flex-start;
+    }
+
+    .final-symbol {
+        margin-bottom: 10px;
+    }
+
+    .final-container h1 {
+        margin-bottom: 19px;
+
+        font-size:
+            clamp(
+                40px,
+                6vw,
+                58px
+            );
+    }
+
+    .final-quote {
+        font-size: 18px;
+    }
+
+    .final-line {
+        margin:
+            19px
+            auto;
+    }
+
+    .final-choice {
+        margin-top: 7px;
+    }
+
+    .final-reminder {
+        margin-top: 17px;
+    }
+
+    .final-actions {
+        margin-top: 20px;
+
+        padding-bottom: 14px;
+    }
+
+    .text-button {
+        width: 82px;
+
+        height: 82px;
+
+        font-size: 54px;
+    }
+
+}
+
+
+/* =========================================
+   VERY SHORT SCREENS
 ========================================= */
 
 @media
 (max-height: 700px) {
 
-    .final-container {
-        padding:
-            34px
-            0
-            28px;
+    .heart-mark {
+        width: 30px;
+
+        height: 26px;
+
+        margin-bottom: 2px;
     }
 
-    .final-symbol {
-        margin-bottom: 16px;
+    .scene-label {
+        margin-bottom: 8px;
     }
 
-    .final-container h1 {
-        margin-bottom: 25px;
+    .envelope-wrapper {
+        height: 250px;
+
+        margin-bottom: 3px;
     }
 
-    .final-line {
-        margin:
-            24px
-            auto;
+    .envelope {
+        width:
+            min(
+                370px,
+                67vw
+            );
     }
 
-    .final-reminder {
-        margin-top: 20px;
+    .password-pill,
+    .password-pill button {
+        height: 50px;
     }
 
-    .final-actions {
-        margin-top: 28px;
+    .story-container {
+        padding-top: 62px;
+
+        padding-bottom: 52px;
+    }
+
+    .story-lines {
+        max-height: 72vh;
+    }
+
+    .poem-container {
+        padding-top: 42px;
+
+        padding-bottom: 48px;
+    }
+
+    .poem-lines {
+        max-height: 72vh;
     }
 
 }
@@ -3167,9 +3747,14 @@ input:focus-visible {
     *,
     *::before,
     *::after {
-        animation: none !important;
-        transition: none !important;
-        scroll-behavior: auto !important;
+        animation:
+            none !important;
+
+        transition:
+            none !important;
+
+        scroll-behavior:
+            auto !important;
     }
 
 }
