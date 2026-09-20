@@ -6,6 +6,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+
+    -webkit-tap-highlight-color: transparent;
 }
 
 html,
@@ -28,7 +30,6 @@ body {
 button,
 input {
     font: inherit;
-    -webkit-tap-highlight-color: transparent;
 }
 
 button,
@@ -36,13 +37,23 @@ a {
     -webkit-tap-highlight-color: transparent;
 }
 
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 1px solid rgba(230, 197, 151, 0.72);
+    outline-offset: 4px;
+}
+
 .screen {
     position: relative;
+
     width: 100%;
+
     min-height: 100vh;
     min-height: 100svh;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -222,6 +233,7 @@ a {
 }
 
 @keyframes glowBreath {
+
     0%,
     100% {
         opacity: 0.42;
@@ -238,6 +250,7 @@ a {
             translateX(-50%)
             scale(1.035);
     }
+
 }
 
 
@@ -368,8 +381,7 @@ a {
     transform:
         translateX(-50%);
 
-    width:
-        min(420px, 74vw);
+    width: min(420px, 74vw);
 
     aspect-ratio:
         1.6 / 1;
@@ -840,10 +852,7 @@ a {
     z-index: 10;
 
     width:
-        min(
-            360px,
-            86vw
-        );
+        min(360px, 86vw);
 
     transition:
         opacity 0.55s ease,
@@ -1007,6 +1016,7 @@ a {
 }
 
 @keyframes shake {
+
     0%,
     100% {
         transform:
@@ -1032,6 +1042,7 @@ a {
         transform:
             translateX(3px);
     }
+
 }
 
 
@@ -1241,10 +1252,7 @@ a {
     z-index: 2;
 
     width:
-        min(
-            760px,
-            90vw
-        );
+        min(760px, 90vw);
 
     text-align: center;
 
@@ -1256,6 +1264,7 @@ a {
 }
 
 @keyframes paperReveal {
+
     from {
         opacity: 0;
 
@@ -1271,6 +1280,7 @@ a {
             translateY(0)
             scale(1);
     }
+
 }
 
 .paper-small {
@@ -1291,11 +1301,7 @@ a {
 
 .main-title {
     font-size:
-        clamp(
-            52px,
-            10vw,
-            98px
-        );
+        clamp(52px, 10vw, 98px);
 
     font-weight:
         normal;
@@ -1392,6 +1398,10 @@ a {
 ========================================= */
 
 #story-screen {
+    --scene-art: none;
+
+    isolation: isolate;
+
     background:
         radial-gradient(
             circle at 50% 42%,
@@ -1404,12 +1414,12 @@ a {
             #17171a 0%,
             #0b0b0c 72%
         );
-
-    transition:
-        background 1s ease,
-        opacity 0.9s ease,
-        transform 0.9s ease;
 }
+
+
+/*
+   Πολύ διακριτικό texture.
+*/
 
 #story-screen::before {
     content: "";
@@ -1418,8 +1428,10 @@ a {
 
     inset: 0;
 
+    z-index: 0;
+
     opacity:
-        0.08;
+        0.075;
 
     pointer-events:
         none;
@@ -1434,84 +1446,275 @@ a {
         );
 }
 
+
+/*
+   Κάθε πράξη αποκτά διαφορετικό
+   minimal visual motif.
+*/
+
+#story-screen::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    background:
+        var(--scene-art);
+
+    opacity: 1;
+}
+
+
+/* =========================================
+   SCENE 01 — OPENING
+   Warm / intimate
+========================================= */
+
 #story-screen.theme-opening {
+    --scene-art:
+        radial-gradient(
+            circle at 50% 18%,
+            rgba(226, 164, 97, 0.13),
+            transparent 27%
+        ),
+
+        linear-gradient(
+            118deg,
+            transparent 0%,
+            transparent 44%,
+            rgba(255, 235, 207, 0.025) 49%,
+            transparent 54%,
+            transparent 100%
+        );
+
     background:
         radial-gradient(
             circle at 50% 45%,
-            rgba(170, 111, 61, 0.14),
-            transparent 31%
+            rgba(170, 111, 61, 0.18),
+            transparent 34%
         ),
 
         linear-gradient(
             145deg,
-            #17120f 0%,
-            #0b0908 75%
+            #1a130f 0%,
+            #0a0807 78%
         );
 }
 
+
+/* =========================================
+   SCENE 02 — WORDS
+   Ink / paper / language
+========================================= */
+
 #story-screen.theme-words {
+    --scene-art:
+        repeating-linear-gradient(
+            115deg,
+            transparent 0,
+            transparent 52px,
+            rgba(230, 199, 155, 0.025) 53px,
+            transparent 54px
+        ),
+
+        radial-gradient(
+            circle at 23% 23%,
+            rgba(215, 165, 102, 0.11),
+            transparent 25%
+        );
+
     background:
         radial-gradient(
-            circle at 30% 30%,
-            rgba(191, 145, 89, 0.10),
-            transparent 28%
+            circle at 28% 30%,
+            rgba(137, 95, 57, 0.15),
+            transparent 29%
+        ),
+
+        linear-gradient(
+            145deg,
+            #13100d,
+            #090908 74%
+        );
+}
+
+
+/* =========================================
+   SCENE 03 — CONFESSION
+   Wine / emotional
+========================================= */
+
+#story-screen.theme-confession {
+    --scene-art:
+        radial-gradient(
+            ellipse at 50% 55%,
+            rgba(157, 60, 75, 0.17),
+            transparent 34%
         ),
 
         radial-gradient(
-            circle at 72% 68%,
-            rgba(107, 74, 46, 0.11),
-            transparent 26%
-        ),
+            circle at 50% 55%,
+            transparent 0%,
+            transparent 18%,
+            rgba(226, 160, 167, 0.035) 18.4%,
+            rgba(226, 160, 167, 0.035) 18.8%,
+            transparent 19.3%
+        );
 
-        #0e0d0c;
-}
-
-#story-screen.theme-confession,
-
-#story-screen.theme-confession-deep {
     background:
         radial-gradient(
             circle at 50% 50%,
-            rgba(118, 43, 43, 0.13),
-            transparent 33%
+            rgba(129, 43, 58, 0.18),
+            transparent 38%
         ),
 
         linear-gradient(
             150deg,
-            #130d0f 0%,
-            #090809 76%
+            #170d11 0%,
+            #080708 78%
         );
 }
 
-#story-screen.theme-life {
+
+/* =========================================
+   SCENE 04 — DEEP CONFESSION
+   Darker / spotlight
+========================================= */
+
+#story-screen.theme-confession-deep {
+    --scene-art:
+        linear-gradient(
+            90deg,
+            transparent 24%,
+            rgba(255, 227, 215, 0.012) 39%,
+            rgba(255, 227, 215, 0.045) 50%,
+            rgba(255, 227, 215, 0.012) 61%,
+            transparent 76%
+        ),
+
+        radial-gradient(
+            ellipse at 50% 50%,
+            rgba(120, 39, 54, 0.16),
+            transparent 33%
+        );
+
     background:
         radial-gradient(
-            circle at 50% 32%,
-            rgba(93, 86, 121, 0.11),
+            ellipse at 50% 48%,
+            rgba(93, 28, 42, 0.16),
+            transparent 40%
+        ),
+
+        #080608;
+}
+
+
+/* =========================================
+   SCENE 05 — LIFE
+   Midnight blue / horizon
+========================================= */
+
+#story-screen.theme-life {
+    --scene-art:
+        linear-gradient(
+            to top,
+            rgba(81, 88, 138, 0.12),
             transparent 31%
         ),
 
         linear-gradient(
+            to bottom,
+            transparent 0%,
+            transparent 68%,
+            rgba(169, 174, 220, 0.035) 68.4%,
+            transparent 68.8%,
+            transparent 100%
+        );
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(87, 91, 141, 0.17),
+            transparent 34%
+        ),
+
+        linear-gradient(
             160deg,
-            #111116 0%,
-            #09090b 72%
+            #10111b 0%,
+            #07080c 76%
         );
 }
 
-#story-screen.theme-care,
 
-#story-screen.theme-hope {
+/* =========================================
+   SCENE 06 — CARE
+   Two soft warm lights
+========================================= */
+
+#story-screen.theme-care {
+    --scene-art:
+        radial-gradient(
+            circle at 28% 50%,
+            rgba(218, 157, 95, 0.11),
+            transparent 22%
+        ),
+
+        radial-gradient(
+            circle at 72% 50%,
+            rgba(218, 157, 95, 0.08),
+            transparent 22%
+        );
+
     background:
         radial-gradient(
-            circle at 50% 45%,
-            rgba(171, 117, 72, 0.12),
-            transparent 30%
+            circle at 50% 48%,
+            rgba(153, 98, 54, 0.14),
+            transparent 35%
         ),
 
         linear-gradient(
             145deg,
-            #15110f 0%,
-            #090807 78%
+            #15100c 0%,
+            #080706 78%
+        );
+}
+
+
+/* =========================================
+   SCENE 07 — HOPE
+   Dawn / warm light from below
+========================================= */
+
+#story-screen.theme-hope {
+    --scene-art:
+        radial-gradient(
+            ellipse at 50% 102%,
+            rgba(221, 167, 100, 0.20),
+            transparent 43%
+        ),
+
+        radial-gradient(
+            circle at 16% 24%,
+            rgba(255, 228, 190, 0.08),
+            transparent 2px
+        ),
+
+        radial-gradient(
+            circle at 81% 18%,
+            rgba(255, 228, 190, 0.07),
+            transparent 1.5px
+        );
+
+    background:
+        linear-gradient(
+            to top,
+            #17100b 0%,
+            #0c0908 35%,
+            #080707 100%
         );
 }
 
@@ -1523,13 +1726,15 @@ a {
 .story-ambient {
     position: absolute;
 
+    z-index: 1;
+
     border-radius: 50%;
 
     filter:
         blur(80px);
 
     opacity:
-        0.11;
+        0.10;
 
     pointer-events:
         none;
@@ -1544,7 +1749,6 @@ a {
 
 .story-ambient-one {
     width: 280px;
-
     height: 280px;
 
     top: 12%;
@@ -1557,7 +1761,6 @@ a {
 
 .story-ambient-two {
     width: 220px;
-
     height: 220px;
 
     right: -70px;
@@ -1572,6 +1775,7 @@ a {
 }
 
 @keyframes ambientFloat {
+
     from {
         transform:
             translate3d(0, -8px, 0)
@@ -1583,6 +1787,7 @@ a {
             translate3d(20px, 14px, 0)
             scale(1.05);
     }
+
 }
 
 
@@ -1593,13 +1798,10 @@ a {
 .story-container {
     position: relative;
 
-    z-index: 2;
+    z-index: 3;
 
     width:
-        min(
-            880px,
-            92vw
-        );
+        min(880px, 92vw);
 
     height: 100%;
 
@@ -1632,6 +1834,18 @@ a {
     user-select:
         none;
 
+    -webkit-user-select:
+        none;
+
+    -webkit-touch-callout:
+        none;
+
+    -webkit-tap-highlight-color:
+        transparent;
+
+    touch-action:
+        manipulation;
+
     transition:
         opacity 0.52s ease,
         transform 0.52s ease,
@@ -1658,6 +1872,7 @@ a {
 }
 
 @keyframes sceneEnter {
+
     from {
         opacity:
             0;
@@ -1679,6 +1894,7 @@ a {
         filter:
             blur(0);
     }
+
 }
 
 
@@ -1761,10 +1977,7 @@ a {
         100%;
 
     max-height:
-        min(
-            66vh,
-            610px
-        );
+        min(66vh, 610px);
 
     overflow-y:
         auto;
@@ -1776,10 +1989,14 @@ a {
         8px
         5px
         20px;
+
+    -webkit-tap-highlight-color:
+        transparent;
 }
 
 .story-lines::-webkit-scrollbar {
-    display: none;
+    display:
+        none;
 }
 
 .story-line {
@@ -1795,11 +2012,7 @@ a {
         rgba(245, 239, 230, 0.48);
 
     font-size:
-        clamp(
-            20px,
-            2.2vw,
-            28px
-        );
+        clamp(20px, 2.2vw, 28px);
 
     line-height:
         1.43;
@@ -1845,11 +2058,7 @@ a {
         !important;
 
     font-size:
-        clamp(
-            26px,
-            3vw,
-            38px
-        );
+        clamp(26px, 3vw, 38px);
 
     font-style:
         italic;
@@ -1973,10 +2182,7 @@ a {
         2;
 
     width:
-        min(
-            820px,
-            92vw
-        );
+        min(820px, 92vw);
 
     min-height:
         100svh;
@@ -2003,6 +2209,21 @@ a {
 
     cursor:
         pointer;
+
+    user-select:
+        none;
+
+    -webkit-user-select:
+        none;
+
+    -webkit-touch-callout:
+        none;
+
+    -webkit-tap-highlight-color:
+        transparent;
+
+    touch-action:
+        manipulation;
 }
 
 .poem-title {
@@ -2015,11 +2236,7 @@ a {
         36px;
 
     font-size:
-        clamp(
-            22px,
-            3.2vw,
-            34px
-        );
+        clamp(22px, 3.2vw, 34px);
 
     line-height:
         1.42;
@@ -2051,6 +2268,9 @@ a {
         4px
         10px
         20px;
+
+    -webkit-tap-highlight-color:
+        transparent;
 }
 
 .poem-lines::-webkit-scrollbar {
@@ -2085,11 +2305,7 @@ a {
 
 .poem-stanza p {
     font-size:
-        clamp(
-            18px,
-            2.1vw,
-            25px
-        );
+        clamp(18px, 2.1vw, 25px);
 
     line-height:
         1.52;
@@ -2183,10 +2399,7 @@ a {
 
 .music-section {
     width:
-        min(
-            1160px,
-            92vw
-        );
+        min(1160px, 92vw);
 
     margin:
         0 auto;
@@ -2233,11 +2446,7 @@ a {
 
 .music-heading h2 {
     font-size:
-        clamp(
-            36px,
-            5.3vw,
-            66px
-        );
+        clamp(36px, 5.3vw, 66px);
 
     font-weight:
         normal;
@@ -2277,10 +2486,7 @@ a {
     grid-template-columns:
         repeat(
             4,
-            minmax(
-                0,
-                1fr
-            )
+            minmax(0, 1fr)
         );
 
     gap:
@@ -2470,11 +2676,7 @@ a {
         8px;
 
     font-size:
-        clamp(
-            22px,
-            2vw,
-            29px
-        );
+        clamp(22px, 2vw, 29px);
 
     line-height:
         1.12;
@@ -2621,10 +2823,7 @@ a {
 
 .final-container {
     width:
-        min(
-            720px,
-            90vw
-        );
+        min(720px, 90vw);
 
     padding:
         28px
@@ -2656,11 +2855,7 @@ a {
         34px;
 
     font-size:
-        clamp(
-            45px,
-            9vw,
-            80px
-        );
+        clamp(45px, 9vw, 80px);
 
     line-height:
         1.1;
@@ -2681,11 +2876,7 @@ a {
         rgba(244, 241, 235, 0.72);
 
     font-size:
-        clamp(
-            18px,
-            2.2vw,
-            23px
-        );
+        clamp(18px, 2.2vw, 23px);
 
     line-height:
         1.7;
@@ -2789,6 +2980,7 @@ a {
 }
 
 @keyframes finalAppear {
+
     from {
         opacity:
             0;
@@ -2804,6 +2996,7 @@ a {
         transform:
             translateY(0);
     }
+
 }
 
 
@@ -2818,10 +3011,7 @@ a {
         grid-template-columns:
             repeat(
                 2,
-                minmax(
-                    0,
-                    1fr
-                )
+                minmax(0, 1fr)
             );
     }
 
@@ -2829,6 +3019,7 @@ a {
         min-height:
             220px;
     }
+
 }
 
 
@@ -2870,10 +3061,7 @@ a {
 
     .envelope-wrapper {
         width:
-            min(
-                500px,
-                94vw
-            );
+            min(500px, 94vw);
 
         height:
             282px;
@@ -2884,18 +3072,12 @@ a {
 
     .envelope {
         width:
-            min(
-                338px,
-                78vw
-            );
+            min(338px, 78vw);
     }
 
     .letter-sheet {
         width:
-            min(
-                250px,
-                56vw
-            );
+            min(250px, 56vw);
 
         bottom:
             63px;
@@ -2903,10 +3085,7 @@ a {
 
     .password-area {
         width:
-            min(
-                330px,
-                88vw
-            );
+            min(330px, 88vw);
     }
 
     .password-pill,
@@ -2923,11 +3102,7 @@ a {
 
     .main-title {
         font-size:
-            clamp(
-                49px,
-                15vw,
-                74px
-            );
+            clamp(49px, 15vw, 74px);
 
         letter-spacing:
             -1px;
@@ -2977,11 +3152,7 @@ a {
             11px;
 
         font-size:
-            clamp(
-                18px,
-                5.1vw,
-                23px
-            );
+            clamp(18px, 5.1vw, 23px);
 
         line-height:
             1.4;
@@ -2992,11 +3163,7 @@ a {
             18px;
 
         font-size:
-            clamp(
-                23px,
-                6vw,
-                30px
-            );
+            clamp(23px, 6vw, 30px);
     }
 
     .story-hint {
@@ -3108,10 +3275,7 @@ a {
         grid-template-columns:
             repeat(
                 2,
-                minmax(
-                    0,
-                    1fr
-                )
+                minmax(0, 1fr)
             );
 
         gap:
@@ -3188,6 +3352,7 @@ a {
         font-size:
             72px;
     }
+
 }
 
 
@@ -3218,6 +3383,7 @@ a {
         font-size:
             64px;
     }
+
 }
 
 
@@ -3254,10 +3420,7 @@ a {
 
     .envelope {
         width:
-            min(
-                370px,
-                67vw
-            );
+            min(370px, 67vw);
     }
 
     .password-pill,
@@ -3303,6 +3466,7 @@ a {
         font-size:
             62px;
     }
+
 }
 
 
@@ -3327,4 +3491,5 @@ a {
         scroll-behavior:
             auto !important;
     }
+
 }
