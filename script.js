@@ -1,93 +1,351 @@
 const PASSWORD = "marios";
 
-const story = [
-    "Δεν θα σου ευχηθώ τα τετριμμένα.",
-    "Άλλωστε ξέρω ότι δεν σου αρέσουν.",
-    "Αντ' αυτού, ήθελα να σου φτιάξω κάτι λίγο πιο μοναδικό.",
-    "Κάτι που να είναι μόνο για εσένα.",
-    "Κάποια πράγματα είναι δύσκολο να ειπωθούν.",
-    "Δύσκολο να εκφραστούν.",
-    "Ίσως γιατί κάποιες φορές οι λέξεις μοιάζουν πολύ μικρές.",
-    "Όπως το πόσο πολύ σε αγάπησα όλα αυτά τα χρόνια.",
-    "Δεν μπόρεσες να το καταλάβεις.",
-    "Με παρεξήγησες.",
-    "Προσπάθησες να βγάλεις τα δικά σου συμπεράσματα.",
-    "Ναι... δεν είμαι ο πιο νορμάλ άνθρωπος.",
-    "Αλλά σε αγάπησα πραγματικά.",
-    "Ειλικρινά.",
-    "Με όλη μου την καρδιά.",
-    "Και θέλω να ξέρεις κάτι.",
-    "Ότι, ό,τι κι αν γίνει...",
-    "έχεις έναν άνθρωπο που νοιάζεται πραγματικά για εσένα."
+
+/* =========================================
+   STORY
+========================================= */
+
+const storyScenes = [
+
+  {
+    theme: "opening",
+
+    kicker: "Για αρχή...",
+
+    lines: [
+
+      "Χρόνια πολλά, Μάριε μου.",
+
+      "Δεν θα σου ευχηθώ τα τετριμμένα...",
+
+      "Άλλωστε ξέρω ότι δεν σου αρέσουν.",
+
+      "Αντ' αυτού ήθελα να σου φτιάξω κάτι πιο μοναδικό.",
+
+      "(Καιρό είχα.)"
+
+    ]
+  },
+
+
+  {
+    theme: "words",
+
+    kicker:
+      "Κάπου εδώ αλλάζει λίγο το πράγμα...",
+
+    lines: [
+
+      "Αν και η ελληνική γλώσσα είναι τόσο υπέροχη και πλούσια...",
+
+      "κάποιες φορές τα λόγια μοιάζουν φτωχά.",
+
+      "Και κάπου εδώ ίσως καταλάβεις και το 18,1 στην Έκθεση στις Πανελλήνιες.",
+
+      "Από κοντά κομπλάρω.",
+
+      "Δεν εκφράζομαι πάντα όπως θα ήθελα.",
+
+      "Οπότε ίσως αυτός να είναι ο μόνος τρόπος να σου πω κάποια πράγματα ακριβώς όπως τα νιώθω."
+
+    ]
+  },
+
+
+  {
+    theme: "confession",
+
+    kicker:
+      "Αυτά που δύσκολα λέγονται από κοντά.",
+
+    lines: [
+
+      "Σε αγάπησα περισσότερο από τον εαυτό μου.",
+
+      "Περισσότερο από οποιονδήποτε άλλο.",
+
+      "Ένιωσα για εσένα κάτι πρωτόγνωρο.",
+
+      "Κάτι που δεν είχα νιώσει ποτέ ξανά.",
+
+      "Κάτι μοναδικό."
+
+    ]
+  },
+
+
+  {
+    theme: "confession-deep",
+
+    kicker:
+      "Και ίσως αυτό να είναι το πιο δύσκολο κομμάτι.",
+
+    lines: [
+
+      "Ξέρω ότι εσύ το βλέπεις διαφορετικά.",
+
+      "Αλλά για μένα αυτό που ένιωσα για σένα δεν ήταν ποτέ απλώς πλατωνικό.",
+
+      "Μόνο εγώ ξέρω πόσο πολύ σε αγαπώ.",
+
+      "Και ίσως ούτε εγώ να μπορώ πραγματικά να το εξηγήσω με λόγια."
+
+    ]
+  },
+
+
+  {
+    theme: "life",
+
+    kicker:
+      "Η ζωή, βέβαια, έχει τα δικά της σχέδια.",
+
+    lines: [
+
+      "Ξέρω ότι η ζωή δεν μας δίνει πάντα τα πράγματα όπως θα τα θέλαμε.",
+
+      "Καμιά φορά είναι σκληρή.",
+
+      "Αλλά είναι και όμορφη.",
+
+      "Και ίσως κάποια πράγματα να μην μπορούν να είναι όπως τα φανταστήκαμε.",
+
+      "Αυτό όμως δεν αλλάζει το πόσο σημαντικός είσαι για μένα."
+
+    ]
+  },
+
+
+  {
+    theme: "care",
+
+    kicker:
+      "Αυτό θέλω κυρίως να θυμάσαι.",
+
+    lines: [
+
+      "Θέλω μόνο να ξέρεις ότι υπάρχει ένας άνθρωπος που νοιάζεται πραγματικά για εσένα.",
+
+      "Που χαίρεται όταν είσαι καλά.",
+
+      "Που θέλει να σε βλέπει ευτυχισμένο.",
+
+      "Και που θα σε αγαπάει με τον δικό του τρόπο."
+
+    ]
+  },
+
+
+  {
+    theme: "hope",
+
+    kicker:
+      "Και κάτι τελευταίο πριν προχωρήσεις...",
+
+    lines: [
+
+      "Κάποιες φορές στενοχωριέμαι όταν νιώθω ότι απομακρύνεσαι.",
+
+      "Ή όταν συνειδητοποιώ ότι δεν μπορώ να είμαι μέρος της ζωής σου όσο θα ήθελα.",
+
+      "Όχι γιατί δεν θέλω να περνάς καλά.",
+
+      "Το αντίθετο.",
+
+      "Απλώς γιατί θέλω να είμαι κι εγώ ένα μικρό κομμάτι της ζωής σου.",
+
+      "Μακάρι να σε έχω για πολλά ακόμη χρόνια στη ζωή μου.",
+
+      "Με όποιον τρόπο μας επιτρέψει η ζωή."
+
+    ]
+  }
+
 ];
 
-const passwordScreen =
-    document.getElementById("password-screen");
-
-const introScreen =
-    document.getElementById("intro-screen");
-
-const storyScreen =
-    document.getElementById("story-screen");
-
-const finalScreen =
-    document.getElementById("final-screen");
-
-
-const envelopeScene =
-    document.querySelector(".envelope-scene");
-
-const passwordPill =
-    document.getElementById("password-pill");
-
-const passwordInput =
-    document.getElementById("password-input");
-
-const unlockButton =
-    document.getElementById("unlock-button");
-
-const errorMessage =
-    document.getElementById("error-message");
-
-
-const startButton =
-    document.getElementById("start-button");
-
-const storyText =
-    document.getElementById("story-text");
-
-const progressNumber =
-    document.getElementById("progress-number");
-
-const replayButton =
-    document.getElementById("replay-button");
-
-
-let currentStoryIndex = 0;
-let isTransitioning = false;
-let envelopeIsOpening = false;
-let touchStartY = 0;
-let touchEndY = 0;
-let wheelLocked = false;
 
 
 /* =========================================
-   GENERAL SCREEN CHANGE
+   POEM
 ========================================= */
 
-function changeScreen(currentScreen, nextScreen, delay = 780) {
+const poemStanzas = [
 
-    currentScreen.classList.add("fade-out");
+  [
 
-    setTimeout(() => {
+    "Όσες φορές κι αν προσπάθησα «τέλος» να πω,",
 
-        currentScreen.classList.add("hidden");
-        currentScreen.classList.remove("fade-out");
-        nextScreen.classList.remove("hidden");
+    "πάντα σε σένα ξαναγυρνώ.",
 
-    }, delay);
+    "Στην ίδια λούπα τριγυρνώ,",
+
+    "κι όσο κι αν θέλω, δεν μπορώ να βγω."
+
+  ],
+
+
+  [
+
+    "10+ χρόνια μετά",
+
+    "αν τύχει να σε δω ξαφνικά,",
+
+    "η καρδιά μου χτυπά τόσο δυνατά",
+
+    "όπως όταν σε έβλεπα για πρώτη μου φορά."
+
+  ],
+
+
+  [
+
+    "Δύσκολο πράγμα να αγαπάς,",
+
+    "τόσο πολύ που να πονάς,",
+
+    "ώρες και μέρες να μετράς,",
+
+    "κι όσο κι αν φεύγεις, να γυρνάς."
+
+  ],
+
+
+  [
+
+    "Πλάι σου έμαθα πολλά,",
+
+    "για τη ζωή, τα δύσκολα, τ’ απλά,",
+
+    "για ανθρώπους, όνειρα και λεφτά,",
+
+    "χωρίς εσένα πού θα τα μάθαινα όλα αυτά;"
+
+  ]
+
+];
+
+
+
+/* =========================================
+   ELEMENTS
+========================================= */
+
+const passwordScreen =
+  document.getElementById("password-screen");
+
+const introScreen =
+  document.getElementById("intro-screen");
+
+const storyScreen =
+  document.getElementById("story-screen");
+
+const poemScreen =
+  document.getElementById("poem-screen");
+
+const musicScreen =
+  document.getElementById("music-screen");
+
+const finalScreen =
+  document.getElementById("final-screen");
+
+
+const envelopeScene =
+  document.querySelector(".envelope-scene");
+
+const passwordPill =
+  document.getElementById("password-pill");
+
+const passwordInput =
+  document.getElementById("password-input");
+
+const unlockButton =
+  document.getElementById("unlock-button");
+
+const errorMessage =
+  document.getElementById("error-message");
+
+const startButton =
+  document.getElementById("start-button");
+
+
+const storyContainer =
+  document.getElementById("story-container");
+
+const storyKicker =
+  document.getElementById("story-kicker");
+
+const storyLines =
+  document.getElementById("story-lines");
+
+const progressNumber =
+  document.getElementById("progress-number");
+
+const progressTotal =
+  document.getElementById("progress-total");
+
+
+const poemContainer =
+  document.getElementById("poem-container");
+
+const poemLines =
+  document.getElementById("poem-lines");
+
+
+const musicContinue =
+  document.getElementById("music-continue");
+
+const replayButton =
+  document.getElementById("replay-button");
+
+
+
+/* =========================================
+   STATE
+========================================= */
+
+let envelopeIsOpening = false;
+
+let storySceneIndex = 0;
+
+let storyLineIndex = 0;
+
+let poemIndex = 0;
+
+let interactionLocked = false;
+
+let touchStartY = 0;
+
+let touchEndY = 0;
+
+let wheelLocked = false;
+
+
+
+/* =========================================
+   SCREEN TRANSITION
+========================================= */
+
+function changeScreen(
+  currentScreen,
+  nextScreen,
+  delay = 720
+) {
+
+  currentScreen.classList.add("fade-out");
+
+
+  setTimeout(() => {
+
+    currentScreen.classList.add("hidden");
+
+    currentScreen.classList.remove("fade-out");
+
+    nextScreen.classList.remove("hidden");
+
+  }, delay);
 
 }
+
 
 
 /* =========================================
@@ -96,369 +354,620 @@ function changeScreen(currentScreen, nextScreen, delay = 780) {
 
 function wrongPassword() {
 
-    errorMessage.textContent =
-        "Δεν είναι αυτό... ξαναπροσπάθησε.";
+  errorMessage.textContent =
+    "Δεν είναι αυτό... ξαναπροσπάθησε.";
 
-    passwordInput.value = "";
 
-    passwordPill.classList.remove("shake");
-    void passwordPill.offsetWidth;
-    passwordPill.classList.add("shake");
+  passwordInput.value = "";
 
-    if (!window.matchMedia("(pointer: coarse)").matches) {
-        passwordInput.focus();
-    }
+
+  passwordPill.classList.remove("shake");
+
+  void passwordPill.offsetWidth;
+
+  passwordPill.classList.add("shake");
+
+
+  if (
+    !window
+      .matchMedia("(pointer: coarse)")
+      .matches
+  ) {
+
+    passwordInput.focus();
+
+  }
 
 }
+
 
 
 function checkPassword() {
 
-    if (envelopeIsOpening) {
-        return;
-    }
+  if (envelopeIsOpening) {
+    return;
+  }
 
-    const enteredPassword =
-        passwordInput.value.trim();
 
-    if (enteredPassword !== PASSWORD) {
-        wrongPassword();
-        return;
-    }
+  const enteredPassword =
+    passwordInput.value.trim();
 
-    errorMessage.textContent = "";
-    openEnvelope();
+
+  if (
+    enteredPassword !== PASSWORD
+  ) {
+
+    wrongPassword();
+
+    return;
+
+  }
+
+
+  errorMessage.textContent = "";
+
+  openEnvelope();
 
 }
 
 
-unlockButton.addEventListener("click", checkPassword);
 
-passwordInput.addEventListener(
-    "keydown",
-    function(event) {
-
-        if (event.key === "Enter") {
-            event.preventDefault();
-            checkPassword();
-        }
-
-    }
+unlockButton.addEventListener(
+  "click",
+  checkPassword
 );
 
 
+
+passwordInput.addEventListener(
+  "keydown",
+
+  (event) => {
+
+    if (event.key === "Enter") {
+
+      event.preventDefault();
+
+      checkPassword();
+
+    }
+
+  }
+);
+
+
+
 /* =========================================
-   OPEN ENVELOPE SEQUENCE
+   ENVELOPE OPENING
 ========================================= */
 
 function openEnvelope() {
 
-    if (envelopeIsOpening) {
-        return;
-    }
+  if (envelopeIsOpening) {
+    return;
+  }
 
-    envelopeIsOpening = true;
-    passwordInput.blur();
 
-    envelopeScene.classList.add("opening");
+  envelopeIsOpening = true;
 
-    /*
-        1. Small pulse on the wax seal
-    */
-    setTimeout(() => {
-        envelopeScene.classList.add("seal-pulse");
-    }, 250);
 
-    /*
-        2. Seal disappears / "breaks"
-    */
-    setTimeout(() => {
-        envelopeScene.classList.add("seal-open");
-    }, 950);
+  passwordInput.blur();
 
-    /*
-        3. Flap opens
-    */
-    setTimeout(() => {
-        envelopeScene.classList.add("flap-open");
-    }, 1450);
 
-    /*
-        4. Letter rises
-    */
-    setTimeout(() => {
-        envelopeScene.classList.add("letter-rise");
-    }, 2250);
+  envelopeScene.classList.add(
+    "opening"
+  );
 
-    /*
-        5. Letter becomes the focus
-    */
-    setTimeout(() => {
-        envelopeScene.classList.add("letter-focus");
-    }, 3200);
 
-    /*
-        6. Zoom into the letter
-    */
-    setTimeout(() => {
-        envelopeScene.classList.add("letter-zoom");
-    }, 4100);
+  setTimeout(
+    () =>
+      envelopeScene
+        .classList
+        .add("seal-pulse"),
+    250
+  );
 
-    /*
-        7. Move into intro screen
-    */
-    setTimeout(() => {
 
-        passwordScreen.classList.add("hidden");
-        introScreen.classList.remove("hidden");
+  setTimeout(
+    () =>
+      envelopeScene
+        .classList
+        .add("seal-open"),
+    950
+  );
 
-        resetEnvelope();
 
-    }, 5600);
+  setTimeout(
+    () =>
+      envelopeScene
+        .classList
+        .add("flap-open"),
+    1450
+  );
+
+
+  setTimeout(
+    () =>
+      envelopeScene
+        .classList
+        .add("letter-rise"),
+    2250
+  );
+
+
+  setTimeout(
+    () =>
+      envelopeScene
+        .classList
+        .add("letter-focus"),
+    3200
+  );
+
+
+  setTimeout(
+    () =>
+      envelopeScene
+        .classList
+        .add("letter-zoom"),
+    4100
+  );
+
+
+  setTimeout(
+    () => {
+
+      passwordScreen
+        .classList
+        .add("hidden");
+
+
+      introScreen
+        .classList
+        .remove("hidden");
+
+
+      resetEnvelope();
+
+    },
+    5600
+  );
 
 }
+
 
 
 function resetEnvelope() {
 
-    envelopeScene.classList.remove(
-        "opening",
-        "seal-pulse",
-        "seal-open",
-        "flap-open",
-        "letter-rise",
-        "letter-focus",
-        "letter-zoom"
-    );
+  envelopeScene.classList.remove(
 
-    passwordInput.value = "";
-    envelopeIsOpening = false;
+    "opening",
+
+    "seal-pulse",
+
+    "seal-open",
+
+    "flap-open",
+
+    "letter-rise",
+
+    "letter-focus",
+
+    "letter-zoom"
+
+  );
+
+
+  passwordInput.value = "";
+
+  envelopeIsOpening = false;
 
 }
+
 
 
 /* =========================================
    START STORY
 ========================================= */
 
-startButton.addEventListener("click", startStory);
+startButton.addEventListener(
+  "click",
 
-function startStory() {
+  () => {
 
-    currentStoryIndex = 0;
-
-    changeScreen(introScreen, storyScreen);
-
-    setTimeout(showStory, 850);
-
-}
+    resetStory();
 
 
-/* =========================================
-   STORY
-========================================= */
-
-function showStory() {
-
-    storyText.classList.remove("visible");
-
-    setTimeout(() => {
-
-        storyText.textContent =
-            story[currentStoryIndex];
-
-        progressNumber.textContent =
-            String(currentStoryIndex + 1).padStart(2, "0");
-
-        storyText.classList.add("visible");
-
-    }, 330);
-
-}
+    changeScreen(
+      introScreen,
+      storyScreen,
+      650
+    );
 
 
-function nextStory() {
+    setTimeout(
+      () => {
 
-    if (isTransitioning) {
-        return;
-    }
+        renderStoryScene();
 
-    if (currentStoryIndex < story.length - 1) {
+        revealNextStoryLine();
 
-        isTransitioning = true;
-        currentStoryIndex++;
-        showStory();
+      },
+      720
+    );
 
-        setTimeout(() => {
-            isTransitioning = false;
-        }, 950);
-
-    }
-
-    else {
-
-        isTransitioning = true;
-        changeScreen(storyScreen, finalScreen);
-
-        setTimeout(() => {
-            isTransitioning = false;
-        }, 1100);
-
-    }
-
-}
-
-
-function previousStory() {
-
-    if (isTransitioning || currentStoryIndex <= 0) {
-        return;
-    }
-
-    isTransitioning = true;
-    currentStoryIndex--;
-    showStory();
-
-    setTimeout(() => {
-        isTransitioning = false;
-    }, 950);
-
-}
-
-
-/* =========================================
-   KEYBOARD NAVIGATION
-========================================= */
-
-document.addEventListener(
-    "keydown",
-    function(event) {
-
-        if (storyScreen.classList.contains("hidden")) {
-            return;
-        }
-
-        if (event.key === "Enter" || event.code === "Space") {
-            event.preventDefault();
-            nextStory();
-            return;
-        }
-
-        if (event.key === "ArrowDown" || event.key === "ArrowRight") {
-            event.preventDefault();
-            nextStory();
-            return;
-        }
-
-        if (event.key === "ArrowUp" || event.key === "ArrowLeft") {
-            event.preventDefault();
-            previousStory();
-        }
-
-    }
+  }
 );
 
 
+
+function resetStory() {
+
+  storySceneIndex = 0;
+
+  storyLineIndex = 0;
+
+
+  storyLines.innerHTML = "";
+
+
+  storyScreen.className =
+    "screen theme-opening hidden";
+
+
+  progressTotal.textContent =
+    String(storyScenes.length)
+      .padStart(2, "0");
+
+}
+
+
+
 /* =========================================
-   MOUSE WHEEL
+   STORY SCENE
 ========================================= */
 
-storyScreen.addEventListener(
-    "wheel",
-    function(event) {
+function renderStoryScene() {
 
-        event.preventDefault();
+  const scene =
+    storyScenes[storySceneIndex];
 
-        if (wheelLocked) {
-            return;
-        }
 
-        wheelLocked = true;
+  storyScreen.className =
+    `screen theme-${scene.theme}`;
 
-        if (event.deltaY > 0) {
-            nextStory();
-        }
 
-        else if (event.deltaY < 0) {
-            previousStory();
-        }
+  storyKicker.textContent =
+    scene.kicker;
 
-        setTimeout(() => {
-            wheelLocked = false;
-        }, 1050);
+
+  storyLines.innerHTML = "";
+
+
+  storyLineIndex = 0;
+
+
+  progressNumber.textContent =
+    String(storySceneIndex + 1)
+      .padStart(2, "0");
+
+
+  progressTotal.textContent =
+    String(storyScenes.length)
+      .padStart(2, "0");
+
+
+  storyContainer
+    .classList
+    .remove("scene-enter");
+
+
+  void storyContainer.offsetWidth;
+
+
+  storyContainer
+    .classList
+    .add("scene-enter");
+
+}
+
+
+
+/* =========================================
+   ADD NEXT SENTENCE
+========================================= */
+
+function revealNextStoryLine() {
+
+  if (interactionLocked) {
+    return;
+  }
+
+
+  const scene =
+    storyScenes[storySceneIndex];
+
+
+  if (
+    storyLineIndex <
+    scene.lines.length
+  ) {
+
+    const line =
+      document.createElement("p");
+
+
+    line.className =
+      "story-line";
+
+
+    line.textContent =
+      scene.lines[storyLineIndex];
+
+
+    if (
+      scene.theme === "hope" &&
+      storyLineIndex ===
+      scene.lines.length - 1
+    ) {
+
+      line.classList.add(
+        "story-line-emphasis"
+      );
+
+    }
+
+
+    storyLines.appendChild(line);
+
+
+    requestAnimationFrame(
+      () => {
+
+        line.classList.add(
+          "visible"
+        );
+
+      }
+    );
+
+
+    storyLineIndex += 1;
+
+
+    keepNewestStoryLineVisible();
+
+
+    return;
+
+  }
+
+
+  if (
+    storySceneIndex <
+    storyScenes.length - 1
+  ) {
+
+    goToNextStoryScene();
+
+    return;
+
+  }
+
+
+  startPoem();
+
+}
+
+
+
+/* =========================================
+   NEXT STORY SECTION
+========================================= */
+
+function goToNextStoryScene() {
+
+  interactionLocked = true;
+
+
+  storyContainer
+    .classList
+    .add("scene-leave");
+
+
+  setTimeout(
+    () => {
+
+      storySceneIndex += 1;
+
+
+      renderStoryScene();
+
+
+      storyContainer
+        .classList
+        .remove("scene-leave");
+
+
+      setTimeout(
+        () => {
+
+          interactionLocked = false;
+
+          revealNextStoryLine();
+
+        },
+        180
+      );
 
     },
-    {
-        passive: false
-    }
-);
-
-
-/* =========================================
-   CLICK ANYWHERE
-========================================= */
-
-storyScreen.addEventListener(
-    "click",
-    function(event) {
-
-        if (
-            event.target.closest("button") ||
-            event.target.closest("a") ||
-            event.target.closest("input")
-        ) {
-            return;
-        }
-
-        nextStory();
-
-    }
-);
-
-
-/* =========================================
-   MOBILE SWIPE
-========================================= */
-
-storyScreen.addEventListener(
-    "touchstart",
-    function(event) {
-        touchStartY = event.changedTouches[0].screenY;
-    },
-    {
-        passive: true
-    }
-);
-
-storyScreen.addEventListener(
-    "touchend",
-    function(event) {
-        touchEndY = event.changedTouches[0].screenY;
-        handleSwipe();
-    },
-    {
-        passive: true
-    }
-);
-
-function handleSwipe() {
-
-    const distance = touchStartY - touchEndY;
-    const minimumSwipe = 45;
-
-    if (Math.abs(distance) < minimumSwipe) {
-        return;
-    }
-
-    if (distance > 0) {
-        nextStory();
-    }
-
-    else {
-        previousStory();
-    }
+    520
+  );
 
 }
+
+
+
+function keepNewestStoryLineVisible() {
+
+  const newest =
+    storyLines.lastElementChild;
+
+
+  if (!newest) {
+    return;
+  }
+
+
+  newest.scrollIntoView({
+
+    behavior: "smooth",
+
+    block: "nearest"
+
+  });
+
+}
+
+
+
+/* =========================================
+   POEM
+========================================= */
+
+function startPoem() {
+
+  if (interactionLocked) {
+    return;
+  }
+
+
+  interactionLocked = true;
+
+
+  poemIndex = 0;
+
+  poemLines.innerHTML = "";
+
+
+  changeScreen(
+    storyScreen,
+    poemScreen,
+    720
+  );
+
+
+  setTimeout(
+    () => {
+
+      interactionLocked = false;
+
+      revealNextPoemStanza();
+
+    },
+    850
+  );
+
+}
+
+
+
+function revealNextPoemStanza() {
+
+  if (interactionLocked) {
+    return;
+  }
+
+
+  if (
+    poemIndex <
+    poemStanzas.length
+  ) {
+
+    const stanza =
+      document.createElement("div");
+
+
+    stanza.className =
+      "poem-stanza";
+
+
+    poemStanzas[poemIndex]
+      .forEach(
+        (text) => {
+
+          const line =
+            document.createElement("p");
+
+
+          line.textContent =
+            text;
+
+
+          stanza.appendChild(line);
+
+        }
+      );
+
+
+    poemLines.appendChild(stanza);
+
+
+    requestAnimationFrame(
+      () => {
+
+        stanza.classList.add(
+          "visible"
+        );
+
+      }
+    );
+
+
+    poemIndex += 1;
+
+
+    stanza.scrollIntoView({
+
+      behavior: "smooth",
+
+      block: "nearest"
+
+    });
+
+
+    return;
+
+  }
+
+
+  changeScreen(
+    poemScreen,
+    musicScreen,
+    720
+  );
+
+}
+
+
+
+/* =========================================
+   MUSIC → FINAL
+========================================= */
+
+musicContinue.addEventListener(
+  "click",
+
+  () => {
+
+    changeScreen(
+      musicScreen,
+      finalScreen,
+      720
+    );
+
+  }
+);
+
 
 
 /* =========================================
@@ -466,20 +975,387 @@ function handleSwipe() {
 ========================================= */
 
 replayButton.addEventListener(
-    "click",
-    function() {
+  "click",
 
-        currentStoryIndex = 0;
-        changeScreen(finalScreen, introScreen);
+  () => {
 
-    }
+    finalScreen
+      .classList
+      .add("fade-out");
+
+
+    setTimeout(
+      () => {
+
+        finalScreen
+          .classList
+          .add("hidden");
+
+
+        finalScreen
+          .classList
+          .remove("fade-out");
+
+
+        storySceneIndex = 0;
+
+        storyLineIndex = 0;
+
+        poemIndex = 0;
+
+
+        storyLines.innerHTML = "";
+
+        poemLines.innerHTML = "";
+
+
+        passwordScreen
+          .classList
+          .remove("hidden");
+
+
+        passwordInput.value = "";
+
+        errorMessage.textContent = "";
+
+
+        if (
+          !window
+            .matchMedia(
+              "(pointer: coarse)"
+            )
+            .matches
+        ) {
+
+          setTimeout(
+            () =>
+              passwordInput.focus(),
+            150
+          );
+
+        }
+
+      },
+      720
+    );
+
+  }
 );
 
 
+
 /* =========================================
-   INITIAL STATE
+   INPUT HELPERS
 ========================================= */
 
-if (!window.matchMedia("(pointer: coarse)").matches) {
-    passwordInput.focus();
+function isInteractiveStoryScreen() {
+
+  return !storyScreen
+    .classList
+    .contains("hidden");
+
+}
+
+
+
+function isInteractivePoemScreen() {
+
+  return !poemScreen
+    .classList
+    .contains("hidden");
+
+}
+
+
+
+function advanceCurrentExperience() {
+
+  if (interactionLocked) {
+    return;
+  }
+
+
+  if (
+    isInteractiveStoryScreen()
+  ) {
+
+    revealNextStoryLine();
+
+  }
+
+  else if (
+    isInteractivePoemScreen()
+  ) {
+
+    revealNextPoemStanza();
+
+  }
+
+}
+
+
+
+/* =========================================
+   KEYBOARD
+========================================= */
+
+document.addEventListener(
+  "keydown",
+
+  (event) => {
+
+    if (
+      event.key !== "Enter" &&
+      event.key !== " "
+    ) {
+
+      return;
+
+    }
+
+
+    if (
+      document.activeElement ===
+      passwordInput
+    ) {
+
+      return;
+
+    }
+
+
+    if (
+      !isInteractiveStoryScreen() &&
+      !isInteractivePoemScreen()
+    ) {
+
+      return;
+
+    }
+
+
+    event.preventDefault();
+
+
+    advanceCurrentExperience();
+
+  }
+);
+
+
+
+/* =========================================
+   CLICK
+========================================= */
+
+storyContainer.addEventListener(
+  "click",
+
+  (event) => {
+
+    if (
+      event.target.closest(
+        "button, a, input"
+      )
+    ) {
+
+      return;
+
+    }
+
+
+    revealNextStoryLine();
+
+  }
+);
+
+
+
+poemContainer.addEventListener(
+  "click",
+
+  (event) => {
+
+    if (
+      event.target.closest(
+        "button, a, input"
+      )
+    ) {
+
+      return;
+
+    }
+
+
+    revealNextPoemStanza();
+
+  }
+);
+
+
+
+/* =========================================
+   MOUSE WHEEL
+========================================= */
+
+function handleWheel(event) {
+
+  if (
+    !isInteractiveStoryScreen() &&
+    !isInteractivePoemScreen()
+  ) {
+
+    return;
+
+  }
+
+
+  if (
+    Math.abs(event.deltaY) < 18 ||
+    wheelLocked
+  ) {
+
+    return;
+
+  }
+
+
+  wheelLocked = true;
+
+
+  if (
+    event.deltaY > 0
+  ) {
+
+    advanceCurrentExperience();
+
+  }
+
+
+  setTimeout(
+    () => {
+
+      wheelLocked = false;
+
+    },
+    720
+  );
+
+}
+
+
+
+window.addEventListener(
+  "wheel",
+  handleWheel,
+  {
+    passive: true
+  }
+);
+
+
+
+/* =========================================
+   MOBILE SWIPE
+========================================= */
+
+function onTouchStart(event) {
+
+  touchStartY =
+    event
+      .changedTouches[0]
+      .screenY;
+
+}
+
+
+
+function onTouchEnd(event) {
+
+  touchEndY =
+    event
+      .changedTouches[0]
+      .screenY;
+
+
+  const distance =
+    touchStartY - touchEndY;
+
+
+  if (
+    Math.abs(distance) < 45
+  ) {
+
+    return;
+
+  }
+
+
+  if (
+    distance > 0
+  ) {
+
+    advanceCurrentExperience();
+
+  }
+
+}
+
+
+
+storyScreen.addEventListener(
+  "touchstart",
+  onTouchStart,
+  {
+    passive: true
+  }
+);
+
+
+storyScreen.addEventListener(
+  "touchend",
+  onTouchEnd,
+  {
+    passive: true
+  }
+);
+
+
+poemScreen.addEventListener(
+  "touchstart",
+  onTouchStart,
+  {
+    passive: true
+  }
+);
+
+
+poemScreen.addEventListener(
+  "touchend",
+  onTouchEnd,
+  {
+    passive: true
+  }
+);
+
+
+
+/* =========================================
+   AUTOFOCUS DESKTOP
+========================================= */
+
+if (
+  !window
+    .matchMedia(
+      "(pointer: coarse)"
+    )
+    .matches
+) {
+
+  setTimeout(
+    () =>
+      passwordInput.focus(),
+    250
+  );
+
 }
