@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Happy Birthday, Marios</title>
-
-  <link rel="stylesheet" href="style.css?v=12">
+  <title>Happy Birthday</title>
+  <link rel="stylesheet" href="style.css?v=13">
 </head>
 
 <body>
@@ -40,9 +38,7 @@
         </svg>
       </div>
 
-      <p class="scene-label">
-        A little something for you
-      </p>
+      <p class="scene-label">A little something for you</p>
 
       <div class="envelope-wrapper">
 
@@ -50,20 +46,14 @@
 
         <div id="letter-sheet" class="letter-sheet">
           <div class="letter-inner">
-            <p class="letter-small">
-              For you...
-            </p>
+            <p class="letter-small">For you...</p>
           </div>
         </div>
 
         <div id="envelope" class="envelope">
-
           <div class="envelope-back"></div>
 
-          <div
-            id="envelope-flap"
-            class="envelope-flap"
-          ></div>
+          <div id="envelope-flap" class="envelope-flap"></div>
 
           <div class="envelope-front">
             <div class="front-left"></div>
@@ -71,29 +61,15 @@
             <div class="front-bottom"></div>
           </div>
 
-          <div
-            id="wax-seal"
-            class="wax-seal"
-          >
-            <span class="seal-heart">
-              ♡
-            </span>
+          <div id="wax-seal" class="wax-seal">
+            <span class="seal-heart">♡</span>
           </div>
-
         </div>
 
       </div>
 
-      <div
-        id="password-area"
-        class="password-area"
-      >
-
-        <div
-          id="password-pill"
-          class="password-pill"
-        >
-
+      <div id="password-area" class="password-area">
+        <div id="password-pill" class="password-pill">
           <input
             id="password-input"
             type="password"
@@ -104,17 +80,10 @@
 
           <span class="password-divider"></span>
 
-          <button
-            id="unlock-button"
-            aria-label="Άνοιγμα"
-          >
-            →
-          </button>
-
+          <button id="unlock-button" aria-label="Άνοιγμα">→</button>
         </div>
 
         <p id="error-message"></p>
-
       </div>
 
     </section>
@@ -123,21 +92,16 @@
 
 
   <!-- =====================================
-       PAPER INTRO
+       INTRO
   ====================================== -->
 
-  <main
-    id="intro-screen"
-    class="screen paper-screen hidden"
-  >
+  <main id="intro-screen" class="screen paper-screen hidden">
 
     <div class="paper-grain"></div>
 
     <div class="intro-container">
 
-      <p class="paper-small">
-        For Marios
-      </p>
+      <p class="paper-small">For Marios</p>
 
       <h1 class="main-title">
         Χρόνια Πολλά<br>
@@ -150,13 +114,7 @@
         Δεν είναι ακριβώς μια ευχή.
       </p>
 
-      <button
-        id="start-button"
-        class="paper-arrow"
-        aria-label="Συνέχεια"
-      >
-        →
-      </button>
+      <button id="start-button" class="paper-arrow" aria-label="Συνέχεια">→</button>
 
     </div>
 
@@ -167,55 +125,26 @@
        STORY
   ====================================== -->
 
-  <main
-    id="story-screen"
-    class="screen hidden"
-  >
+  <main id="story-screen" class="screen hidden">
 
     <div class="story-ambient story-ambient-one"></div>
     <div class="story-ambient story-ambient-two"></div>
 
-    <div
-      class="story-container"
-      id="story-container"
-    >
+    <div class="story-container" id="story-container">
 
       <div class="story-progress">
-
-        <span id="progress-number">
-          01
-        </span>
-
-        <span class="progress-separator">
-          /
-        </span>
-
-        <span id="progress-total">
-          07
-        </span>
-
+        <span id="progress-number">01</span>
+        <span class="progress-separator">/</span>
+        <span id="progress-total">07</span>
       </div>
 
-      <p
-        id="story-kicker"
-        class="story-kicker"
-      ></p>
+      <p id="story-kicker" class="story-kicker"></p>
 
-      <div
-        id="story-lines"
-        class="story-lines"
-      ></div>
+      <div id="story-lines" class="story-lines"></div>
 
       <div class="story-hint">
-
-        <span class="desktop-hint">
-          ENTER · SPACE · CLICK
-        </span>
-
-        <span class="mobile-hint">
-          TAP · SWIPE
-        </span>
-
+        <span class="desktop-hint">ENTER · SPACE · CLICK</span>
+        <span class="mobile-hint">TAP · SWIPE</span>
       </div>
 
     </div>
@@ -227,38 +156,22 @@
        POEM
   ====================================== -->
 
-  <main
-    id="poem-screen"
-    class="screen poem-screen hidden"
-  >
+  <main id="poem-screen" class="screen poem-screen hidden">
 
     <div class="poem-glow"></div>
 
-    <div
-      class="poem-container"
-      id="poem-container"
-    >
+    <div class="poem-container" id="poem-container">
 
       <h2 class="poem-title">
         Σου έγραψα κι ένα μικρό ποίημα,<br>
         έτσι για να ξεδιπλώσω όλο μου το ταλέντο 😆
       </h2>
 
-      <div
-        id="poem-lines"
-        class="poem-lines"
-      ></div>
+      <div id="poem-lines" class="poem-lines"></div>
 
       <div class="story-hint poem-hint">
-
-        <span class="desktop-hint">
-          ENTER · SPACE · CLICK
-        </span>
-
-        <span class="mobile-hint">
-          TAP · SWIPE
-        </span>
-
+        <span class="desktop-hint">ENTER · SPACE · CLICK</span>
+        <span class="mobile-hint">TAP · SWIPE</span>
       </div>
 
     </div>
@@ -270,17 +183,13 @@
        MUSIC
   ====================================== -->
 
-  <main
-    id="music-screen"
-    class="screen music-screen hidden"
-  >
+  <main id="music-screen" class="screen music-screen hidden">
 
     <div class="music-scroll">
 
       <section class="music-section">
 
         <div class="music-heading">
-
           <h2>
             Και επειδή καμιά φορά<br>
             ένα τραγούδι τα λέει καλύτερα...
@@ -290,17 +199,11 @@
             Μερικά τραγούδια που όταν τα ακούω
             σκέφτομαι εσένα και σου τα αφιερώνω.
           </p>
-
         </div>
 
         <div class="music-grid">
 
-          <a
-            class="track-card"
-            href="https://youtu.be/Ctt9UKG1DzE?si=Nlr73wgF48VhsLZY"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a class="track-card" href="https://youtu.be/Ctt9UKG1DzE?si=Nlr73wgF48VhsLZY" target="_blank" rel="noopener noreferrer">
             <span class="track-number">01</span>
             <span class="track-icon">♪</span>
             <h3>Αύγουστος</h3>
@@ -308,12 +211,7 @@
             <span class="track-link">Άκουσέ το ↗</span>
           </a>
 
-          <a
-            class="track-card"
-            href="https://youtu.be/p-JCOpNuoIw?si=ueT7lfKmNWVcptxe"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a class="track-card" href="https://youtu.be/p-JCOpNuoIw?si=ueT7lfKmNWVcptxe" target="_blank" rel="noopener noreferrer">
             <span class="track-number">02</span>
             <span class="track-icon">♪</span>
             <h3>Enjoy the Silence</h3>
@@ -321,12 +219,7 @@
             <span class="track-link">Άκουσέ το ↗</span>
           </a>
 
-          <a
-            class="track-card"
-            href="https://youtu.be/zMonkjavkkU?si=duzzle_cHerjMg9Z"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a class="track-card" href="https://youtu.be/zMonkjavkkU?si=duzzle_cHerjMg9Z" target="_blank" rel="noopener noreferrer">
             <span class="track-number">03</span>
             <span class="track-icon">♪</span>
             <h3>Τυφλές Ελπίδες</h3>
@@ -334,12 +227,7 @@
             <span class="track-link">Άκουσέ το ↗</span>
           </a>
 
-          <a
-            class="track-card"
-            href="https://youtu.be/YkXOfuS5T7c?si=dY4WV0ihHWSkEqtV"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a class="track-card" href="https://youtu.be/YkXOfuS5T7c?si=dY4WV0ihHWSkEqtV" target="_blank" rel="noopener noreferrer">
             <span class="track-number">04</span>
             <span class="track-icon">♪</span>
             <h3>Impossible</h3>
@@ -347,12 +235,7 @@
             <span class="track-link">Άκουσέ το ↗</span>
           </a>
 
-          <a
-            class="track-card"
-            href="https://youtu.be/wTrESDwOuyg?si=lgiXW76a2hHpPYlu"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a class="track-card" href="https://youtu.be/wTrESDwOuyg?si=lgiXW76a2hHpPYlu" target="_blank" rel="noopener noreferrer">
             <span class="track-number">05</span>
             <span class="track-icon">♪</span>
             <h3>Ο Προσκυνητής</h3>
@@ -360,12 +243,7 @@
             <span class="track-link">Άκουσέ το ↗</span>
           </a>
 
-          <a
-            class="track-card"
-            href="https://youtu.be/9TMu0_AhPRU?si=TDBgDi0mkQyv4MTy"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a class="track-card" href="https://youtu.be/9TMu0_AhPRU?si=TDBgDi0mkQyv4MTy" target="_blank" rel="noopener noreferrer">
             <span class="track-number">06</span>
             <span class="track-icon">♪</span>
             <h3>Could I Have This Kiss Forever</h3>
@@ -373,12 +251,7 @@
             <span class="track-link">Άκουσέ το ↗</span>
           </a>
 
-          <a
-            class="track-card"
-            href="https://youtu.be/s-qXrj2JkzU?si=O33WY_LfHswL1FT1"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a class="track-card" href="https://youtu.be/s-qXrj2JkzU?si=O33WY_LfHswL1FT1" target="_blank" rel="noopener noreferrer">
             <span class="track-number">07</span>
             <span class="track-icon">♪</span>
             <h3>Still Got the Blues</h3>
@@ -386,12 +259,7 @@
             <span class="track-link">Άκουσέ το ↗</span>
           </a>
 
-          <a
-            class="track-card"
-            href="https://youtu.be/m_uWS6K-VF8?si=X2U8Oq972RP8shOp"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a class="track-card" href="https://youtu.be/m_uWS6K-VF8?si=X2U8Oq972RP8shOp" target="_blank" rel="noopener noreferrer">
             <span class="track-number">08</span>
             <span class="track-icon">♪</span>
             <h3>Right Here Waiting</h3>
@@ -401,18 +269,41 @@
 
         </div>
 
-        <p class="music-more">
-          ...και πολλά, πολλά ακόμη. ♡
-        </p>
+        <p class="music-more">...και πολλά, πολλά ακόμη. ♡</p>
 
-        <button
-          id="music-continue"
-          class="music-continue"
-        >
-          Συνέχισε →
-        </button>
+        <button id="music-continue" class="music-continue">Συνέχισε →</button>
 
       </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- =====================================
+       QUESTION
+  ====================================== -->
+
+  <main id="question-screen" class="screen question-screen hidden">
+
+    <div class="question-glow"></div>
+
+    <div class="question-card">
+
+      <p class="question-top">Και τώρα η σημαντικότερη ερώτηση...</p>
+
+      <h2 class="question-title">Με αγαπάς;</h2>
+
+      <div id="question-buttons" class="question-buttons">
+        <button id="answer-yes" class="question-btn">Ναι</button>
+        <button id="answer-no" class="question-btn">Όχι</button>
+      </div>
+
+      <div id="question-result" class="question-result hidden">
+        <img id="question-gif" class="question-gif" src="" alt="gif reaction">
+        <p id="question-message" class="question-message"></p>
+        <button id="question-continue" class="music-continue">Συνέχισε →</button>
+      </div>
 
     </div>
 
@@ -423,16 +314,11 @@
        FINAL
   ====================================== -->
 
-  <main
-    id="final-screen"
-    class="screen hidden"
-  >
+  <main id="final-screen" class="screen hidden">
 
     <div class="final-container">
 
-      <div class="final-symbol">
-        ♡
-      </div>
+      <div class="final-symbol">♡</div>
 
       <h1>
         Χρόνια πολλά,<br>
@@ -460,8 +346,6 @@
 
   </main>
 
-
-  <script src="script.js?v=12"></script>
-
+  <script src="script.js?v=13"></script>
 </body>
 </html>
