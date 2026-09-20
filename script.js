@@ -6,12 +6,9 @@ const PASSWORD = "marios";
 ========================================= */
 
 const storyScenes = [
-
   {
     theme: "opening",
-
     kicker: "Για αρχή...",
-
     lines: [
       "Χρόνια πολλά, Μάριε μου.",
       "Δεν θα σου ευχηθώ τα τετριμμένα...",
@@ -21,12 +18,9 @@ const storyScenes = [
     ]
   },
 
-
   {
     theme: "words",
-
     kicker: "Κάπου εδώ αλλάζει λίγο το πράγμα...",
-
     lines: [
       "Αν και η ελληνική γλώσσα είναι τόσο υπέροχη και πλούσια...",
       "κάποιες φορές τα λόγια μοιάζουν φτωχά.",
@@ -37,12 +31,9 @@ const storyScenes = [
     ]
   },
 
-
   {
     theme: "confession",
-
     kicker: "Αυτά που δύσκολα λέγονται από κοντά.",
-
     lines: [
       "Σε αγάπησα περισσότερο από τον εαυτό μου.",
       "Περισσότερο από οποιονδήποτε άλλο.",
@@ -52,12 +43,9 @@ const storyScenes = [
     ]
   },
 
-
   {
     theme: "confession-deep",
-
     kicker: "Και ίσως αυτό να είναι το πιο δύσκολο κομμάτι.",
-
     lines: [
       "Ξέρω ότι εσύ το βλέπεις διαφορετικά.",
       "Αλλά για μένα αυτό που ένιωσα για σένα δεν ήταν ποτέ απλώς πλατωνικό.",
@@ -66,12 +54,9 @@ const storyScenes = [
     ]
   },
 
-
   {
     theme: "life",
-
     kicker: "Η ζωή, βέβαια, έχει τα δικά της σχέδια.",
-
     lines: [
       "Ξέρω ότι η ζωή δεν μας δίνει πάντα τα πράγματα όπως θα τα θέλαμε.",
       "Καμιά φορά είναι σκληρή.",
@@ -81,12 +66,9 @@ const storyScenes = [
     ]
   },
 
-
   {
     theme: "care",
-
     kicker: "Αυτό θέλω κυρίως να θυμάσαι.",
-
     lines: [
       "Θέλω μόνο να ξέρεις ότι υπάρχει ένας άνθρωπος που νοιάζεται πραγματικά για εσένα.",
       "Που χαίρεται όταν είσαι καλά.",
@@ -95,12 +77,9 @@ const storyScenes = [
     ]
   },
 
-
   {
     theme: "hope",
-
     kicker: "Και κάτι τελευταίο πριν προχωρήσεις...",
-
     lines: [
       "Κάποιες φορές στενοχωριέμαι όταν νιώθω ότι απομακρύνεσαι.",
       "Ή όταν συνειδητοποιώ ότι δεν μπορώ να είμαι μέρος της ζωής σου όσο θα ήθελα.",
@@ -111,7 +90,6 @@ const storyScenes = [
       "Με όποιον τρόπο μας επιτρέψει η ζωή."
     ]
   }
-
 ];
 
 
@@ -120,7 +98,6 @@ const storyScenes = [
 ========================================= */
 
 const poemStanzas = [
-
   [
     "Όσες φορές κι αν προσπάθησα «τέλος» να πω,",
     "πάντα σε σένα ξαναγυρνώ.",
@@ -148,7 +125,6 @@ const poemStanzas = [
     "για ανθρώπους, όνειρα και λεφτά,",
     "χωρίς εσένα πού θα τα μάθαινα όλα αυτά;"
   ]
-
 ];
 
 
@@ -156,72 +132,41 @@ const poemStanzas = [
    ELEMENTS
 ========================================= */
 
-const passwordScreen =
-  document.getElementById("password-screen");
+const passwordScreen = document.getElementById("password-screen");
+const introScreen = document.getElementById("intro-screen");
+const storyScreen = document.getElementById("story-screen");
+const poemScreen = document.getElementById("poem-screen");
+const musicScreen = document.getElementById("music-screen");
+const questionScreen = document.getElementById("question-screen");
+const finalScreen = document.getElementById("final-screen");
 
-const introScreen =
-  document.getElementById("intro-screen");
+const envelopeScene = document.querySelector(".envelope-scene");
+const passwordPill = document.getElementById("password-pill");
+const passwordInput = document.getElementById("password-input");
+const unlockButton = document.getElementById("unlock-button");
+const errorMessage = document.getElementById("error-message");
+const startButton = document.getElementById("start-button");
 
-const storyScreen =
-  document.getElementById("story-screen");
+const storyContainer = document.getElementById("story-container");
+const storyKicker = document.getElementById("story-kicker");
+const storyLines = document.getElementById("story-lines");
+const progressNumber = document.getElementById("progress-number");
+const progressTotal = document.getElementById("progress-total");
 
-const poemScreen =
-  document.getElementById("poem-screen");
+const poemContainer = document.getElementById("poem-container");
+const poemLines = document.getElementById("poem-lines");
 
-const musicScreen =
-  document.getElementById("music-screen");
+const musicContinue = document.getElementById("music-continue");
 
-const finalScreen =
-  document.getElementById("final-screen");
+const answerYes = document.getElementById("answer-yes");
+const answerNo = document.getElementById("answer-no");
+const questionButtons = document.getElementById("question-buttons");
+const questionResult = document.getElementById("question-result");
+const questionGif = document.getElementById("question-gif");
+const questionMessage = document.getElementById("question-message");
+const questionContinue = document.getElementById("question-continue");
 
-
-const envelopeScene =
-  document.querySelector(".envelope-scene");
-
-const passwordPill =
-  document.getElementById("password-pill");
-
-const passwordInput =
-  document.getElementById("password-input");
-
-const unlockButton =
-  document.getElementById("unlock-button");
-
-const errorMessage =
-  document.getElementById("error-message");
-
-const startButton =
-  document.getElementById("start-button");
-
-
-const storyContainer =
-  document.getElementById("story-container");
-
-const storyKicker =
-  document.getElementById("story-kicker");
-
-const storyLines =
-  document.getElementById("story-lines");
-
-const progressNumber =
-  document.getElementById("progress-number");
-
-const progressTotal =
-  document.getElementById("progress-total");
-
-
-const poemContainer =
-  document.getElementById("poem-container");
-
-const poemLines =
-  document.getElementById("poem-lines");
-
-
-const musicContinue =
-  document.getElementById("music-continue");
-
-const replayButton =
-  document.getElementById("replay-button");
+const replayButton = document.getElementById("replay-button");
 
 
 /* =========================================
@@ -242,35 +187,25 @@ let touchEndY = 0;
 
 let wheelLocked = false;
 
-/*
-   Αποτρέπει το ghost click που μπορεί
-   να εμφανιστεί αμέσως μετά από swipe.
-*/
 let ignoreClickUntil = 0;
 
 
 /* =========================================
-   SCREEN TRANSITION
+   HELPERS
 ========================================= */
 
-function changeScreen(
-  currentScreen,
-  nextScreen,
-  delay = 720
-) {
-
+function changeScreen(currentScreen, nextScreen, delay = 720) {
   currentScreen.classList.add("fade-out");
 
   setTimeout(() => {
-
     currentScreen.classList.add("hidden");
-
     currentScreen.classList.remove("fade-out");
-
     nextScreen.classList.remove("hidden");
-
   }, delay);
+}
 
+function isTouchDevice() {
+  return window.matchMedia("(pointer: coarse)").matches;
 }
 
 
@@ -279,74 +214,40 @@ function changeScreen(
 ========================================= */
 
 function wrongPassword() {
-
-  errorMessage.textContent =
-    "Δεν είναι αυτό... ξαναπροσπάθησε.";
-
+  errorMessage.textContent = "Δεν είναι αυτό... ξαναπροσπάθησε.";
   passwordInput.value = "";
 
   passwordPill.classList.remove("shake");
-
   void passwordPill.offsetWidth;
-
   passwordPill.classList.add("shake");
 
-  if (
-    !window
-      .matchMedia("(pointer: coarse)")
-      .matches
-  ) {
+  if (!isTouchDevice()) {
     passwordInput.focus();
   }
-
 }
 
-
 function checkPassword() {
+  if (envelopeIsOpening) return;
 
-  if (envelopeIsOpening) {
-    return;
-  }
+  const enteredPassword = passwordInput.value.trim();
 
-  const enteredPassword =
-    passwordInput.value.trim();
-
-  if (
-    enteredPassword !== PASSWORD
-  ) {
-
+  if (enteredPassword !== PASSWORD) {
     wrongPassword();
-
     return;
   }
 
   errorMessage.textContent = "";
-
   openEnvelope();
-
 }
 
+unlockButton.addEventListener("click", checkPassword);
 
-unlockButton.addEventListener(
-  "click",
-  checkPassword
-);
-
-
-passwordInput.addEventListener(
-  "keydown",
-
-  (event) => {
-
-    if (event.key === "Enter") {
-
-      event.preventDefault();
-
-      checkPassword();
-    }
-
+passwordInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    checkPassword();
   }
-);
+});
 
 
 /* =========================================
@@ -354,89 +255,28 @@ passwordInput.addEventListener(
 ========================================= */
 
 function openEnvelope() {
-
-  if (envelopeIsOpening) {
-    return;
-  }
+  if (envelopeIsOpening) return;
 
   envelopeIsOpening = true;
-
   passwordInput.blur();
 
-  envelopeScene.classList.add(
-    "opening"
-  );
+  envelopeScene.classList.add("opening");
 
-  setTimeout(
-    () =>
-      envelopeScene
-        .classList
-        .add("seal-pulse"),
-    250
-  );
+  setTimeout(() => envelopeScene.classList.add("seal-pulse"), 250);
+  setTimeout(() => envelopeScene.classList.add("seal-open"), 950);
+  setTimeout(() => envelopeScene.classList.add("flap-open"), 1450);
+  setTimeout(() => envelopeScene.classList.add("letter-rise"), 2250);
+  setTimeout(() => envelopeScene.classList.add("letter-focus"), 3200);
+  setTimeout(() => envelopeScene.classList.add("letter-zoom"), 4100);
 
-  setTimeout(
-    () =>
-      envelopeScene
-        .classList
-        .add("seal-open"),
-    950
-  );
-
-  setTimeout(
-    () =>
-      envelopeScene
-        .classList
-        .add("flap-open"),
-    1450
-  );
-
-  setTimeout(
-    () =>
-      envelopeScene
-        .classList
-        .add("letter-rise"),
-    2250
-  );
-
-  setTimeout(
-    () =>
-      envelopeScene
-        .classList
-        .add("letter-focus"),
-    3200
-  );
-
-  setTimeout(
-    () =>
-      envelopeScene
-        .classList
-        .add("letter-zoom"),
-    4100
-  );
-
-  setTimeout(
-    () => {
-
-      passwordScreen
-        .classList
-        .add("hidden");
-
-      introScreen
-        .classList
-        .remove("hidden");
-
-      resetEnvelope();
-
-    },
-    5600
-  );
-
+  setTimeout(() => {
+    passwordScreen.classList.add("hidden");
+    introScreen.classList.remove("hidden");
+    resetEnvelope();
+  }, 5600);
 }
 
-
 function resetEnvelope() {
-
   envelopeScene.classList.remove(
     "opening",
     "seal-pulse",
@@ -448,230 +288,106 @@ function resetEnvelope() {
   );
 
   passwordInput.value = "";
-
   envelopeIsOpening = false;
-
 }
 
 
 /* =========================================
-   START STORY
+   STORY START
 ========================================= */
 
-startButton.addEventListener(
-  "click",
+startButton.addEventListener("click", () => {
+  resetStory();
 
-  () => {
+  changeScreen(introScreen, storyScreen, 650);
 
-    resetStory();
-
-    changeScreen(
-      introScreen,
-      storyScreen,
-      650
-    );
-
-    setTimeout(
-      () => {
-
-        renderStoryScene();
-
-        revealNextStoryLine();
-
-      },
-      720
-    );
-
-  }
-);
-
+  setTimeout(() => {
+    renderStoryScene();
+    revealNextStoryLine();
+  }, 720);
+});
 
 function resetStory() {
-
   storySceneIndex = 0;
-
   storyLineIndex = 0;
-
   storyLines.innerHTML = "";
-
-  storyScreen.className =
-    "screen theme-opening hidden";
-
-  progressTotal.textContent =
-    String(storyScenes.length)
-      .padStart(2, "0");
-
+  storyScreen.className = "screen theme-opening hidden";
+  progressTotal.textContent = String(storyScenes.length).padStart(2, "0");
 }
-
-
-/* =========================================
-   STORY SCENE
-========================================= */
 
 function renderStoryScene() {
+  const scene = storyScenes[storySceneIndex];
 
-  const scene =
-    storyScenes[storySceneIndex];
-
-  storyScreen.className =
-    `screen theme-${scene.theme}`;
-
-  storyKicker.textContent =
-    scene.kicker;
-
+  storyScreen.className = `screen theme-${scene.theme}`;
+  storyKicker.textContent = scene.kicker;
   storyLines.innerHTML = "";
-
   storyLineIndex = 0;
 
-  progressNumber.textContent =
-    String(storySceneIndex + 1)
-      .padStart(2, "0");
+  progressNumber.textContent = String(storySceneIndex + 1).padStart(2, "0");
+  progressTotal.textContent = String(storyScenes.length).padStart(2, "0");
 
-  progressTotal.textContent =
-    String(storyScenes.length)
-      .padStart(2, "0");
-
-  storyContainer
-    .classList
-    .remove("scene-enter");
-
+  storyContainer.classList.remove("scene-enter");
   void storyContainer.offsetWidth;
-
-  storyContainer
-    .classList
-    .add("scene-enter");
-
+  storyContainer.classList.add("scene-enter");
 }
 
-
-/* =========================================
-   ADD NEXT SENTENCE
-========================================= */
-
 function revealNextStoryLine() {
+  if (interactionLocked) return;
 
-  if (interactionLocked) {
-    return;
-  }
+  const scene = storyScenes[storySceneIndex];
 
-  const scene =
-    storyScenes[storySceneIndex];
+  if (storyLineIndex < scene.lines.length) {
+    const line = document.createElement("p");
+    line.className = "story-line";
+    line.textContent = scene.lines[storyLineIndex];
 
-  if (
-    storyLineIndex <
-    scene.lines.length
-  ) {
-
-    const line =
-      document.createElement("p");
-
-    line.className =
-      "story-line";
-
-    line.textContent =
-      scene.lines[storyLineIndex];
-
-    if (
-      scene.theme === "hope" &&
-      storyLineIndex ===
-      scene.lines.length - 1
-    ) {
-
-      line.classList.add(
-        "story-line-emphasis"
-      );
-
+    if (scene.theme === "hope" && storyLineIndex === scene.lines.length - 1) {
+      line.classList.add("story-line-emphasis");
     }
 
     storyLines.appendChild(line);
 
-    requestAnimationFrame(
-      () => {
-
-        line.classList.add(
-          "visible"
-        );
-
-      }
-    );
+    requestAnimationFrame(() => {
+      line.classList.add("visible");
+    });
 
     storyLineIndex += 1;
-
     keepNewestStoryLineVisible();
-
     return;
   }
 
-  if (
-    storySceneIndex <
-    storyScenes.length - 1
-  ) {
-
+  if (storySceneIndex < storyScenes.length - 1) {
     goToNextStoryScene();
-
     return;
   }
 
   startPoem();
-
 }
-
-
-/* =========================================
-   NEXT STORY SECTION
-========================================= */
 
 function goToNextStoryScene() {
-
   interactionLocked = true;
+  storyContainer.classList.add("scene-leave");
 
-  storyContainer
-    .classList
-    .add("scene-leave");
+  setTimeout(() => {
+    storySceneIndex += 1;
+    renderStoryScene();
+    storyContainer.classList.remove("scene-leave");
 
-  setTimeout(
-    () => {
-
-      storySceneIndex += 1;
-
-      renderStoryScene();
-
-      storyContainer
-        .classList
-        .remove("scene-leave");
-
-      setTimeout(
-        () => {
-
-          interactionLocked = false;
-
-          revealNextStoryLine();
-
-        },
-        180
-      );
-
-    },
-    520
-  );
-
+    setTimeout(() => {
+      interactionLocked = false;
+      revealNextStoryLine();
+    }, 180);
+  }, 520);
 }
 
-
 function keepNewestStoryLineVisible() {
-
-  const newest =
-    storyLines.lastElementChild;
-
-  if (!newest) {
-    return;
-  }
+  const newest = storyLines.lastElementChild;
+  if (!newest) return;
 
   newest.scrollIntoView({
     behavior: "smooth",
     block: "nearest"
   });
-
 }
 
 
@@ -680,80 +396,38 @@ function keepNewestStoryLineVisible() {
 ========================================= */
 
 function startPoem() {
-
-  if (interactionLocked) {
-    return;
-  }
+  if (interactionLocked) return;
 
   interactionLocked = true;
-
   poemIndex = 0;
-
   poemLines.innerHTML = "";
 
-  changeScreen(
-    storyScreen,
-    poemScreen,
-    720
-  );
+  changeScreen(storyScreen, poemScreen, 720);
 
-  setTimeout(
-    () => {
-
-      interactionLocked = false;
-
-      revealNextPoemStanza();
-
-    },
-    850
-  );
-
+  setTimeout(() => {
+    interactionLocked = false;
+    revealNextPoemStanza();
+  }, 850);
 }
 
-
 function revealNextPoemStanza() {
+  if (interactionLocked) return;
 
-  if (interactionLocked) {
-    return;
-  }
+  if (poemIndex < poemStanzas.length) {
+    const stanza = document.createElement("div");
+    stanza.className = "poem-stanza";
 
-  if (
-    poemIndex <
-    poemStanzas.length
-  ) {
-
-    const stanza =
-      document.createElement("div");
-
-    stanza.className =
-      "poem-stanza";
-
-    poemStanzas[poemIndex]
-      .forEach(
-        (text) => {
-
-          const line =
-            document.createElement("p");
-
-          line.textContent =
-            text;
-
-          stanza.appendChild(line);
-
-        }
-      );
+    poemStanzas[poemIndex].forEach((text) => {
+      const line = document.createElement("p");
+      line.textContent = text;
+      stanza.appendChild(line);
+    });
 
     poemLines.appendChild(stanza);
 
-    requestAnimationFrame(
-      () => {
-
-        stanza.classList.add(
-          "visible"
-        );
-
-      }
-    );
+    requestAnimationFrame(() => {
+      stanza.classList.add("visible");
+    });
 
     poemIndex += 1;
 
@@ -765,141 +439,117 @@ function revealNextPoemStanza() {
     return;
   }
 
-  changeScreen(
-    poemScreen,
-    musicScreen,
-    720
-  );
-
+  changeScreen(poemScreen, musicScreen, 720);
 }
 
 
 /* =========================================
-   MUSIC → FINAL
+   MUSIC → QUESTION
 ========================================= */
 
-musicContinue.addEventListener(
-  "click",
+musicContinue.addEventListener("click", () => {
+  changeScreen(musicScreen, questionScreen, 720);
+});
 
-  () => {
 
-    changeScreen(
-      musicScreen,
-      finalScreen,
-      720
-    );
+/* =========================================
+   QUESTION
+========================================= */
 
+function resetQuestion() {
+  questionButtons.classList.remove("hidden");
+  questionResult.classList.add("hidden");
+  questionMessage.textContent = "";
+  questionGif.src = "";
+  questionGif.style.display = "none";
+}
+
+function showQuestionResult(type) {
+  questionButtons.classList.add("hidden");
+  questionResult.classList.remove("hidden");
+
+  if (type === "yes") {
+    questionMessage.textContent = "Το ήξερα... 😌";
+    questionGif.src = "yes.gif";
+  } else {
+    questionMessage.textContent = "Μάλλον δεν διάβασες καλά την ερώτηση... 😒";
+    questionGif.src = "no.gif";
   }
-);
+}
+
+questionGif.addEventListener("load", () => {
+  questionGif.style.display = "block";
+});
+
+questionGif.addEventListener("error", () => {
+  questionGif.style.display = "none";
+});
+
+answerYes.addEventListener("click", () => {
+  showQuestionResult("yes");
+});
+
+answerNo.addEventListener("click", () => {
+  showQuestionResult("no");
+});
+
+questionContinue.addEventListener("click", () => {
+  changeScreen(questionScreen, finalScreen, 720);
+});
 
 
 /* =========================================
    REPLAY
 ========================================= */
 
-replayButton.addEventListener(
-  "click",
+replayButton.addEventListener("click", () => {
+  finalScreen.classList.add("fade-out");
 
-  () => {
+  setTimeout(() => {
+    finalScreen.classList.add("hidden");
+    finalScreen.classList.remove("fade-out");
 
-    finalScreen
-      .classList
-      .add("fade-out");
+    storySceneIndex = 0;
+    storyLineIndex = 0;
+    poemIndex = 0;
 
-    setTimeout(
-      () => {
+    storyLines.innerHTML = "";
+    poemLines.innerHTML = "";
 
-        finalScreen
-          .classList
-          .add("hidden");
+    resetQuestion();
 
-        finalScreen
-          .classList
-          .remove("fade-out");
+    passwordScreen.classList.remove("hidden");
 
-        storySceneIndex = 0;
-        storyLineIndex = 0;
-        poemIndex = 0;
+    passwordInput.value = "";
+    errorMessage.textContent = "";
 
-        storyLines.innerHTML = "";
-        poemLines.innerHTML = "";
-
-        passwordScreen
-          .classList
-          .remove("hidden");
-
-        passwordInput.value = "";
-
-        errorMessage.textContent = "";
-
-        if (
-          !window
-            .matchMedia(
-              "(pointer: coarse)"
-            )
-            .matches
-        ) {
-
-          setTimeout(
-            () =>
-              passwordInput.focus(),
-            150
-          );
-
-        }
-
-      },
-      720
-    );
-
-  }
-);
+    if (!isTouchDevice()) {
+      setTimeout(() => passwordInput.focus(), 150);
+    }
+  }, 720);
+});
 
 
 /* =========================================
-   INPUT HELPERS
+   ADVANCE EXPERIENCE
 ========================================= */
 
 function isInteractiveStoryScreen() {
-
-  return !storyScreen
-    .classList
-    .contains("hidden");
-
+  return !storyScreen.classList.contains("hidden");
 }
-
 
 function isInteractivePoemScreen() {
-
-  return !poemScreen
-    .classList
-    .contains("hidden");
-
+  return !poemScreen.classList.contains("hidden");
 }
 
-
 function advanceCurrentExperience() {
+  if (interactionLocked) return;
 
-  if (interactionLocked) {
-    return;
-  }
-
-  if (
-    isInteractiveStoryScreen()
-  ) {
-
+  if (isInteractiveStoryScreen()) {
     revealNextStoryLine();
-
-  }
-
-  else if (
-    isInteractivePoemScreen()
-  ) {
-
+  } else if (isInteractivePoemScreen()) {
     revealNextPoemStanza();
-
   }
-
 }
 
 
@@ -907,97 +557,33 @@ function advanceCurrentExperience() {
    KEYBOARD
 ========================================= */
 
-document.addEventListener(
-  "keydown",
+document.addEventListener("keydown", (event) => {
+  if (event.key !== "Enter" && event.key !== " ") return;
 
-  (event) => {
+  if (document.activeElement === passwordInput) return;
 
-    if (
-      event.key !== "Enter" &&
-      event.key !== " "
-    ) {
+  if (!isInteractiveStoryScreen() && !isInteractivePoemScreen()) return;
 
-      return;
-    }
-
-    if (
-      document.activeElement ===
-      passwordInput
-    ) {
-
-      return;
-    }
-
-    if (
-      !isInteractiveStoryScreen() &&
-      !isInteractivePoemScreen()
-    ) {
-
-      return;
-    }
-
-    event.preventDefault();
-
-    advanceCurrentExperience();
-
-  }
-);
+  event.preventDefault();
+  advanceCurrentExperience();
+});
 
 
 /* =========================================
-   TAP / CLICK
+   CLICK / TAP
 ========================================= */
 
-storyContainer.addEventListener(
-  "click",
+storyContainer.addEventListener("click", (event) => {
+  if (Date.now() < ignoreClickUntil) return;
+  if (event.target.closest("button, a, input")) return;
+  revealNextStoryLine();
+});
 
-  (event) => {
-
-    if (
-      Date.now() <
-      ignoreClickUntil
-    ) {
-      return;
-    }
-
-    if (
-      event.target.closest(
-        "button, a, input"
-      )
-    ) {
-      return;
-    }
-
-    revealNextStoryLine();
-
-  }
-);
-
-
-poemContainer.addEventListener(
-  "click",
-
-  (event) => {
-
-    if (
-      Date.now() <
-      ignoreClickUntil
-    ) {
-      return;
-    }
-
-    if (
-      event.target.closest(
-        "button, a, input"
-      )
-    ) {
-      return;
-    }
-
-    revealNextPoemStanza();
-
-  }
-);
+poemContainer.addEventListener("click", (event) => {
+  if (Date.now() < ignoreClickUntil) return;
+  if (event.target.closest("button, a, input")) return;
+  revealNextPoemStanza();
+});
 
 
 /* =========================================
@@ -1005,52 +591,22 @@ poemContainer.addEventListener(
 ========================================= */
 
 function handleWheel(event) {
+  if (!isInteractiveStoryScreen() && !isInteractivePoemScreen()) return;
 
-  if (
-    !isInteractiveStoryScreen() &&
-    !isInteractivePoemScreen()
-  ) {
-
-    return;
-  }
-
-  if (
-    Math.abs(event.deltaY) < 18 ||
-    wheelLocked
-  ) {
-
-    return;
-  }
+  if (Math.abs(event.deltaY) < 18 || wheelLocked) return;
 
   wheelLocked = true;
 
-  if (
-    event.deltaY > 0
-  ) {
-
+  if (event.deltaY > 0) {
     advanceCurrentExperience();
-
   }
 
-  setTimeout(
-    () => {
-
-      wheelLocked = false;
-
-    },
-    720
-  );
-
+  setTimeout(() => {
+    wheelLocked = false;
+  }, 720);
 }
 
-
-window.addEventListener(
-  "wheel",
-  handleWheel,
-  {
-    passive: true
-  }
-);
+window.addEventListener("wheel", handleWheel, { passive: true });
 
 
 /* =========================================
@@ -1058,110 +614,41 @@ window.addEventListener(
 ========================================= */
 
 function onTouchStart(event) {
-
-  touchStartY =
-    event
-      .changedTouches[0]
-      .screenY;
-
+  touchStartY = event.changedTouches[0].screenY;
 }
-
 
 function onTouchEnd(event) {
+  touchEndY = event.changedTouches[0].screenY;
 
-  touchEndY =
-    event
-      .changedTouches[0]
-      .screenY;
+  const distance = touchStartY - touchEndY;
 
-  const distance =
-    touchStartY - touchEndY;
+  if (Math.abs(distance) < 45) return;
 
-  if (
-    Math.abs(distance) < 45
-  ) {
-
-    return;
-  }
-
-  if (
-    distance > 0
-  ) {
-
-    /*
-       Εμποδίζουμε τον browser να στείλει
-       ένα δεύτερο click μετά το swipe.
-    */
-
+  if (distance > 0) {
     event.preventDefault();
-
-    ignoreClickUntil =
-      Date.now() + 550;
-
+    ignoreClickUntil = Date.now() + 550;
     advanceCurrentExperience();
-
   }
-
 }
 
+storyScreen.addEventListener("touchstart", onTouchStart, { passive: true });
+storyScreen.addEventListener("touchend", onTouchEnd, { passive: false });
 
-/*
-   touchend = passive:false ώστε να μπορούμε
-   να κάνουμε preventDefault() μετά από swipe.
-*/
-
-storyScreen.addEventListener(
-  "touchstart",
-  onTouchStart,
-  {
-    passive: true
-  }
-);
-
-
-storyScreen.addEventListener(
-  "touchend",
-  onTouchEnd,
-  {
-    passive: false
-  }
-);
-
-
-poemScreen.addEventListener(
-  "touchstart",
-  onTouchStart,
-  {
-    passive: true
-  }
-);
-
-
-poemScreen.addEventListener(
-  "touchend",
-  onTouchEnd,
-  {
-    passive: false
-  }
-);
+poemScreen.addEventListener("touchstart", onTouchStart, { passive: true });
+poemScreen.addEventListener("touchend", onTouchEnd, { passive: false });
 
 
 /* =========================================
    AUTOFOCUS DESKTOP
 ========================================= */
 
-if (
-  !window
-    .matchMedia(
-      "(pointer: coarse)"
-    )
-    .matches
-) {
-
-  setTimeout(
-    () =>
-      passwordInput.focus(),
-    250
-  );
-
+if (!isTouchDevice()) {
+  setTimeout(() => passwordInput.focus(), 250);
 }
+
+
+/* =========================================
+   INIT
+========================================= */
+
+resetQuestion();
