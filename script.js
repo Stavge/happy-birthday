@@ -1,4 +1,4 @@
-const PASSWORD = "marios13";
+const PASSWORD = "marios";
 
 
 /* =========================================
@@ -136,10 +136,10 @@ const poemStanzas = [
   ],
 
   [
-    "Δύσκολο πράγμα να αγαπάς,",
-    "τόσο πολύ που να πονάς,",
-    "ώρες και μέρες να μετράς,",
-    "κι όσο κι αν φεύγεις, να γυρνάς."
+    "Έχεις έναν λόγο αιχμηρό,",
+    "που εγώ συχνά παρεξηγώ,",
+    "μα τελικά, τις πιο πολλές φορές,",
+    "κάτι ξέρεις από γκόμενους και δουλειές."
   ],
 
   [
@@ -293,28 +293,17 @@ function changeScreen(
   delay = 720
 ) {
 
-  currentScreen.classList.add(
-    "fade-out"
-  );
+  currentScreen.classList.add("fade-out");
 
-  setTimeout(
-    () => {
+  setTimeout(() => {
 
-      currentScreen.classList.add(
-        "hidden"
-      );
+    currentScreen.classList.add("hidden");
 
-      currentScreen.classList.remove(
-        "fade-out"
-      );
+    currentScreen.classList.remove("fade-out");
 
-      nextScreen.classList.remove(
-        "hidden"
-      );
+    nextScreen.classList.remove("hidden");
 
-    },
-    delay
-  );
+  }, delay);
 
 }
 
@@ -322,9 +311,7 @@ function changeScreen(
 function isTouchDevice() {
 
   return window
-    .matchMedia(
-      "(pointer: coarse)"
-    )
+    .matchMedia("(pointer: coarse)")
     .matches;
 
 }
@@ -341,15 +328,11 @@ function wrongPassword() {
 
   passwordInput.value = "";
 
-  passwordPill.classList.remove(
-    "shake"
-  );
+  passwordPill.classList.remove("shake");
 
   void passwordPill.offsetWidth;
 
-  passwordPill.classList.add(
-    "shake"
-  );
+  passwordPill.classList.add("shake");
 
   if (!isTouchDevice()) {
     passwordInput.focus();
@@ -367,9 +350,7 @@ function checkPassword() {
   const enteredPassword =
     passwordInput.value.trim();
 
-  if (
-    enteredPassword !== PASSWORD
-  ) {
+  if (enteredPassword !== PASSWORD) {
 
     wrongPassword();
 
@@ -395,9 +376,7 @@ passwordInput.addEventListener(
 
   (event) => {
 
-    if (
-      event.key === "Enter"
-    ) {
+    if (event.key === "Enter") {
 
       event.preventDefault();
 
@@ -423,74 +402,53 @@ function openEnvelope() {
 
   passwordInput.blur();
 
-  envelopeScene.classList.add(
-    "opening"
-  );
+  envelopeScene.classList.add("opening");
 
   setTimeout(
     () =>
-      envelopeScene
-        .classList
-        .add("seal-pulse"),
+      envelopeScene.classList.add("seal-pulse"),
     250
   );
 
   setTimeout(
     () =>
-      envelopeScene
-        .classList
-        .add("seal-open"),
+      envelopeScene.classList.add("seal-open"),
     950
   );
 
   setTimeout(
     () =>
-      envelopeScene
-        .classList
-        .add("flap-open"),
+      envelopeScene.classList.add("flap-open"),
     1450
   );
 
   setTimeout(
     () =>
-      envelopeScene
-        .classList
-        .add("letter-rise"),
+      envelopeScene.classList.add("letter-rise"),
     2250
   );
 
   setTimeout(
     () =>
-      envelopeScene
-        .classList
-        .add("letter-focus"),
+      envelopeScene.classList.add("letter-focus"),
     3200
   );
 
   setTimeout(
     () =>
-      envelopeScene
-        .classList
-        .add("letter-zoom"),
+      envelopeScene.classList.add("letter-zoom"),
     4100
   );
 
-  setTimeout(
-    () => {
+  setTimeout(() => {
 
-      passwordScreen
-        .classList
-        .add("hidden");
+    passwordScreen.classList.add("hidden");
 
-      introScreen
-        .classList
-        .remove("hidden");
+    introScreen.classList.remove("hidden");
 
-      resetEnvelope();
+    resetEnvelope();
 
-    },
-    5600
-  );
+  }, 5600);
 
 }
 
@@ -531,16 +489,13 @@ startButton.addEventListener(
       650
     );
 
-    setTimeout(
-      () => {
+    setTimeout(() => {
 
-        renderStoryScene();
+      renderStoryScene();
 
-        revealNextStoryLine();
+      revealNextStoryLine();
 
-      },
-      720
-    );
+    }, 720);
 
   }
 );
@@ -558,13 +513,8 @@ function resetStory() {
     "screen theme-opening hidden";
 
   progressTotal.textContent =
-    String(
-      storyScenes.length
-    )
-      .padStart(
-        2,
-        "0"
-      );
+    String(storyScenes.length)
+      .padStart(2, "0");
 
 }
 
@@ -576,9 +526,7 @@ function resetStory() {
 function renderStoryScene() {
 
   const scene =
-    storyScenes[
-      storySceneIndex
-    ];
+    storyScenes[storySceneIndex];
 
   storyScreen.className =
     `screen theme-${scene.theme}`;
@@ -591,36 +539,22 @@ function renderStoryScene() {
   storyLineIndex = 0;
 
   progressNumber.textContent =
-    String(
-      storySceneIndex + 1
-    )
-      .padStart(
-        2,
-        "0"
-      );
+    String(storySceneIndex + 1)
+      .padStart(2, "0");
 
   progressTotal.textContent =
-    String(
-      storyScenes.length
-    )
-      .padStart(
-        2,
-        "0"
-      );
+    String(storyScenes.length)
+      .padStart(2, "0");
 
   storyContainer
     .classList
-    .remove(
-      "scene-enter"
-    );
+    .remove("scene-enter");
 
   void storyContainer.offsetWidth;
 
   storyContainer
     .classList
-    .add(
-      "scene-enter"
-    );
+    .add("scene-enter");
 
 }
 
@@ -632,9 +566,7 @@ function revealNextStoryLine() {
   }
 
   const scene =
-    storyScenes[
-      storySceneIndex
-    ];
+    storyScenes[storySceneIndex];
 
   if (
     storyLineIndex <
@@ -642,22 +574,18 @@ function revealNextStoryLine() {
   ) {
 
     const line =
-      document.createElement(
-        "p"
-      );
+      document.createElement("p");
 
     line.className =
       "story-line";
 
     line.textContent =
-      scene.lines[
-        storyLineIndex
-      ];
+      scene.lines[storyLineIndex];
 
     if (
       scene.theme === "hope" &&
       storyLineIndex ===
-        scene.lines.length - 1
+      scene.lines.length - 1
     ) {
 
       line.classList.add(
@@ -666,19 +594,13 @@ function revealNextStoryLine() {
 
     }
 
-    storyLines.appendChild(
-      line
-    );
+    storyLines.appendChild(line);
 
-    requestAnimationFrame(
-      () => {
+    requestAnimationFrame(() => {
 
-        line.classList.add(
-          "visible"
-        );
+      line.classList.add("visible");
 
-      }
-    );
+    });
 
     storyLineIndex += 1;
 
@@ -710,37 +632,27 @@ function goToNextStoryScene() {
 
   storyContainer
     .classList
-    .add(
-      "scene-leave"
-    );
+    .add("scene-leave");
 
-  setTimeout(
-    () => {
+  setTimeout(() => {
 
-      storySceneIndex += 1;
+    storySceneIndex += 1;
 
-      renderStoryScene();
+    renderStoryScene();
 
-      storyContainer
-        .classList
-        .remove(
-          "scene-leave"
-        );
+    storyContainer
+      .classList
+      .remove("scene-leave");
 
-      setTimeout(
-        () => {
+    setTimeout(() => {
 
-          interactionLocked = false;
+      interactionLocked = false;
 
-          revealNextStoryLine();
+      revealNextStoryLine();
 
-        },
-        180
-      );
+    }, 180);
 
-    },
-    520
-  );
+  }, 520);
 
 }
 
@@ -748,8 +660,7 @@ function goToNextStoryScene() {
 function keepNewestStoryLineVisible() {
 
   const newest =
-    storyLines
-      .lastElementChild;
+    storyLines.lastElementChild;
 
   if (!newest) {
     return;
@@ -785,16 +696,13 @@ function startPoem() {
     720
   );
 
-  setTimeout(
-    () => {
+  setTimeout(() => {
 
-      interactionLocked = false;
+    interactionLocked = false;
 
-      revealNextPoemStanza();
+    revealNextPoemStanza();
 
-    },
-    850
-  );
+  }, 850);
 
 }
 
@@ -811,47 +719,31 @@ function revealNextPoemStanza() {
   ) {
 
     const stanza =
-      document.createElement(
-        "div"
-      );
+      document.createElement("div");
 
     stanza.className =
       "poem-stanza";
 
-    poemStanzas[
-      poemIndex
-    ]
-      .forEach(
-        (text) => {
+    poemStanzas[poemIndex]
+      .forEach((text) => {
 
-          const line =
-            document.createElement(
-              "p"
-            );
+        const line =
+          document.createElement("p");
 
-          line.textContent =
-            text;
+        line.textContent =
+          text;
 
-          stanza.appendChild(
-            line
-          );
+        stanza.appendChild(line);
 
-        }
-      );
+      });
 
-    poemLines.appendChild(
-      stanza
-    );
+    poemLines.appendChild(stanza);
 
-    requestAnimationFrame(
-      () => {
+    requestAnimationFrame(() => {
 
-        stanza.classList.add(
-          "visible"
-        );
+      stanza.classList.add("visible");
 
-      }
-    );
+    });
 
     poemIndex += 1;
 
@@ -917,49 +809,33 @@ function resetQuestion() {
 
   questionChoiceState
     .classList
-    .remove(
-      "hidden"
-    );
+    .remove("hidden");
 
   questionResult
     .classList
-    .add(
-      "hidden"
-    );
+    .add("hidden");
 
-  questionMessage.textContent =
-    "";
+  questionMessage.textContent = "";
 
-  questionGif.removeAttribute(
-    "src"
-  );
+  questionGif.removeAttribute("src");
 
-  questionGif.style.display =
-    "none";
+  questionGif.style.display = "none";
 
 }
 
 
-function showQuestionResult(
-  type
-) {
+function showQuestionResult(type) {
 
   questionChoiceState
     .classList
-    .add(
-      "hidden"
-    );
+    .add("hidden");
 
   questionResult
     .classList
-    .remove(
-      "hidden"
-    );
+    .remove("hidden");
 
 
-  if (
-    type === "yes"
-  ) {
+  if (type === "yes") {
 
     questionMessage.textContent =
       "Το ήξερα... 😌";
@@ -1017,9 +893,7 @@ answerYes.addEventListener(
 
   () => {
 
-    showQuestionResult(
-      "yes"
-    );
+    showQuestionResult("yes");
 
   }
 );
@@ -1030,15 +904,11 @@ answerNo.addEventListener(
 
   () => {
 
-    showQuestionResult(
-      "no"
-    );
+    showQuestionResult("no");
 
   }
 );
 
-
-/* BACK TO MUSIC */
 
 questionBack.addEventListener(
   "click",
@@ -1057,8 +927,6 @@ questionBack.addEventListener(
 );
 
 
-/* TRY THE OTHER ANSWER */
-
 questionTryAgain.addEventListener(
   "click",
 
@@ -1070,12 +938,12 @@ questionTryAgain.addEventListener(
 );
 
 
-/* QUESTION → FINAL */
-
 questionContinue.addEventListener(
   "click",
 
   () => {
+
+    finalScreen.scrollTop = 0;
 
     changeScreen(
       questionScreen,
@@ -1095,12 +963,6 @@ finalBack.addEventListener(
   "click",
 
   () => {
-
-    /*
-      Επιστρέφει απευθείας
-      στην ερώτηση με τις δύο
-      επιλογές ξανά διαθέσιμες.
-    */
 
     resetQuestion();
 
@@ -1125,65 +987,50 @@ replayButton.addEventListener(
 
     finalScreen
       .classList
-      .add(
-        "fade-out"
-      );
+      .add("fade-out");
 
-    setTimeout(
-      () => {
+    setTimeout(() => {
 
-        finalScreen
-          .classList
-          .add(
-            "hidden"
-          );
+      finalScreen
+        .classList
+        .add("hidden");
 
-        finalScreen
-          .classList
-          .remove(
-            "fade-out"
-          );
+      finalScreen
+        .classList
+        .remove("fade-out");
 
-        storySceneIndex = 0;
+      finalScreen.scrollTop = 0;
 
-        storyLineIndex = 0;
+      storySceneIndex = 0;
 
-        poemIndex = 0;
+      storyLineIndex = 0;
 
-        storyLines.innerHTML =
-          "";
+      poemIndex = 0;
 
-        poemLines.innerHTML =
-          "";
+      storyLines.innerHTML = "";
 
-        resetQuestion();
+      poemLines.innerHTML = "";
 
-        passwordScreen
-          .classList
-          .remove(
-            "hidden"
-          );
+      resetQuestion();
 
-        passwordInput.value =
-          "";
+      passwordScreen
+        .classList
+        .remove("hidden");
 
-        errorMessage.textContent =
-          "";
+      passwordInput.value = "";
 
-        if (!isTouchDevice()) {
+      errorMessage.textContent = "";
 
-          setTimeout(
-            () =>
-              passwordInput
-                .focus(),
-            150
-          );
+      if (!isTouchDevice()) {
 
-        }
+        setTimeout(
+          () => passwordInput.focus(),
+          150
+        );
 
-      },
-      720
-    );
+      }
+
+    }, 720);
 
   }
 );
@@ -1197,9 +1044,7 @@ function isInteractiveStoryScreen() {
 
   return !storyScreen
     .classList
-    .contains(
-      "hidden"
-    );
+    .contains("hidden");
 
 }
 
@@ -1208,9 +1053,7 @@ function isInteractivePoemScreen() {
 
   return !poemScreen
     .classList
-    .contains(
-      "hidden"
-    );
+    .contains("hidden");
 
 }
 
@@ -1253,27 +1096,21 @@ document.addEventListener(
       event.key !== "Enter" &&
       event.key !== " "
     ) {
-
       return;
-
     }
 
     if (
       document.activeElement ===
       passwordInput
     ) {
-
       return;
-
     }
 
     if (
       !isInteractiveStoryScreen() &&
       !isInteractivePoemScreen()
     ) {
-
       return;
-
     }
 
     event.preventDefault();
@@ -1297,9 +1134,7 @@ storyContainer.addEventListener(
       Date.now() <
       ignoreClickUntil
     ) {
-
       return;
-
     }
 
     if (
@@ -1307,9 +1142,7 @@ storyContainer.addEventListener(
         "button, a, input"
       )
     ) {
-
       return;
-
     }
 
     revealNextStoryLine();
@@ -1327,9 +1160,7 @@ poemContainer.addEventListener(
       Date.now() <
       ignoreClickUntil
     ) {
-
       return;
-
     }
 
     if (
@@ -1337,9 +1168,7 @@ poemContainer.addEventListener(
         "button, a, input"
       )
     ) {
-
       return;
-
     }
 
     revealNextPoemStanza();
@@ -1352,28 +1181,20 @@ poemContainer.addEventListener(
    MOUSE WHEEL
 ========================================= */
 
-function handleWheel(
-  event
-) {
+function handleWheel(event) {
 
   if (
     !isInteractiveStoryScreen() &&
     !isInteractivePoemScreen()
   ) {
-
     return;
-
   }
 
   if (
-    Math.abs(
-      event.deltaY
-    ) < 18 ||
+    Math.abs(event.deltaY) < 18 ||
     wheelLocked
   ) {
-
     return;
-
   }
 
   wheelLocked = true;
@@ -1386,14 +1207,11 @@ function handleWheel(
 
   }
 
-  setTimeout(
-    () => {
+  setTimeout(() => {
 
-      wheelLocked = false;
+    wheelLocked = false;
 
-    },
-    720
-  );
+  }, 720);
 
 }
 
@@ -1411,9 +1229,7 @@ window.addEventListener(
    MOBILE SWIPE
 ========================================= */
 
-function onTouchStart(
-  event
-) {
+function onTouchStart(event) {
 
   touchStartY =
     event
@@ -1423,9 +1239,7 @@ function onTouchStart(
 }
 
 
-function onTouchEnd(
-  event
-) {
+function onTouchEnd(event) {
 
   touchEndY =
     event
@@ -1437,13 +1251,9 @@ function onTouchEnd(
     touchEndY;
 
   if (
-    Math.abs(
-      distance
-    ) < 45
+    Math.abs(distance) < 45
   ) {
-
     return;
-
   }
 
   if (
@@ -1499,15 +1309,13 @@ poemScreen.addEventListener(
 
 
 /* =========================================
-   AUTOFOCUS DESKTOP
+   AUTOFOCUS
 ========================================= */
 
 if (!isTouchDevice()) {
 
   setTimeout(
-    () =>
-      passwordInput
-        .focus(),
+    () => passwordInput.focus(),
     250
   );
 
