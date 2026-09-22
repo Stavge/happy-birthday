@@ -30,10 +30,34 @@ const storyScenes = [
     lines: [
       "Αν και η ελληνική γλώσσα είναι τόσο υπέροχη και πλούσια...",
       "κάποιες φορές τα λόγια μοιάζουν φτωχά.",
-      "Και κάπου εδώ ίσως καταλάβεις και το 18,1 στην Έκθεση στις Πανελλήνιες.",
       "Από κοντά κομπλάρω.",
-      "Δεν εκφράζομαι πάντα όπως θα ήθελα.",
-      "Οπότε ίσως αυτός να είναι ο μόνος τρόπος να σου πω κάποια πράγματα ακριβώς όπως τα νιώθω."
+      "Οπότε ίσως έτσι να μπορώ να σου πω κάποια πράγματα όπως ακριβώς τα νιώθω.",
+      {
+        text: "(Και κάπου εδώ ίσως να εξηγηθεί και το 18,1 στην Έκθεση που δυσκολευόσουν να πιστέψεις. 😆)",
+        style: "note"
+      }
+    ]
+  },
+
+
+  {
+    theme: "opening",
+
+    kicker: "2015",
+
+    lines: [
+      "Ήταν αρχές Οκτώβρη του 2015 όταν σε είδα πρώτη φορά.",
+      "Ακόμα έχω την εικόνα σου να μπαίνεις μέσα στην τάξη, σαν να ήταν χθες.",
+      "Περίεργο πράγμα...",
+      "Πώς γίνεται να σου καρφωθεί στο μυαλό ένας άγνωστος από την πρώτη ματιά;",
+      "Στην αρχή το αγνόησα.",
+      "Αλλά όσο σε έβλεπα και σε άκουγα να μιλάς, τόσο περισσότερο ένιωθα πως κάτι με τραβάει προς εσένα.",
+      "Κάτι που τότε δεν μπορούσα ούτε να εξηγήσω ούτε να αγνοήσω.",
+      "Η σκέψη μου ήταν πολύ πιο απλή:",
+      {
+        text: "«ΤΟΝ ΘΕΛΩ.»",
+        style: "emphasis"
+      }
     ]
   },
 
@@ -41,43 +65,18 @@ const storyScenes = [
   {
     theme: "confession",
 
-    kicker: "Αυτά που δύσκολα λέγονται από κοντά.",
+    kicker: "Τα επόμενα χρόνια",
 
     lines: [
-      "Σε αγάπησα περισσότερο από τον εαυτό μου.",
-      "Περισσότερο από οποιονδήποτε άλλο.",
-      "Ένιωσα για εσένα κάτι πρωτόγνωρο.",
-      "Κάτι που δεν είχα νιώσει ποτέ ξανά.",
-      "Κάτι μοναδικό."
-    ]
-  },
-
-
-  {
-    theme: "confession-deep",
-
-    kicker: "Και ίσως αυτό να είναι το πιο δύσκολο κομμάτι.",
-
-    lines: [
-      "Ξέρω ότι εσύ το βλέπεις διαφορετικά.",
-      "Αλλά για μένα αυτό που ένιωσα για σένα δεν ήταν ποτέ απλώς πλατωνικό.",
-      "Μόνο εγώ ξέρω πόσο πολύ σε αγαπώ.",
-      "Και ίσως ούτε εγώ να μπορώ πραγματικά να το εξηγήσω με λόγια."
-    ]
-  },
-
-
-  {
-    theme: "life",
-
-    kicker: "Η ζωή, βέβαια, έχει τα δικά της σχέδια.",
-
-    lines: [
-      "Ξέρω ότι η ζωή δεν μας δίνει πάντα τα πράγματα όπως θα τα θέλαμε.",
-      "Καμιά φορά είναι σκληρή.",
-      "Αλλά είναι και όμορφη.",
-      "Και ίσως κάποια πράγματα να μην μπορούν να είναι όπως τα φανταστήκαμε.",
-      "Αυτό όμως δεν αλλάζει το πόσο σημαντικός είσαι για μένα."
+      "Τα επόμενα χρόνια δεν ήταν ακριβώς... εύκολα.",
+      "Προσπαθούσα με κάθε τρόπο να κρατήσω μια επαφή μαζί σου.",
+      "Και ναι, κάποιες φορές η συμπεριφορά μου μάλλον σε τρόμαζε.",
+      "Τώρα που το βλέπω λίγο πιο αντικειμενικά... το καταλαβαίνω. 😆",
+      "Ήμουν απλώς υπερβολικά ερωτευμένη και κυνηγούσα κάτι που μου φαινόταν άπιαστο.",
+      "Κάπου στην Α' Λυκείου, όμως, ανακάλυψα το ✨διάβασμα✨.",
+      "Και προς μεγάλη έκπληξη όλων (κυρίως δική μου), είδα ότι μπορούσα να τα πάω και αρκετά καλά.",
+      "Κάπως έτσι έφτασα στα 18.450 μόρια.",
+      "Και κάπου εκεί ήταν ίσως η πρώτη φορά που ένιωσα ότι κατάφερα πραγματικά να σου τραβήξω την προσοχή."
     ]
   },
 
@@ -85,13 +84,109 @@ const storyScenes = [
   {
     theme: "care",
 
-    kicker: "Αυτό θέλω κυρίως να θυμάσαι.",
+    kicker: "Πολυτεχνείο και το 13",
 
     lines: [
-      "Θέλω μόνο να ξέρεις ότι υπάρχει ένας άνθρωπος που νοιάζεται πραγματικά για εσένα.",
-      "Που χαίρεται όταν είσαι καλά.",
-      "Που θέλει να σε βλέπει ευτυχισμένο.",
-      "Και που θα σε αγαπάει με τον δικό του τρόπο."
+      "13η στη Σχολή Μηχανολόγων Μηχανικών.",
+      "Και κάπου εκεί άρχισα να πιστεύω ότι τελικά δεν θεωρώ τυχαία το 13 τυχερό μου νούμερο.",
+
+      {
+        text: "13η στη σχολή.",
+        style: "note"
+      },
+
+      {
+        text: "13η και στη διάκριση στο Euroscola (εκείνη που με είχε στείλει στη Β' Λυκείου στο Ευρωπαϊκό Κοινοβούλιο, στο Στρασβούργο).",
+        style: "note"
+      },
+
+      {
+        text: "13 κομποσχοίνια μάζεψα στα χέρια μου πριν τις Πανελλήνιες (και ακόμη τα φοράω).",
+        style: "note"
+      },
+
+      {
+        text: "Και 13 Νοέμβρη γεννήθηκε ο πιο σημαντικός άνθρωπος για μένα.",
+        style: "strong"
+      },
+
+      {
+        text: "Οπότε ναι... ίσως κάτι να έχει αυτός ο αριθμός. 😆",
+        style: "note"
+      },
+
+      "Κι εγώ κάπου στον έβδομο ουρανό.",
+
+      "Γιατί μετά από σχεδόν πέντε χρόνια υπομονής και επιμονής, κάτι που για τόσο καιρό μου φαινόταν αδύνατο είχε επιτέλους γίνει πραγματικότητα.",
+
+      "Υπήρχε πια ένα «μεταξύ μας».",
+
+      "Και στο πρώτο έτος (διαδικτυακά τότε), ας πούμε ότι τα μαθήματα δεν ήταν ακριβώς η πρώτη μου προτεραιότητα.",
+
+      "Ήμουν απλώς... τρισευτυχισμένη."
+    ]
+  },
+
+
+  {
+    theme: "life",
+
+    kicker: "Τα χρόνια της σχολής",
+
+    lines: [
+      "Πέρασαν πέντε χρόνια μέσα στη σχολή.",
+      "Δύσκολα μαθήματα, εξεταστικές, άγχος, διάβασμα και αρκετές στιγμές που ήθελα να τα παρατήσω όλα.",
+      "Και μέσα σε όλα αυτά, εσύ ήσουν πάντα κάπου εκεί στο μυαλό μου.",
+      "Μερικές φορές έλεγα ότι έκλαιγα επειδή δεν καταλάβαινα κάποιο μάθημα...",
+      "ενώ στην πραγματικότητα μπορεί απλώς να είχες εξαφανιστεί και να μην απαντούσες. 😆",
+      "Διάβασμα, υπομονή, συναισθηματικά σκαμπανεβάσματα.",
+      "Και τελικά πέρασαν κι αυτά."
+    ]
+  },
+
+
+  {
+    theme: "confession-deep",
+
+    kicker: "Μεγαλώνοντας",
+
+    lines: [
+      "Κάποιες φορές ξεχνάω από πού ξεκίνησε όλο αυτό.",
+      "Ξεχνάω πόσο απίθανο μου φαινόταν κάποτε ακόμα και το να είσαι μέρος της ζωής μου.",
+      "Και ίσως γι' αυτό, τώρα που είσαι, καμιά φορά γίνομαι απαιτητική.",
+      "Θέλω περισσότερο χρόνο, περισσότερη παρουσία, περισσότερα πράγματα από εσένα.",
+      "Δεν ένιωσα ποτέ εκείνο το «εντάξει, τώρα τον έχω, μπορώ να χαλαρώσω».",
+      "Ίσως επειδή για τόσα χρόνια έμαθα να προσπαθώ για να μη σε χάσω.",
+      "Αλλά μεγαλώνοντας καταλαβαίνω και κάτι άλλο:",
+      "καμία ανθρώπινη σχέση, όπως κι αν την ονομάσουμε, δεν μπορεί να στηρίζεται μόνο στην προσπάθεια του ενός."
+    ]
+  },
+
+
+  {
+    theme: "words",
+
+    kicker: "Και τελικά...",
+
+    lines: [
+      "Είμαι συναισθηματικός άνθρωπος.",
+      "Δεν λειτουργώ συχνά με τη λογική.",
+      "Και ενώ ήξερα ότι αυτό που ήθελα μάλλον δεν θα οδηγούσε εκεί που φανταζόμουν, κατά βάθος πάντα ήλπιζα.",
+      "Παρόλα αυτά, το πάλεψα με όλη μου τη δύναμη.",
+      "Προσπάθησα με κάθε πιθανό (και αρκετές φορές ευφάνταστο) τρόπο να σου τραβήξω την προσοχή.",
+      "Να σε κρατήσω κάπως στη ζωή μου.",
+      "Και ξέρεις κάτι;",
+      "Δεν μετανιώνω.",
+      "Δεν μετανιώνω για όσα έκανα.",
+      "Ούτε για τον χρόνο που αφιέρωσα σε εσένα.",
+      "Ούτε για τον χρόνο που αφιέρωσα για εσένα, χωρίς εσένα.",
+      "Γιατί όλα αυτά είναι κι αυτά ένα κομμάτι της ζωής μου.",
+      "Και, καλώς ή κακώς, ένα πολύ μεγάλο κομμάτι της έχει μέσα εσένα.",
+
+      {
+        text: "Σύμφωνα με κάτι πρόχειρους υπολογισμούς... περίπου το 46%. 😮",
+        style: "punchline"
+      }
     ]
   },
 
@@ -99,14 +194,13 @@ const storyScenes = [
   {
     theme: "hope",
 
-    kicker: "Και κάτι τελευταίο πριν προχωρήσεις...",
+    kicker: "Και μετά από όλα αυτά...",
 
     lines: [
-      "Κάποιες φορές στενοχωριέμαι όταν νιώθω ότι απομακρύνεσαι.",
-      "Ή όταν συνειδητοποιώ ότι δεν μπορώ να είμαι μέρος της ζωής σου όσο θα ήθελα.",
-      "Όχι γιατί δεν θέλω να περνάς καλά.",
-      "Το αντίθετο.",
-      "Απλώς γιατί θέλω να είμαι κι εγώ ένα μικρό κομμάτι της ζωής σου.",
+      "Και μετά από όλα αυτά, τι μένει;",
+      "Ότι είσαι ένας από τους ανθρώπους που σημάδεψαν περισσότερο τη ζωή μου.",
+      "Με έκανες να νιώσω, να προσπαθήσω, να μεγαλώσω και να μάθω πράγματα, ακόμη κι όταν δεν το ήξερες.",
+      "Και όσο κι αν αλλάξουν τα πράγματα μεταξύ μας, αυτό δεν αλλάζει.",
       "Μακάρι να σε έχω για πολλά ακόμη χρόνια στη ζωή μου.",
       "Με όποιον τρόπο μας επιτρέψει η ζωή."
     ]
@@ -313,6 +407,81 @@ function isTouchDevice() {
   return window
     .matchMedia("(pointer: coarse)")
     .matches;
+
+}
+
+
+function getStoryLineData(item) {
+
+  if (typeof item === "string") {
+
+    return {
+      text: item,
+      style: "normal"
+    };
+
+  }
+
+  return {
+    text: item.text,
+    style: item.style || "normal"
+  };
+
+}
+
+
+function applyStoryLineStyle(line, style) {
+
+  if (style === "note") {
+
+    line.style.maxWidth = "720px";
+    line.style.fontSize =
+      "clamp(15px, 1.55vw, 19px)";
+    line.style.lineHeight = "1.45";
+    line.style.fontStyle = "italic";
+    line.style.color =
+      "rgba(245, 239, 230, 0.58)";
+    line.style.marginBottom = "10px";
+
+  }
+
+
+  if (style === "strong") {
+
+    line.style.maxWidth = "760px";
+    line.style.fontSize =
+      "clamp(21px, 2.35vw, 29px)";
+    line.style.lineHeight = "1.42";
+    line.style.fontWeight = "600";
+    line.style.color = "#f2d5ae";
+    line.style.marginTop = "5px";
+    line.style.marginBottom = "16px";
+
+  }
+
+
+  if (style === "emphasis") {
+
+    line.style.fontSize =
+      "clamp(26px, 3vw, 38px)";
+    line.style.fontWeight = "600";
+    line.style.color = "#f2d5ae";
+    line.style.marginTop = "20px";
+
+  }
+
+
+  if (style === "punchline") {
+
+    line.style.maxWidth = "760px";
+    line.style.fontSize =
+      "clamp(20px, 2.25vw, 28px)";
+    line.style.fontWeight = "600";
+    line.style.fontStyle = "italic";
+    line.style.color = "#f2d5ae";
+    line.style.marginTop = "18px";
+
+  }
 
 }
 
@@ -573,6 +742,11 @@ function revealNextStoryLine() {
     scene.lines.length
   ) {
 
+    const lineData =
+      getStoryLineData(
+        scene.lines[storyLineIndex]
+      );
+
     const line =
       document.createElement("p");
 
@@ -580,7 +754,13 @@ function revealNextStoryLine() {
       "story-line";
 
     line.textContent =
-      scene.lines[storyLineIndex];
+      lineData.text;
+
+    applyStoryLineStyle(
+      line,
+      lineData.style
+    );
+
 
     if (
       scene.theme === "hope" &&
@@ -594,13 +774,16 @@ function revealNextStoryLine() {
 
     }
 
+
     storyLines.appendChild(line);
+
 
     requestAnimationFrame(() => {
 
       line.classList.add("visible");
 
     });
+
 
     storyLineIndex += 1;
 
@@ -609,6 +792,7 @@ function revealNextStoryLine() {
     return;
 
   }
+
 
   if (
     storySceneIndex <
@@ -620,6 +804,7 @@ function revealNextStoryLine() {
     return;
 
   }
+
 
   startPoem();
 
@@ -634,6 +819,7 @@ function goToNextStoryScene() {
     .classList
     .add("scene-leave");
 
+
   setTimeout(() => {
 
     storySceneIndex += 1;
@@ -643,6 +829,7 @@ function goToNextStoryScene() {
     storyContainer
       .classList
       .remove("scene-leave");
+
 
     setTimeout(() => {
 
@@ -690,11 +877,13 @@ function startPoem() {
 
   poemLines.innerHTML = "";
 
+
   changeScreen(
     storyScreen,
     poemScreen,
     720
   );
+
 
   setTimeout(() => {
 
@@ -713,6 +902,7 @@ function revealNextPoemStanza() {
     return;
   }
 
+
   if (
     poemIndex <
     poemStanzas.length
@@ -723,6 +913,7 @@ function revealNextPoemStanza() {
 
     stanza.className =
       "poem-stanza";
+
 
     poemStanzas[poemIndex]
       .forEach((text) => {
@@ -737,7 +928,9 @@ function revealNextPoemStanza() {
 
       });
 
+
     poemLines.appendChild(stanza);
+
 
     requestAnimationFrame(() => {
 
@@ -745,16 +938,20 @@ function revealNextPoemStanza() {
 
     });
 
+
     poemIndex += 1;
+
 
     stanza.scrollIntoView({
       behavior: "smooth",
       block: "nearest"
     });
 
+
     return;
 
   }
+
 
   changeScreen(
     poemScreen,
@@ -989,6 +1186,7 @@ replayButton.addEventListener(
       .classList
       .add("fade-out");
 
+
     setTimeout(() => {
 
       finalScreen
@@ -1013,6 +1211,7 @@ replayButton.addEventListener(
 
       resetQuestion();
 
+
       passwordScreen
         .classList
         .remove("hidden");
@@ -1020,6 +1219,7 @@ replayButton.addEventListener(
       passwordInput.value = "";
 
       errorMessage.textContent = "";
+
 
       if (!isTouchDevice()) {
 
@@ -1064,6 +1264,7 @@ function advanceCurrentExperience() {
     return;
   }
 
+
   if (
     isInteractiveStoryScreen()
   ) {
@@ -1071,6 +1272,7 @@ function advanceCurrentExperience() {
     revealNextStoryLine();
 
   }
+
 
   else if (
     isInteractivePoemScreen()
@@ -1099,6 +1301,7 @@ document.addEventListener(
       return;
     }
 
+
     if (
       document.activeElement ===
       passwordInput
@@ -1106,12 +1309,14 @@ document.addEventListener(
       return;
     }
 
+
     if (
       !isInteractiveStoryScreen() &&
       !isInteractivePoemScreen()
     ) {
       return;
     }
+
 
     event.preventDefault();
 
@@ -1137,6 +1342,7 @@ storyContainer.addEventListener(
       return;
     }
 
+
     if (
       event.target.closest(
         "button, a, input"
@@ -1144,6 +1350,7 @@ storyContainer.addEventListener(
     ) {
       return;
     }
+
 
     revealNextStoryLine();
 
@@ -1163,6 +1370,7 @@ poemContainer.addEventListener(
       return;
     }
 
+
     if (
       event.target.closest(
         "button, a, input"
@@ -1170,6 +1378,7 @@ poemContainer.addEventListener(
     ) {
       return;
     }
+
 
     revealNextPoemStanza();
 
@@ -1190,6 +1399,7 @@ function handleWheel(event) {
     return;
   }
 
+
   if (
     Math.abs(event.deltaY) < 18 ||
     wheelLocked
@@ -1197,7 +1407,9 @@ function handleWheel(event) {
     return;
   }
 
+
   wheelLocked = true;
+
 
   if (
     event.deltaY > 0
@@ -1206,6 +1418,7 @@ function handleWheel(event) {
     advanceCurrentExperience();
 
   }
+
 
   setTimeout(() => {
 
@@ -1246,15 +1459,18 @@ function onTouchEnd(event) {
       .changedTouches[0]
       .screenY;
 
+
   const distance =
     touchStartY -
     touchEndY;
+
 
   if (
     Math.abs(distance) < 45
   ) {
     return;
   }
+
 
   if (
     distance > 0
