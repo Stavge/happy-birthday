@@ -7,6 +7,58 @@
   <title>Happy Birthday</title>
 
   <link rel="stylesheet" href="style.css?v=17">
+
+  <!-- Μικρές προσθήκες μόνο για τη νέα interactive ερώτηση -->
+  <style>
+    .question-title.question-long-title {
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: clamp(27px, 4vw, 48px);
+      line-height: 1.16;
+    }
+
+    .question-buttons.question-options-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      width: min(680px, 100%);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .question-options-grid .question-btn {
+      width: 100%;
+      min-height: 64px;
+      padding: 14px 18px;
+      line-height: 1.3;
+    }
+
+    .question-disclaimer {
+      max-width: 560px;
+      margin: 24px auto 0;
+      padding: 0 18px;
+      text-align: center;
+      font-size: clamp(12px, 1.25vw, 15px);
+      line-height: 1.55;
+      opacity: 0.58;
+    }
+
+    @media (max-width: 620px) {
+      .question-buttons.question-options-grid {
+        grid-template-columns: 1fr;
+        gap: 11px;
+      }
+
+      .question-options-grid .question-btn {
+        min-height: 56px;
+      }
+
+      .question-title.question-long-title {
+        font-size: clamp(25px, 7vw, 35px);
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -427,9 +479,7 @@
 
 
   <!-- =====================================
-       QUESTION
-       Προσωρινά παραμένει μέχρι να αποφασίσουμε
-       τι θα μπει στη θέση του.
+       INTERACTIVE QUESTION
   ====================================== -->
 
   <main
@@ -442,11 +492,12 @@
     <div class="question-card">
 
       <p class="question-top">
-        Και τώρα η σημαντικότερη ερώτηση...
+        Και τώρα μια πολύ σημαντική ερώτηση...
       </p>
 
-      <h2 class="question-title">
-        Με αγαπάς;
+      <h2 class="question-title question-long-title">
+        Τι θα ήθελες από εμένα κατά την επόμενη δεκαετία
+        των δεύτερων «ήντα» σου;
       </h2>
 
 
@@ -455,20 +506,34 @@
         class="question-choice-state"
       >
 
-        <div class="question-buttons">
+        <div class="question-buttons question-options-grid">
 
           <button
-            id="answer-yes"
+            id="answer-1"
             class="question-btn"
           >
-            Ναι
+            Να με αφήσεις στην ησυχία μου
           </button>
 
           <button
-            id="answer-no"
+            id="answer-2"
             class="question-btn"
           >
-            Όχι
+            Να εξαφανιστείς
+          </button>
+
+          <button
+            id="answer-3"
+            class="question-btn"
+          >
+            Να είμαστε φίλοι
+          </button>
+
+          <button
+            id="answer-4"
+            class="question-btn"
+          >
+            Να είμαστε όπως ήμασταν
           </button>
 
         </div>
@@ -501,11 +566,6 @@
           alt=""
         >
 
-        <p
-          id="question-message"
-          class="question-message"
-        ></p>
-
 
         <div class="result-navigation">
 
@@ -514,7 +574,7 @@
             <button
               id="question-try-again"
               class="nav-circle"
-              aria-label="Δοκίμασε άλλη απάντηση"
+              aria-label="Άλλη απάντηση"
             >
               ←
             </button>
@@ -543,6 +603,12 @@
           </div>
 
         </div>
+
+
+        <p class="question-disclaimer">
+          Για πλάκα το έβαλα... ας γίνει ό,τι είναι να γίνει.
+          Εγώ μόνο να είσαι καλά θέλω.
+        </p>
 
       </div>
 
@@ -646,7 +712,7 @@
   </main>
 
 
-  <script src="script.js?v=20"></script>
+  <script src="script.js?v=21"></script>
 
 </body>
 </html>
