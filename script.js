@@ -64,8 +64,11 @@ const storyScenes = [
 
     lines: [
       "Τα επόμενα χρόνια δεν ήταν ακριβώς... εύκολα.",
+
       "Προσπαθούσα με κάθε τρόπο να κρατήσω μια επαφή μαζί σου.",
+
       "Και ναι, κάποιες φορές η συμπεριφορά μου σε τρόμαζε.",
+
       "Ήμουν απλώς υπερβολικά ερωτευμένη και κυνηγούσα κάτι που μου φαινόταν άπιαστο.",
 
       "Κάπου στην Α' Λυκείου, όμως, ανακάλυψα το ✨διάβασμα✨.",
@@ -181,7 +184,7 @@ const storyScenes = [
     kicker: "Και μετά από όλα αυτά...",
 
     lines: [
-      "Και μετά από όλα αυτά, τι μένει?",
+      "Και μετά από όλα αυτά, τι μένει;",
 
       "Ότι πάντα θα έχεις μια ξεχωριστή θέση στην καρδιά και στο μυαλό μου.",
 
@@ -323,11 +326,17 @@ const musicBack =
 const questionChoiceState =
   document.getElementById("question-choice-state");
 
-const answerYes =
-  document.getElementById("answer-yes");
+const answer1 =
+  document.getElementById("answer-1");
 
-const answerNo =
-  document.getElementById("answer-no");
+const answer2 =
+  document.getElementById("answer-2");
+
+const answer3 =
+  document.getElementById("answer-3");
+
+const answer4 =
+  document.getElementById("answer-4");
 
 const questionBack =
   document.getElementById("question-back");
@@ -337,9 +346,6 @@ const questionResult =
 
 const questionGif =
   document.getElementById("question-gif");
-
-const questionMessage =
-  document.getElementById("question-message");
 
 const questionTryAgain =
   document.getElementById("question-try-again");
@@ -972,7 +978,7 @@ musicBack.addEventListener(
 
 
 /* =========================================
-   QUESTION
+   INTERACTIVE QUESTION
 ========================================= */
 
 function resetQuestion() {
@@ -985,8 +991,6 @@ function resetQuestion() {
     .classList
     .add("hidden");
 
-  questionMessage.textContent = "";
-
   questionGif.removeAttribute("src");
 
   questionGif.style.display = "none";
@@ -994,7 +998,7 @@ function resetQuestion() {
 }
 
 
-function showQuestionResult(type) {
+function showQuestionResult(choiceNumber) {
 
   questionChoiceState
     .classList
@@ -1004,32 +1008,13 @@ function showQuestionResult(type) {
     .classList
     .remove("hidden");
 
+  questionGif.style.display = "none";
 
-  if (type === "yes") {
+  questionGif.alt =
+    `Απάντηση ${choiceNumber}`;
 
-    questionMessage.textContent =
-      "Το ήξερα... 😌";
-
-    questionGif.alt =
-      "Happy reaction";
-
-    questionGif.src =
-      "yes.gif";
-
-  }
-
-  else {
-
-    questionMessage.textContent =
-      "Μάλλον δεν διάβασες καλά την ερώτηση... 😒";
-
-    questionGif.alt =
-      "Reaction";
-
-    questionGif.src =
-      "no.gif";
-
-  }
+  questionGif.src =
+    `${choiceNumber}.gif`;
 
 }
 
@@ -1058,23 +1043,45 @@ questionGif.addEventListener(
 );
 
 
-answerYes.addEventListener(
+answer1.addEventListener(
   "click",
 
   () => {
 
-    showQuestionResult("yes");
+    showQuestionResult(1);
 
   }
 );
 
 
-answerNo.addEventListener(
+answer2.addEventListener(
   "click",
 
   () => {
 
-    showQuestionResult("no");
+    showQuestionResult(2);
+
+  }
+);
+
+
+answer3.addEventListener(
+  "click",
+
+  () => {
+
+    showQuestionResult(3);
+
+  }
+);
+
+
+answer4.addEventListener(
+  "click",
+
+  () => {
+
+    showQuestionResult(4);
 
   }
 );
